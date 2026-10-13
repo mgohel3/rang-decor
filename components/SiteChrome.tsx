@@ -108,7 +108,11 @@ export function Footer({ direction = "01-editorial" }: { direction?: string }) {
   return <footer className="footer">
     <FooterWave />
     <div className="footer-top">
-      <Link href={`/demo/${direction}`} className="brand"><Image src="/images/rang-header.svg" alt="Rang Decor, Let’s Live Beautiful" width={126} height={46} unoptimized /></Link>
+      <div className="footer-brand-group">
+        <Link href={`/demo/${direction}`} className="brand"><Image src="/images/rang-header.svg" alt="Rang Decor, Let’s Live Beautiful" width={126} height={46} unoptimized /></Link>
+        <span className="footer-brand-divider" aria-hidden="true" />
+        <Image className="footer-group-mark" src="/images/bhandari-group.svg" alt="A Bhandari Group initiative" width={48} height={48} unoptimized />
+      </div>
       <p>Surfaces for spaces<br/>that feel like yours.</p>
       <Link className="footer-enquire" href={`${base}/contact`}>Begin a conversation <ArrowRight size={16}/></Link>
     </div>
@@ -118,5 +122,10 @@ export function Footer({ direction = "01-editorial" }: { direction?: string }) {
       <div><span>Find us</span><a href="mailto:info@rangdecor.in">info@rangdecor.in</a><a href="tel:+918297585000">+91 8297 585 000</a><p>14-1-395/1, New Aghapura Rd,<br/>Hyderabad, Telangana, India</p><div className="footer-social"><a href="#" aria-label="Instagram"><Instagram size={17}/><span>Instagram</span></a><a href="#" aria-label="Facebook"><Facebook size={17}/><span>Facebook</span></a><a href="#" aria-label="LinkedIn"><Linkedin size={17}/><span>LinkedIn</span></a></div></div>
     </div>
     <div className="footer-legal"><span>© Rang Décor · Let’s Live Beautiful</span><div><a href="#">Privacy</a><a href="#">Terms</a></div><span>Designed &amp; developed by Karya Graphito</span></div>
+    <a className="whatsapp-float" href="https://wa.me/918297585000" target="_blank" rel="noreferrer" aria-label="Chat with Rang Décor on WhatsApp">
+      <span className="whatsapp-pulse" aria-hidden="true" />
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.03 3.2a12.65 12.65 0 0 0-10.8 19.23L3.5 28.8l6.52-1.71A12.65 12.65 0 1 0 16.03 3.2Zm0 23.02c-1.93 0-3.82-.52-5.47-1.51l-.39-.23-3.87 1.01 1.03-3.77-.25-.4a10.54 10.54 0 1 1 8.95 4.9Zm5.79-7.9c-.32-.16-1.91-.94-2.21-1.04-.3-.11-.51-.16-.72.16-.22.32-.83 1.04-1.02 1.25-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.58-.96-.85-1.61-1.91-1.8-2.23-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.62-.53-.54-.72-.55h-.61c-.21 0-.56.08-.86.4-.3.32-1.12 1.1-1.12 2.67s1.15 3.1 1.31 3.31c.16.21 2.26 3.45 5.47 4.84.76.33 1.35.53 1.81.68.76.24 1.45.21 2 .13.61-.09 1.91-.78 2.18-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+      <span className="whatsapp-label">Let’s talk</span>
+    </a>
   </footer>;
 }

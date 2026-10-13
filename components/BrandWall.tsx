@@ -18,7 +18,7 @@ export function BrandWall() {
       <div className="section-index">08 <i/> A WORLD OF SURFACES</div>
       <p>ONE POINT OF VIEW, MANY EXPRESSIONS</p>
     </div>
-    <h2 id="brand-wall-title">Meet the <em>Rang family.</em></h2>
+    <h2 id="brand-wall-title">Meet the <em className="brand-shimmer">Rang family.</em></h2>
     <p className="brand-wall-lede">Discover the specialist collections that bring colour, texture and character to every kind of space.</p>
     <div className="brand-wall-grid">
       {brands.map(([name, slug], index) => <motion.div className="brand-logo" key={slug}
