@@ -6,4 +6,6 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  // Images are served unoptimized (next.config.ts), so plain <img> is intentional here.
+  { rules: { "@next/next/no-img-element": "off" } },
 ]);

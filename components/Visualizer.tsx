@@ -17,7 +17,6 @@ export function Visualizer({ base, room, rooms, families }: { base: string; room
     <div className="viz-main">
       <div className="viz-stage" style={{ backgroundImage: `url(${selected.swatch.image})` }}>
         {/* the room image has a transparent wall; the chosen swatch is tiled behind it */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={room.image} alt={`${room.name} with the selected surface applied`} />
       </div>
       <aside className="viz-panel">
