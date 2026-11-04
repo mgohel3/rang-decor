@@ -1,7 +1,9 @@
 // Content for the redesigned site. Facts (names, descriptions, catalogue files, contact) come from
 // DESIGN.md / rangdecor.in. When the CMS is ready, replace these exports with loaders; pages stay the same.
 
-const PDF = "https://rangdecor.in/static/front/catalogues/";
+// Catalogue PDFs are large (about 380 MB in total), so they are served from storage, not the repository.
+// After launch, upload them to your storage and set NEXT_PUBLIC_CATALOGUE_BASE (with a trailing slash).
+const PDF = process.env.NEXT_PUBLIC_CATALOGUE_BASE ?? "https://rangdecor.in/static/front/catalogues/";
 
 export const groups = {
   louvers: "Louvers & Cladding",
@@ -20,20 +22,20 @@ const photo = (f: string) => `/images/${f}`;
 const logo = (f: string) => `/images/brands/${f}.svg`;
 
 export const collections: Collection[] = [
-  { id: "groove-earth", name: "Groove Earth", group: "louvers", kind: "Decorative louvers", desc: "Decorative 5 inch width louvers crafted for premium spaces.", src: photo("groove-earth.png"), cover: true, pdf: PDF + "groove_earth.pdf", family: "groove-earth" },
-  { id: "groove-forest", name: "Groove Forest", group: "louvers", kind: "Wooden shade louvers", desc: "Modern textures bringing classic finish to everyday living space.", long: "Groove is the latest and an exotic product line from Rang Décor. The highlighter product line ensures strength and beauty to be lasting and bring a zestful induce of global standards in your space decor.", src: photo("groove-forest.png"), cover: true, pdf: PDF + "groove_forest.pdf", family: "groove-forest" },
-  { id: "groove-pastel", name: "Groove Pastel", group: "louvers", kind: "Pastel louvers", desc: "Soft elegant shades crafted for modern soothing interiors.", src: photo("groove-pastel.png"), cover: true, pdf: PDF + "groove_pastel.pdf", family: "groove-pastel" },
-  { id: "onit", name: "ONIT", group: "louvers", kind: "Charcoal louvers", desc: "Contemporary charcoal textures for premium wall applications.", src: logo("onit"), cover: false, pdf: PDF + "onit.pdf", family: "onit" },
-  { id: "wallmate", name: "Wallmate", group: "louvers", kind: "Designer wall louvers", desc: "Innovative wall surfaces for elegant modern interiors.", src: logo("wallmate"), cover: false, pdf: PDF + "wallmate.pdf" },
-  { id: "art-by-one", name: "Art by One", group: "louvers", kind: "Seamlessfit louvers", desc: "Stylish seamless louvers with hassle free panel fitting.", src: photo("art-by-one.png"), cover: true, pdf: PDF + "art_by_one.pdf" },
-  { id: "interlockit", name: "Interlockit", group: "panels", kind: "Luxury wall clads", desc: "Designer wall solutions for sophisticated interior spaces.", src: logo("interlockit"), cover: false, pdf: PDF + "interlockit.pdf" },
-  { id: "charco-charm", name: "Charco Charm", group: "panels", kind: "Charcoal interior panels", desc: "Stylish panel collections for elegant interior environments.", long: "Charcocharm is a premium 8 ft x 2 ft decorative charcoal panel designed to elevate interior aesthetics. Perfect for living rooms, bedrooms, and office settings.", src: photo("charco.png"), cover: true, pdf: PDF + "charco_charm.pdf", family: "charco-charm" },
-  { id: "nazrana", name: "Nazrana", group: "panels", kind: "Engraved mirror panels", desc: "Reflective designer surfaces with elegant engraved detailing.", src: logo("nazrana"), cover: false, pdf: PDF + "nazrana.pdf" },
-  { id: "bern", name: "Bern Thermo", group: "laminates", kind: "Meta thermo mica", desc: "Premium thermo mica series for refined modern interiors.", long: "Bern Thermo Mica is a premium 1 mm thick thermo-mica sheet, available in a standard size of 8 ft x 4 ft, in solid glossy, matt, metallic, sparkle, texture, veneer and glass rustic finishes.", src: photo("bern.png"), cover: true, pdf: PDF + "bern_thermo.pdf", family: "bern-thermo" },
-  { id: "faded", name: "Faded", group: "laminates", kind: "Acrylic laminates", desc: "Exclusive 2mm acrylic laminates in suede, glossy and matt surfaces.", src: photo("faded.png"), cover: true, pdf: PDF + "faded_.pdf", family: "faded" },
-  { id: "litia", name: "Litia", group: "laminates", kind: "Acrylic fluted laminates", desc: "Luxury acrylic fluted laminates with sophisticated visual appeal.", src: logo("litia"), cover: false, pdf: PDF + "litia.pdf" },
-  { id: "maskara", name: "Maskara", group: "laminates", kind: "Acrylic series", desc: "Designer acrylic panels for aesthetically best interiors.", src: logo("maskara"), cover: false, pdf: PDF + "maskara.pdf", family: "maskara" },
-  { id: "bella-ceilo", name: "Bella Ceilo", group: "ceilings", kind: "Ceiling slat solutions", desc: "Decorative soffit slats with ultimate architectural appeal.", src: photo("bella-ceilo.png"), cover: true, pdf: PDF + "bella_ceilo.pdf" },
+  { id: "groove-earth", name: "Groove Earth", group: "louvers", kind: "Decorative louvers", desc: "Slim 5 inch louvers in earthy tones, made for warm and grounded interiors.", long: "Groove Earth belongs to the Groove louver family: seamless, interlocking slats that come in a 9 ft height and fit walls, ceilings and partitions. This series uses a 5 inch width in earth-toned finishes.", src: photo("groove-earth.png"), cover: true, pdf: PDF + "groove_earth.pdf", family: "groove-earth" },
+  { id: "groove-forest", name: "Groove Forest", group: "louvers", kind: "Wooden shade louvers", desc: "Wood-shade louvers that bring a natural, calm texture to a room.", long: "Groove Forest is the wood-shade range of the Groove louver family. The slats interlock for a clean, seamless finish and run 9 ft tall, so they suit feature walls, ceilings and partitions.", src: photo("groove-forest.png"), cover: true, pdf: PDF + "groove_forest.pdf", family: "groove-forest" },
+  { id: "groove-pastel", name: "Groove Pastel", group: "louvers", kind: "Pastel louvers", desc: "Soft pastel louvers for light, soothing interiors.", long: "Groove Pastel offers the same interlocking Groove louvers in gentler colours. Use them where you want a quiet, airy backdrop on walls, ceilings or room dividers.", src: photo("groove-pastel.png"), cover: true, pdf: PDF + "groove_pastel.pdf", family: "groove-pastel" },
+  { id: "onit", name: "ONIT", group: "louvers", kind: "Charcoal louvers", desc: "Charcoal louvers that add linear depth to feature walls.", long: "ONIT is a charcoal-toned louver range for wall applications that need a strong, modern line.", src: logo("onit"), cover: false, pdf: PDF + "onit.pdf", family: "onit" },
+  { id: "wallmate", name: "Wallmate", group: "louvers", kind: "Designer wall louvers", desc: "Designer wall louvers for refined, modern interiors.", long: "Wallmate is a range of designer wall louvers, listed in two volumes of finishes.", src: logo("wallmate"), cover: false, pdf: PDF + "wallmate.pdf" },
+  { id: "art-by-one", name: "Art by One", group: "louvers", kind: "Seamlessfit louvers", desc: "Seamless louvers that fit together without fuss.", long: "Art by One louvers are made to join seamlessly, so panels go up quickly and the finished wall looks continuous.", src: photo("art-by-one.png"), cover: true, pdf: PDF + "art_by_one.pdf" },
+  { id: "interlockit", name: "Interlockit", group: "panels", kind: "Luxury wall clads", desc: "Wall cladding boards and louvers with a full set of trims.", long: "Interlockit is a wall-cladding system of HDPC boards and louvers. A matching trim family (J, I, T, P, L, LED, LED skirting and H) finishes edges, corners and lighting lines.", src: logo("interlockit"), cover: false, pdf: PDF + "interlockit.pdf" },
+  { id: "charco-charm", name: "Charco Charm", group: "panels", kind: "Charcoal interior panels", desc: "Charcoal decorative panels with a tactile, modern character.", long: "Charco Charm is a decorative charcoal panel measuring 8 ft by 2 ft. It lifts living rooms, bedrooms and offices with texture and depth.", src: photo("charco.png"), cover: true, pdf: PDF + "charco_charm.pdf", family: "charco-charm" },
+  { id: "nazrana", name: "Nazrana", group: "panels", kind: "Engraved mirror panels", desc: "Engraved mirror panels with a reflective, decorative finish.", long: "Nazrana panels combine a mirror surface with engraved detail, for walls that catch and move the light.", src: logo("nazrana"), cover: false, pdf: PDF + "nazrana.pdf" },
+  { id: "bern", name: "Bern Thermo", group: "laminates", kind: "Meta thermo mica", desc: "Thermo-mica sheets in a wide spread of finishes.", long: "Bern Thermo is a 1 mm thermo-mica sheet in the standard 8 ft by 4 ft size. Finishes include solid gloss and matt, metallic, sparkle, textures, veneers and glass rustic.", src: photo("bern.png"), cover: true, pdf: PDF + "bern_thermo.pdf", family: "bern-thermo" },
+  { id: "faded", name: "Faded", group: "laminates", kind: "Acrylic laminates", desc: "2 mm acrylic laminates in suede, gloss and matt.", long: "Faded is a range of 2 mm acrylic laminates. Pick a suede, glossy or matt surface to suit furniture, wardrobes and wall panels.", src: photo("faded.png"), cover: true, pdf: PDF + "faded_.pdf", family: "faded" },
+  { id: "litia", name: "Litia", group: "laminates", kind: "Acrylic fluted laminates", desc: "Fluted acrylic laminates with ribble, frill and wavie profiles.", long: "Litia is a fluted acrylic laminate. It comes in three profiles (ribble, frill and wavie) and in 8 x 2 ft and 8 x 4 ft sheets.", src: logo("litia"), cover: false, pdf: PDF + "litia.pdf" },
+  { id: "maskara", name: "Maskara", group: "laminates", kind: "Acrylic series", desc: "Acrylic laminates for a polished, luxurious look.", long: "Maskara is the 100 percent acrylic laminate range at the heart of Rang Décor, known for deep colour, reflective gloss and a luxurious finish.", src: logo("maskara"), cover: false, pdf: PDF + "maskara.pdf", family: "maskara" },
+  { id: "bella-ceilo", name: "Bella Ceilo", group: "ceilings", kind: "Ceiling slat solutions", desc: "Decorative soffit slats for ceilings with presence.", long: "Bella Ceilo is a range of soffit slats for ceilings, offered in wood-look and neutral colours with matching T, J, outer-corner and inner-corner trims. Selected shades are also available in 13 ft lengths.", src: photo("bella-ceilo.png"), cover: true, pdf: PDF + "bella_ceilo.pdf" },
 ];
 
 export const byId = (id: string) => collections.find(c => c.id === id);
@@ -63,12 +65,12 @@ export const applications = [
 ];
 
 export const why = [
-  ["Range of Products", "Explore an extensive range of products at Rang. With a wide variety of designs and finishes available, you can bring your dream spaces to life with plenty of beautiful choices."],
-  ["Our Service", "Our timely services ensure a seamless experience. We believe that even the best creations lose their value if not delivered on time, so we thrive to be punctual."],
-  ["Credibility", "Rang stands for trust and reliability. We are committed to delivering excellence, always on time, without compromising on quality."],
-  ["Our Commitment", "We are dedicated to transforming your space into something truly remarkable, something that reflects your personality and makes a lasting impression, every time."],
-  ["Product Quality", "At Rang, we believe in continuous improvement and innovation. Our designs are unique, modern, and crafted to stand out in the market."],
-  ["Exhibit Aesthetic", "Rang promises to design for you what you could flaunt. Aesthetic concepts lead to trend-setting decor."],
+  ["A wide range", "From laminates and acrylics to louvers, panels and ceiling slats, Rang covers many designs and finishes, so one supplier can serve a whole project."],
+  ["Reliable delivery", "A great product only helps if it arrives when you need it. We plan our service around keeping delivery dates."],
+  ["Trust you can build on", "We stand behind quality and timing, and we keep our promises to dealers, designers and customers alike."],
+  ["Care for your space", "We want your room to feel like you. Our team helps you choose finishes that suit the space and its purpose."],
+  ["Steady quality", "We keep refining our ranges, so new designs arrive modern, distinctive and consistent with what you already know."],
+  ["Design with a point of view", "Every collection is developed to look good and stand apart, so your space has something worth showing off."],
 ];
 
 export const events = [

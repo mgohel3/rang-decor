@@ -1,7 +1,7 @@
 import { PageHead } from "@/components/rd/Pages";
 import { HR_EMAIL, getRoles } from "@/data/content";
 
-export const metadata = { title: "Careers | Rang Décor" };
+export const metadata = { title: "Careers at Rang Décor", description: "Join the Rang Décor team in Hyderabad. Send your CV to hr@rangdecor.in to be considered for current and future roles.", alternates: { canonical: "/careers" }, openGraph: { title: "Careers at Rang Décor", description: "Join the Rang Décor team in Hyderabad. Send your CV to hr@rangdecor.in to be considered for current and future roles.", url: "/careers" } };
 
 export default function Careers() {
   const roles = getRoles();

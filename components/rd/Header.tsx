@@ -4,10 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import dynamic from "next/dynamic";
+import { ArrowDown, Search } from "lucide-react";
+import { PdfLink } from "./Leads";
 import { collections, groups, nav, type GroupKey } from "@/data/rang";
 import { Smoke } from "./Smoke";
 
+const SearchModal = dynamic(() => import("./SearchModal"), { ssr: false });
 const groupKeys = Object.keys(groups) as GroupKey[];
 
 export function Header() {
@@ -19,6 +22,7 @@ export function Header() {
   const [hov, setHov] = useState("groove-earth");
   const [scrolled, setScrolled] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
+  const [searching, setSearching] = useState(false);
   const headRef = useRef<HTMLElement>(null);
   const openT = useRef(0), closeT = useRef(0);
 
@@ -27,7 +31,11 @@ export function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setMenu(null); setMob(false); } };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setMenu(null); setMob(false); }
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target as HTMLElement)?.tagName ?? "");
+      if ((e.key === "/" && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) { e.preventDefault(); setSearching(true); setMenu(null); }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("keydown", onKey);
@@ -67,6 +75,7 @@ export function Header() {
             : <Link key={n.label} href={n.href} className={active(n.href) ? "on" : ""} aria-current={active(n.href) ? "page" : undefined} onMouseEnter={closeNow}>{n.label}<span className="bar"/></Link>)}
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+          <button className="rd-iconbtn" aria-label="Search" onClick={() => { setSearching(true); setMenu(null); }}><Search size={18} aria-hidden="true"/></button>
           <Link href={isHome ? "/collections" : "/contact"} className="rd-cta" data-drop="btn">{isHome ? "Explore Collections" : "Enquire"}</Link>
           <button className="rd-burger" aria-label="Menu" aria-expanded={mob} onClick={() => { setMob(!mob); setMobSub(null); }}>{mob ? "CLOSE" : "MENU"}</button>
         </div>
@@ -86,7 +95,7 @@ export function Header() {
           </div>
           <div className="rd-mega-list" style={{ display: "grid" }}>
             {menu === "catalogues"
-              ? collections.map(c => <a key={c.id} className={`rd-mega-item pdf ${hov === c.id ? "on" : ""}`} href={c.pdf} target="_blank" rel="noopener noreferrer" onMouseEnter={() => setHov(c.id)} onFocus={() => setHov(c.id)}><b>{c.name}</b><i>PDF ↓</i></a>)
+              ? collections.map(c => <PdfLink key={c.id} pdf={c.pdf} name={c.name} className={`rd-mega-item pdf ${hov === c.id ? "on" : ""}`} onMouseEnter={() => setHov(c.id)} onFocus={() => setHov(c.id)}><b>{c.name}</b><i>PDF ↓</i></PdfLink>)
               : collections.filter(c => c.group === grp).map(c => <Link key={c.id} className={`rd-mega-item ${hov === c.id ? "on" : ""}`} href={`/product/${c.id}`} onClick={close} onMouseEnter={() => setHov(c.id)} onFocus={() => setHov(c.id)}><b>{c.name}</b><span>{c.desc}</span></Link>)}
           </div>
           <div className="rd-mega-feat" aria-hidden="true">
@@ -105,7 +114,7 @@ export function Header() {
           const on = mobSub === n.menu;
           return <div className="row" key={n.label}>
             {n.menu ? <button onClick={() => setMobSub(on ? null : n.menu!)} aria-expanded={on}>{n.label}<i>{on ? "–" : "+"}</i></button> : <Link href={n.href} onClick={close}>{n.label}</Link>}
-            {n.menu && <div className={`subs ${on ? "open" : ""}`}>{subs.map(s => <a key={s.name} href={s.url} onClick={close}>{s.name}</a>)}</div>}
+            {n.menu && <div className={`subs ${on ? "open" : ""}`}>{subs.map(s => n.menu === "catalogues" ? <PdfLink key={s.name} pdf={s.url} name={s.name} onClick={close}>{s.name}</PdfLink> : <a key={s.name} href={s.url} onClick={close}>{s.name}</a>)}</div>}
           </div>;
         })}
         <div className="row"><Link href="/careers" onClick={close}>Careers</Link></div>
@@ -113,5 +122,6 @@ export function Header() {
         <Link href="/collections" className="rd-btn dark" style={{ width: "100%", marginTop: "1.1rem" }} onClick={close}>Explore Collections</Link>
       </div>
     </div>
+    {searching && <SearchModal onClose={() => setSearching(false)}/>}
   </header>;
 }

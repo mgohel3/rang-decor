@@ -1,16 +1,19 @@
 // Single data layer for the new pages. When the CMS API is ready, replace the bodies of these
 // loaders with fetch() calls; the page components keep working unchanged.
 import visualizerData from "./visualizer.json";
+import { catalog, seriesFor } from "./catalog";
+import { byId } from "./rang";
 
 export type Swatch = { code: string; image: string };
 export type Family = { id: string; name: string; swatches: Swatch[] };
 export type Room = { id: string; name: string; image: string };
 
 export const getRooms = (): Room[] => visualizerData.areas;
-export const getFamilies = (): Family[] => visualizerData.families.map(f => ({
-  ...f,
-  swatches: visualizerData.swatches.filter(s => s.family === f.id).map(s => ({ code: s.number, image: s.image })),
-}));
+// The visualizer tiles the small swatch image behind the room, so it uses the catalogue thumbnails.
+export const getFamilies = (): Family[] => catalog.filter(s => s.items.length).map(s => {
+  const base = byId(s.collection)?.name ?? s.name;
+  return { id: s.id, name: seriesFor(s.collection).length > 1 ? `${base} · ${s.name}` : base, swatches: s.items.map(i => ({ code: i.code, image: i.thumb })) };
+});
 
 export const HR_EMAIL = "hr@rangdecor.in";
 

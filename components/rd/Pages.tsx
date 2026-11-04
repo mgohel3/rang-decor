@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PdfLink } from "./Leads";
 import { useState } from "react";
 import { collections, groups, contact, type GroupKey } from "@/data/rang";
 
@@ -39,10 +40,10 @@ export function CatalogueSearch() {
   return <>
     <label className="rd-search" style={{ margin: "0 0 2.25rem" }}><span aria-hidden="true">⌕</span><input type="search" aria-label="Search catalogues" placeholder="Search catalogues" value={q} onChange={e => setQ(e.target.value)}/></label>
     <div className="rd-covers">
-      {list.map(c => <a key={c.id} href={c.pdf} target="_blank" rel="noopener noreferrer" className={`rd-cover ${c.cover ? "" : "logo"}`}>
+      {list.map(c => <PdfLink key={c.id} pdf={c.pdf} name={c.name} className={`rd-cover ${c.cover ? "" : "logo"}`}>
         <div className="bk" data-drop="tint"><img src={c.src} alt={`${c.name} catalogue`} loading="lazy"/></div>
         <div className="nm"><b>{c.name}</b><i>PDF ↓</i></div>
-      </a>)}
+      </PdfLink>)}
     </div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: ".75rem 2rem", marginTop: "2.75rem", fontWeight: 600, fontSize: ".9rem" }}>
       <a href="https://products.rangdecor.in/extra/interlockit.mp4">Interlockit video →</a><a href="https://rangdecor.in/public/Bella_ceilo.mp4">Bella Ceilo video →</a>

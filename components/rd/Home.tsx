@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { applications, byId, collections, events, featuredLayout, featuredOrder, groups, materials, rooms, why, type GroupKey } from "@/data/rang";
 import { Smoke } from "./Smoke";
+import { PdfLink } from "./Leads";
 
 const G = ({ children }: { children: React.ReactNode }) => <em className="grad">{children}</em>;
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <div className="rd-eyebrow">{children}</div>;
@@ -58,8 +59,8 @@ export function Home() {
       <div className="rd-intro">
         <div data-rv="1">
           <Eyebrow>01 — About Rang Décor</Eyebrow>
-          <h2 className="rd-h2">India’s leading range of premium <G>decorative products.</G></h2>
-          <p className="rd-lead" style={{ maxWidth: "32.5rem", marginTop: "2rem" }}>Welcome to Rang Décor. We offer a range of beautiful designs, textures, and finishes in interior products that are crafted for all your interior needs. With our experience in interior design, we focus on comfort, style, and your personal taste.</p>
+          <h2 className="rd-h2">A wide range of surfaces <G>made for interiors.</G></h2>
+          <p className="rd-lead" style={{ maxWidth: "32.5rem", marginTop: "2rem" }}>Rang Décor brings together laminates, louvers, panels and ceiling slats in a broad spread of designs, textures and finishes. Each one is chosen with comfort, style and your own taste in mind.</p>
           <Link href="/about" className="rd-textlink" style={{ marginTop: "2rem" }}>Learn more about us</Link>
         </div>
         <div className="rd-intro-art">
@@ -125,7 +126,7 @@ export function Home() {
           {results.map(c => <article key={c.id} className={`rd-result ${c.cover ? "" : "logo"}`}>
             <div className="ph"><img src={c.src} alt={c.name} loading="lazy"/></div>
             <div className="tx"><small>{c.kind}</small><b>{c.name}</b><p>{c.desc}</p>
-              <div className="ln"><Link href={`/product/${c.id}`}>View</Link><a href={c.pdf} target="_blank" rel="noopener noreferrer">Catalogue PDF</a></div></div>
+              <div className="ln"><Link href={`/product/${c.id}`}>View</Link><PdfLink pdf={c.pdf} name={c.name}>Catalogue PDF</PdfLink></div></div>
           </article>)}
         </div>
         {!results.length && <p className="rd-lead">No collections match. Clear the search or choose another material.</p>}
@@ -140,7 +141,7 @@ export function Home() {
         <div>
           <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>05 — Envision your space</div>
           <h2 className="rd-h2">See a surface in <G>your space.</G></h2>
-          <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem", color: "#ece6dd" }}>Pick a room and try Rang designs on its surfaces, from Bern Thermo to Groove, Faded and Maskara.</p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem", color: "#ece6dd" }}>Choose a room, then try Rang finishes on its walls and see how each one changes the space.</p>
         </div>
         <div className="rd-glass-dark">
           <div style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: ".9rem" }}>Room</div>
@@ -174,11 +175,11 @@ export function Home() {
       <div className="rd-wrap">
         <div className="rd-head"><div><Eyebrow>08 — Catalogue library</Eyebrow><h2 className="rd-h2">Ideas, in <G>good company.</G></h2></div><p>{collections.length - 1} catalogues, each a PDF from the Rang library.</p></div>
         <div className="rd-covers">
-          {collections.map(c => <a key={c.id} href={c.pdf} target="_blank" rel="noopener noreferrer" className={`rd-cover ${c.cover ? "" : "logo"}`}
+          {collections.map(c => <PdfLink key={c.id} pdf={c.pdf} name={c.name} className={`rd-cover ${c.cover ? "" : "logo"}`}
             onMouseMove={e => { const r = e.currentTarget.getBoundingClientRect(); setTilt({ [c.id]: [-((e.clientY - r.top) / r.height - 0.5) * 10, ((e.clientX - r.left) / r.width - 0.5) * 12] }); }} onMouseLeave={() => setTilt({})}>
             <div className="bk" style={tilt[c.id] ? { transform: `rotateX(${tilt[c.id][0].toFixed(1)}deg) rotateY(${tilt[c.id][1].toFixed(1)}deg) translateY(-6px)`, boxShadow: "0 28px 50px rgba(28,27,26,.28)" } : undefined}><img src={c.src} alt={`${c.name} catalogue`} loading="lazy"/></div>
             <div className="nm"><b>{c.name}</b><i>PDF ↓</i></div>
-          </a>)}
+          </PdfLink>)}
         </div>
       </div>
     </section>

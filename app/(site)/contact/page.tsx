@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ContactForm } from "@/components/rd/Pages";
 import { contact } from "@/data/rang";
 
-export const metadata = { title: "Contact | Rang Décor", description: "Talk to the Rang Décor team about collections, projects and partnerships." };
+export const metadata = { title: "Contact Rang Décor in Hyderabad", description: "Talk to the Rang Décor team about collections, samples, projects and partnerships. Call +91 8297 585 000 or write to info@rangdecor.in. We reply within 24 hours.", alternates: { canonical: "/contact" }, openGraph: { title: "Contact Rang Décor in Hyderabad", description: "Talk to the Rang Décor team about collections, samples, projects and partnerships. Call +91 8297 585 000 or write to info@rangdecor.in. We reply within 24 hours.", url: "/contact" } };
 
 export default function Contact() {
   return <div className="rd-wrap rd-page">

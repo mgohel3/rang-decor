@@ -2,7 +2,7 @@ import { Building2, Home, PenTool, Store } from "lucide-react";
 import { PageHead } from "@/components/rd/Pages";
 import { getTestimonials } from "@/data/content";
 
-export const metadata = { title: "Testimonials | Rang Décor" };
+export const metadata = { title: "Testimonials from Rang Décor customers", description: "Read what architects, designers, dealers and homeowners say about working with Rang Décor.", alternates: { canonical: "/testimonials" }, openGraph: { title: "Testimonials from Rang Décor customers", description: "Read what architects, designers, dealers and homeowners say about working with Rang Décor.", url: "/testimonials" } };
 const icons = { architect: Building2, designer: PenTool, dealer: Store, homeowner: Home };
 
 export default function Testimonials() {

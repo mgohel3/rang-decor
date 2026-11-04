@@ -1,7 +1,7 @@
 import { PageHead } from "@/components/rd/Pages";
 import { events } from "@/data/rang";
 
-export const metadata = { title: "Gallery | Rang Décor" };
+export const metadata = { title: "Gallery: Rang Décor at events and exhibitions", description: "See Rang Décor at exhibitions and events in Mumbai, Bangalore, Indiawood and IIID Hyderabad.", alternates: { canonical: "/gallery" }, openGraph: { title: "Gallery: Rang Décor at events and exhibitions", description: "See Rang Décor at exhibitions and events in Mumbai, Bangalore, Indiawood and IIID Hyderabad.", url: "/gallery" } };
 const bg = ["var(--magenta)", "var(--teal)", "#B47A2E", "var(--ink)"];
 
 export default function Gallery() {
@@ -13,6 +13,7 @@ export default function Gallery() {
         <span><span style={{ display: "block", font: "500 2.5rem/1 var(--display)" }}>{n}</span><span style={{ display: "block", marginTop: ".9rem", fontSize: ".85rem", fontWeight: 600 }}>Open event photos →</span></span>
       </a>)}
     </div>
+    <p className="rd-lead" style={{ maxWidth: "40rem", marginBottom: "2rem" }}>We meet architects, designers and dealers at trade events across India, from Mumbai and Bangalore to Indiawood and the IIID exhibition in Hyderabad. Browse each event album for photographs of the stands and the products on show.</p>
     <p className="rd-muted" style={{ marginTop: "1.75rem", fontSize: ".85rem", maxWidth: "32.5rem", lineHeight: 1.6 }}>Event photographs open in the Rang gallery on rangdecor.in. Add event images to this project to show them here as a grid with lightbox.</p>
   </div>;
 }

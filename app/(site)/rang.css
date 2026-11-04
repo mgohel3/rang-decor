@@ -460,3 +460,96 @@ body{margin:0;background:#F7F5F0}
 .rd-contact-card .info h1{font-size:clamp(3rem,6.2vw,6.5rem)}
 .rd-contact-card .info h1 em.grad{color:transparent}
 .rd-contact-card .info p{font-size:1.0625rem}
+
+/* Tiles are 1:2 (the client's sheet proportion); name under the code; codes still waiting for images */
+.rd-sw .ph{aspect-ratio:1/2}
+.rd-sw .lab small{display:block;font-size:.72rem;font-weight:500;letter-spacing:.02em;opacity:.8;margin-top:.1rem}
+.rd-pending{margin-top:3rem;padding:1.75rem;border-radius:18px;background:var(--stone)}
+.rd-pending h3{font-size:1.9rem}
+.rd-pending p{margin:.4rem 0 1.1rem;color:var(--grey-ink);font-size:.9rem}
+.rd-pending ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.rd-pending li{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.4rem;padding:.55rem 1rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.35));box-shadow:0 6px 16px rgba(28,27,26,.08);font-size:.85rem}
+.rd-pending li b{font-weight:600;letter-spacing:.03em}
+.rd-pending li span{color:var(--body)}
+.rd-pending li small{color:var(--grey-ink);font-size:.72rem;flex-basis:100%}
+
+/* Search fields: no square outline on the inner input; the whole pill shows the focus ring */
+.rd .rd-search input:focus,.rd .rd-search input:focus-visible{outline:none}
+.rd .rd-search:focus-within{outline:2px solid var(--teal);outline-offset:2px;background:#fff}
+.rd .rd-search input::placeholder{color:var(--grey-ink)}
+.rd-lightbox .floor{transition:opacity .4s}
+
+/* Header search button */
+.rd-iconbtn{width:2.75rem;height:2.75rem;border-radius:50%;border:0;background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;transition:background .3s}
+.rd-iconbtn:hover{background:rgba(255,255,255,.55)}
+.rd-header.over-hero .rd-iconbtn:hover{background:rgba(255,255,255,.18)}
+
+/* Search modal: glass, same recipe as the footer and mega menu */
+.rd-search-wrap{position:fixed;inset:0;z-index:90;display:flex;justify-content:center;align-items:flex-start;padding:clamp(4rem,12vh,8rem) 1rem 1rem;background:rgba(28,27,26,.45);backdrop-filter:blur(10px)}
+.rd-search-box{position:relative;width:min(100%,42rem);max-height:min(76vh,40rem);display:flex;flex-direction:column;overflow:hidden;border-radius:22px;color:var(--ink);
+  background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.34) 52%,rgba(255,255,255,.55));backdrop-filter:blur(42px) saturate(2.4) brightness(1.1);box-shadow:0 40px 90px rgba(0,0,0,.35),0 3px 8px rgba(0,0,0,.15)}
+.rd-search-box .top{display:flex;align-items:center;gap:.85rem;padding:1.1rem 1.25rem;border-bottom:1px solid rgba(28,27,26,.1)}
+.rd-search-box .top input{flex:1;border:0;background:transparent;outline:0;font:500 1.15rem var(--sans);color:var(--ink);min-width:0}
+.rd-search-box .top button{width:2.25rem;height:2.25rem;border-radius:50%;border:0;background:rgba(28,27,26,.08);cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.rd-search-box ul{list-style:none;margin:0;padding:.5rem;overflow:auto;flex:1}
+.rd-search-box .grp{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta-ink);font-weight:600;padding:.9rem .8rem .35rem}
+.rd-search-box li button{width:100%;display:flex;align-items:center;gap:.9rem;padding:.6rem .8rem;border:0;border-radius:12px;background:transparent;text-align:left;cursor:pointer;color:var(--ink);font-family:var(--sans)}
+.rd-search-box li button.on{background:rgba(255,255,255,.75);box-shadow:0 4px 14px rgba(28,27,26,.1)}
+.rd-search-box li img{width:2.5rem;height:2.5rem;border-radius:8px;object-fit:cover;flex:none}
+.rd-search-box li .ic{width:2.5rem;height:2.5rem;border-radius:8px;background:rgba(28,27,26,.07);display:grid;place-items:center;flex:none}
+.rd-search-box li .t{display:grid;min-width:0}
+.rd-search-box li .t b{font-weight:600;font-size:1rem}
+.rd-search-box li .t small{color:var(--grey-ink);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rd-search-box .none{padding:1.5rem;color:var(--grey-ink);line-height:1.6}
+.rd-search-box .foot{display:flex;gap:1.25rem;flex-wrap:wrap;padding:.7rem 1.25rem;border-top:1px solid rgba(28,27,26,.1);font-size:.75rem;color:var(--grey-ink)}
+.rd-search-box kbd{font:600 .7rem var(--sans);padding:.15rem .4rem;margin-right:.25rem;border-radius:5px;background:rgba(28,27,26,.08)}
+
+/* Lead / catalogue modal: dark glass over a blurred page */
+.rd-lead-wrap{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:1rem;overflow:auto;background:rgba(28,27,26,.55);backdrop-filter:blur(12px);animation:rdIn .35s var(--ease) both}
+.rd-lead{position:relative;width:min(100%,30rem);padding:clamp(1.5rem,4vw,2.4rem);border-radius:24px;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(28,27,26,.58) 60%,rgba(28,27,26,.45));backdrop-filter:blur(36px) saturate(1.8);box-shadow:0 40px 90px rgba(0,0,0,.45)}
+.rd-lead h2{font-size:clamp(2rem,5vw,2.8rem);line-height:1;color:#fff;margin-bottom:.8rem}
+.rd-lead h2 em{font-style:italic;color:#FFB3D9}
+.rd-lead>p,.rd-lead .done>p{color:#efe8de;line-height:1.7;font-size:.95rem}
+.rd-lead form{display:grid;gap:.8rem;margin-top:1.3rem}
+.rd-lead .rd-field{color:#fff;gap:.35rem}
+.rd-lead .rd-field input,.rd-lead .rd-field select{height:3rem;padding:0 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;font:500 .95rem var(--sans)}
+.rd-lead .rd-field select option{color:var(--ink)}
+.rd-lead .rd-field input:focus,.rd-lead .rd-field select:focus{outline:2px solid var(--teal);outline-offset:1px;background:rgba(255,255,255,.22)}
+.rd-lead .rd-field input[aria-invalid="true"]{border-color:#FFB3D9}
+.rd-lead .rd-field .err{color:#FFB3D9;min-height:.9rem;font-size:.8rem}
+.rd-lead .fine{font-size:.75rem;color:#d8cdbf;text-align:center;margin:0}
+.rd-lead-x{position:absolute;top:1rem;right:1rem;width:2.25rem;height:2.25rem;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;display:grid;place-items:center}
+.rd-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* Branded placeholder for codes that do not have a photograph yet */
+.rd-sw.missing{cursor:default}
+.rd-sw.missing .ph{display:grid;place-items:center;align-content:center;gap:.6rem;text-align:center;padding:1rem;
+  background:radial-gradient(70% 45% at 15% 12%,rgba(224,16,128,.22),transparent 70%),radial-gradient(70% 45% at 90% 55%,rgba(0,176,128,.2),transparent 70%),radial-gradient(70% 45% at 25% 100%,rgba(242,169,0,.24),transparent 70%),linear-gradient(160deg,#fbf9f4,#ebe6dc)}
+.rd-sw.missing:hover .ph{transform:none;box-shadow:0 10px 26px rgba(28,27,26,.14)}
+.rd-sw.missing .mark{width:62%;height:auto;opacity:.9}
+.rd-sw.missing .soon{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-ink);font-weight:600}
+
+/* Product copy and FAQ */
+.rd-about-prod{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:clamp(2rem,5vw,4.5rem);margin-top:var(--sec)}
+.rd-about-prod .rd-lead{margin-top:1.1rem;max-width:40rem}
+.rd-about-prod h2{margin-bottom:.4rem}
+.rd-about-prod .side{padding:1.6rem;border-radius:18px;background:var(--stone);align-self:start}
+.rd-about-prod .side h3{font-size:1.5rem;margin:0 0 .8rem}
+.rd-about-prod dl{margin:0 0 1.6rem;display:grid;gap:.6rem}
+.rd-about-prod dl div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.5rem}
+.rd-about-prod dt{color:var(--grey-ink);font-size:.85rem}
+.rd-about-prod dd{margin:0;font-weight:600;font-size:.9rem;text-align:right}
+.rd-about-prod ul{margin:0;padding-left:1.1rem;line-height:1.9;color:var(--body)}
+@media(max-width:899px){.rd-about-prod{grid-template-columns:1fr}}
+.rd-faq details{border-top:1px solid var(--line);padding:1.1rem 0}
+.rd-faq details:last-of-type{border-bottom:1px solid var(--line)}
+.rd-faq summary{cursor:pointer;font:500 1.5rem/1.2 var(--display);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.rd-faq summary::after{content:"+";font:500 1.4rem var(--sans);color:var(--magenta-ink)}
+.rd-faq details[open] summary::after{content:"–"}
+.rd-faq p{margin-top:.7rem;max-width:42rem;line-height:1.75;color:var(--body)}
+
+.rd-guide{margin-top:var(--sec)}
+.rd-guide .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem;margin-top:1.75rem}
+.rd-guide h3{font-size:1.7rem;margin-bottom:.5rem}
+.rd-guide p{line-height:1.75;color:var(--body);font-size:.95rem}
+.rd-guide p a{color:var(--magenta-ink);text-decoration:underline;text-underline-offset:3px}
