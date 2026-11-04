@@ -355,5 +355,19 @@ body{margin:0;background:#F7F5F0}
 .rd .rd-hero-card,.rd .rd-glass-dark{background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.07) 55%,rgba(255,255,255,.16))}
 .rd .rd-mat-card{background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(28,27,26,.4) 60%)}
 .rd .rd-mat-card>*,.rd .rd-hero-card>*,.rd .rd-glass-dark>*{position:relative;z-index:1}
+/* Inner pages: the lighter ivory header from the design (soft blur, hairline border, gentle shadow, no heavy rim) */
+.rd .rd-header.page .rd-pill{background:rgba(247,245,240,.82);backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(28,27,26,.1);box-shadow:0 8px 32px rgba(28,27,26,.1)}
+.rd .rd-header.page .rd-pill::before,.rd .rd-header.page .rd-pill::after{display:none}
+/* Menu underline: brand gradient, shown for the current page and on hover; over the hero it is a thin white line */
+.rd .rd-nav .bar{height:2px;bottom:.3rem;background:linear-gradient(90deg,#E01080,#00B080,#F2A900)}
+.rd .rd-header.over-hero .rd-nav .bar{height:1px;background:currentColor}
+.rd .rd-nav a.on .bar,.rd .rd-nav button.on .bar{transform:scaleX(1)}
 /* glass captions and overlays */
 .rd .rd-feat .cap,.rd .rd-card .ov{background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.22) 60%,rgba(255,255,255,.4));backdrop-filter:blur(26px) saturate(2.2) brightness(1.1);border:1px solid rgba(255,255,255,.9);box-shadow:0 12px 30px rgba(28,27,26,.18),inset 0 2px 1px rgba(255,255,255,.95),inset 0 -2px 6px rgba(255,255,255,.3)}
+
+/* No white outline on glass. The mega menu uses the same glass as the footer panel. */
+.rd .rd-pill,.rd .rd-mega,.rd .rd-footer-glass,.rd .rd-hero-card,.rd .rd-glass-dark,.rd .rd-mat-card,.rd .rd-lightbox .box,.rd .rd-header.over-hero .rd-pill{border-color:transparent}
+.rd .rd-pill::after,.rd .rd-mega::after,.rd .rd-footer-glass::after,.rd .rd-hero-card::after,.rd .rd-glass-dark::after,.rd .rd-mat-card::after,.rd .rd-lightbox .box::after{display:none}
+.rd .rd-feat .cap,.rd .rd-card .ov{border:0;box-shadow:0 12px 30px rgba(28,27,26,.18)}
+.rd .rd-mega{background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.2) 52%,rgba(255,255,255,.4));backdrop-filter:blur(42px) saturate(2.4) brightness(1.1);box-shadow:0 40px 90px rgba(28,27,26,.2),0 3px 8px rgba(28,27,26,.08)}
+.rd .rd-mega::before,.rd .rd-footer-glass::before,.rd .rd-pill::before{opacity:.45}

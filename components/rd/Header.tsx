@@ -36,17 +36,21 @@ export function Header() {
   const hi = collections.findIndex(c => c.id === hov);
   const close = () => { setMenu(null); setMob(false); };
 
-  return <header className={`rd-header ${light ? "" : "over-hero"}`} onMouseLeave={() => setMenu(null)}>
+  const isHome = pathname === "/";
+  // The page the visitor is on keeps its underline (Products also covers product pages).
+  const active = (href: string) => href === "/" ? isHome : pathname.startsWith(href.split("/").slice(0, 2).join("/")) || (href === "/collections" && pathname.startsWith("/product"));
+
+  return <header className={`rd-header ${light ? "" : "over-hero"} ${isHome ? "" : "page"}`} onMouseLeave={() => setMenu(null)}>
     <div className="rd-header-in">
       <div className="rd-pill">
         <Link href="/" className="rd-logo" aria-label="Rang Décor home"><Image src="/images/rang-header.svg" alt="Rang Décor" width={126} height={46} priority unoptimized/></Link>
         <nav className="rd-nav" aria-label="Primary">
           {nav.map(n => n.menu
-            ? <button key={n.label} className={menu === n.menu ? "on" : ""} aria-haspopup="true" aria-expanded={menu === n.menu} onMouseEnter={() => setMenu(n.menu!)} onClick={() => setMenu(menu === n.menu ? null : n.menu!)}>{n.label}<ArrowDown size={13} aria-hidden="true"/><span className="bar"/></button>
-            : <Link key={n.label} href={n.href} onMouseEnter={() => setMenu(null)}>{n.label}<span className="bar"/></Link>)}
+            ? <button key={n.label} className={menu === n.menu || active(n.href) ? "on" : ""} aria-haspopup="true" aria-expanded={menu === n.menu} onMouseEnter={() => setMenu(n.menu!)} onClick={() => setMenu(menu === n.menu ? null : n.menu!)}>{n.label}<ArrowDown size={13} aria-hidden="true"/><span className="bar"/></button>
+            : <Link key={n.label} href={n.href} className={active(n.href) ? "on" : ""} aria-current={active(n.href) ? "page" : undefined} onMouseEnter={() => setMenu(null)}>{n.label}<span className="bar"/></Link>)}
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-          <Link href="/collections" className="rd-cta" data-drop="btn">Explore Collections</Link>
+          <Link href={isHome ? "/collections" : "/contact"} className="rd-cta" data-drop="btn">{isHome ? "Explore Collections" : "Enquire"}</Link>
           <button className="rd-burger" aria-label="Menu" aria-expanded={mob} onClick={() => { setMob(!mob); setMobSub(null); }}>{mob ? "CLOSE" : "MENU"}</button>
         </div>
       </div>
@@ -77,7 +81,6 @@ export function Header() {
       </div>
 
       <div className={`rd-mobmenu ${mob ? "open" : ""}`}>
-        <div className="row"><Link href="/" onClick={close}>Home</Link></div>
         {nav.map(n => {
           const subs = n.menu === "products" ? collections.map(c => ({ name: c.name, url: `/product/${c.id}` })) : n.menu === "catalogues" ? collections.map(c => ({ name: c.name, url: c.pdf })) : [];
           const on = mobSub === n.menu;

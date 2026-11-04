@@ -87,6 +87,7 @@ export const contact = {
 export const rooms = [["Living Room", "living-room"], ["Kitchen", "kitchen"], ["Wardrobe", "wardrobe"], ["Shopping Mall", "shopping-mall"]];
 
 export const nav = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Products", href: "/collections", menu: "products" },
   { label: "Catalogues", href: "/catalogue", menu: "catalogues" },
