@@ -58,7 +58,7 @@ export default async function Product({ params }: { params: Promise<{ id: string
                 <PdfLink pdf={c.pdf} name={c.name} className="rd-btn outline" data-drop="btn" data-off="1">Catalogue PDF ↓</PdfLink>
               </div>
             </div>
-            <div className="ph" data-drop="tint"><img src={c.src} alt={`${c.name}: ${c.kind} by Rang Décor`} style={c.cover ? undefined : { objectFit: "contain", padding: "12%" }}/></div>
+            <div className="ph" data-shine><img src={c.src} alt={`${c.name}: ${c.kind} by Rang Décor`} style={c.cover ? undefined : { objectFit: "contain", padding: "12%" }}/></div>
           </div>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default async function Product({ params }: { params: Promise<{ id: string
 
           <div className="blk">
             <h2 className="rd-h3" style={{ marginBottom: "1.75rem" }}>Related materials</h2>
-            <div className="rd-grid">{related.map(r => <Link key={r.id} href={`/product/${r.id}`} className={`rd-card ${r.cover ? "" : "logo"}`}><div className="ph" data-drop="tint" style={{ aspectRatio: "4/3" }}><img src={r.src} alt={`${r.name}: ${r.kind}`} loading="lazy"/></div><div className="nm"><b style={{ fontSize: "1.75rem" }}>{r.name}</b></div></Link>)}</div>
+            <div className="rd-grid">{related.map(r => <Link key={r.id} href={`/product/${r.id}`} className={`rd-card ${r.cover ? "" : "logo"}`}><div className="ph" data-shine style={{ aspectRatio: "4/3" }}><img src={r.src} alt={`${r.name}: ${r.kind}`} loading="lazy"/></div><div className="nm"><b style={{ fontSize: "1.75rem" }}>{r.name}</b></div></Link>)}</div>
           </div>
         </div>
       </section>

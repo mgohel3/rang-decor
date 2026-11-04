@@ -80,7 +80,7 @@ export function Home() {
       <div className="rd-showcase">
         {feat.map((c, i) => <Link key={c.id} href={`/product/${c.id}`} data-rv="1" className={`rd-card ${c.cover ? "" : "logo"}`}
           style={{ gridColumn: featuredLayout[i][0], marginTop: featuredLayout[i][2], transitionDelay: `${(i % 2) * 0.12}s` }}>
-          <div className="ph" data-drop="tint" style={{ aspectRatio: featuredLayout[i][1] }}>
+          <div className="ph" data-shine style={{ aspectRatio: featuredLayout[i][1] }}>
             <img src={c.src} alt={`${c.name} collection`} loading="lazy"/>
             <div className="ov"><p>{c.desc}</p><span>View collection →</span></div>
           </div>

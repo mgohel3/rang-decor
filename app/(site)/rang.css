@@ -594,3 +594,56 @@ body{background:#FFFFFF}
   .rd-stack .c2{z-index:2}
   .rd-stack .c3{z-index:3}
 }
+
+/* ---- Header spacing and shadow: lighter shadow under the pill, less empty space between header and page content ---- */
+.rd .rd-header.page .rd-pill{box-shadow:0 10px 30px rgba(28,27,26,.07),0 1px 4px rgba(28,27,26,.05)}
+.rd .rd-pill{box-shadow:0 10px 30px rgba(28,27,26,.1),0 1px 4px rgba(28,27,26,.06)}
+.rd .rd-header.over-hero .rd-pill{box-shadow:0 12px 34px rgba(0,0,0,.18)}
+.rd-page{padding-top:clamp(6rem,7.5vw,6.75rem)}
+.rd-stack .c1{padding-top:6.5rem}
+.rd-contact-stage{min-height:min(44rem,88vh)}
+
+/* Product image hover: a glass shine sweeps across the picture (replaces the colour tint on product images) */
+[data-shine]{position:relative;overflow:hidden}
+[data-shine]::before{content:"";position:absolute;top:-10%;bottom:-10%;left:-45%;width:42%;z-index:2;pointer-events:none;opacity:0;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.22) 35%,rgba(255,255,255,.62) 50%,rgba(255,255,255,.22) 65%,rgba(255,255,255,0) 100%);
+  transform:translateX(0) skewX(-16deg);filter:blur(1.5px);transition:opacity .25s}
+@media(hover:hover){
+  [data-shine]:hover::before{opacity:1;animation:rd-shine 1.1s var(--ease) both}
+}
+@keyframes rd-shine{from{transform:translateX(0) skewX(-16deg)}to{transform:translateX(480%) skewX(-16deg)}}
+@media(prefers-reduced-motion:reduce){[data-shine]:hover::before{animation:none;opacity:0}}
+
+/* Our network: interactive map */
+.rd-netmap .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.rd-netmap .frame{display:grid;grid-template-columns:minmax(0,1fr) 20rem;gap:1.25rem;align-items:stretch}
+.rd-netmap .canvas{position:relative;min-height:min(70vh,36rem);border-radius:18px;overflow:hidden;background:#eef0ee;box-shadow:0 14px 40px rgba(28,27,26,.1)}
+.rd-netmap .canvas .fallback{position:absolute;inset:0;display:grid;place-items:center;padding:2rem;text-align:center;color:var(--grey-ink)}
+.rd-netmap .side{border-radius:18px;background:var(--stone);padding:.6rem;max-height:min(70vh,36rem);overflow:auto}
+.rd-netmap .side ul{list-style:none;margin:0;padding:0}
+.rd-netmap .side button{width:100%;display:flex;align-items:center;gap:.8rem;padding:.7rem .8rem;border:0;border-radius:12px;background:transparent;text-align:left;cursor:pointer;color:var(--ink);font-family:var(--sans);transition:background .25s}
+.rd-netmap .side button:hover,.rd-netmap .side button.on{background:rgba(255,255,255,.85)}
+.rd-netmap .side .t{display:grid;flex:1}
+.rd-netmap .side .t b{font-weight:600}
+.rd-netmap .side .t small{color:var(--grey-ink);font-size:.78rem}
+.rd-netmap .side .k{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--magenta-ink);font-weight:600}
+.rd-netmap .dot{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;flex:none}
+.rd-netmap .dot.hq{background:#E01080;box-shadow:0 0 0 4px rgba(224,16,128,.2)}
+.rd-netmap .dot.company{background:#D5361E;box-shadow:0 0 0 4px rgba(213,54,30,.18)}
+.rd-netmap .dot.distribution{background:#6D6862}
+.rd-netmap .legend{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1rem;font-size:.85rem;color:var(--body)}
+.rd-netmap .legend span{display:inline-flex;align-items:center;gap:.5rem}
+.rd-pin{position:relative;width:1.5rem;height:1.5rem;padding:0;border:0;background:transparent;cursor:pointer}
+.rd-pin i{position:absolute;inset:.35rem;border-radius:50%;background:#6D6862;border:2px solid #fff;box-shadow:0 2px 6px rgba(28,27,26,.3);transition:transform .25s}
+.rd-pin.hq i{inset:.2rem;background:#E01080}.rd-pin.company i{inset:.2rem;background:#D5361E}
+.rd-pin b{position:absolute;inset:-.1rem;border-radius:50%;border:2px solid currentColor;opacity:.5;animation:rd-ping 2.4s ease-out infinite}
+.rd-pin.hq{color:#E01080}.rd-pin.company{color:#D5361E}
+.rd-pin:hover i,.rd-pin:focus-visible i{transform:scale(1.35)}
+@keyframes rd-ping{from{transform:scale(.7);opacity:.7}to{transform:scale(1.7);opacity:0}}
+@media(prefers-reduced-motion:reduce){.rd-pin b{animation:none}}
+.rd-pop .maplibregl-popup-content{border-radius:14px;padding:.8rem 1rem;box-shadow:0 14px 34px rgba(28,27,26,.2);font-family:var(--sans)}
+.rd-pop strong{display:block;font:500 1.35rem/1.1 var(--display)}
+.rd-pop span{display:block;font-size:.8rem;color:var(--grey-ink)}
+.rd-pop em{display:block;margin-top:.35rem;font-style:normal;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--magenta-ink);font-weight:600}
+.rd-citylist{columns:3 11rem;column-gap:2rem;margin:1.5rem 0 0;padding:0;list-style:none;line-height:2}
+@media(max-width:899px){.rd-netmap .frame{grid-template-columns:1fr}.rd-netmap .side{max-height:16rem}}

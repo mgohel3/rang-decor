@@ -108,7 +108,7 @@ export function SwatchGrid({ c, title, note, items, pending }: { c: Collection; 
     {note && <p className="rd-muted" style={{ marginBottom: "1.75rem", maxWidth: "42rem", lineHeight: 1.7, fontSize: ".9rem" }}>{note}</p>}
     <div className="rd-swatches">
       {list.map((x, i) => <button key={`${x.thumb}-${i}`} className="rd-sw" aria-label={`Open ${c.name} ${x.code}${x.name ? ` ${x.name}` : ""}`} onClick={() => { setSel(i); reset(); }}>
-        <div className="ph" data-drop="tint"><img src={x.thumb} alt={`${c.name} ${x.code}`} loading="lazy"/><b className="lab">{x.code}{x.name ? <small>{x.name}</small> : null}</b></div>
+        <div className="ph" data-shine><img src={x.thumb} alt={`${c.name} ${x.code}`} loading="lazy"/><b className="lab">{x.code}{x.name ? <small>{x.name}</small> : null}</b></div>
       </button>)}
       {waiting.map(x => <div key={x.code} className="rd-sw missing" role="img" aria-label={`${c.name} ${x.code}${x.name ? ` ${x.name}` : ""}: image coming soon`}>
         <div className="ph">

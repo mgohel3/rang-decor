@@ -25,7 +25,7 @@ export function CollectionList() {
     </div>
     <div className="rd-grid" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,18.75rem),1fr))", gap: "1.75rem" }}>
       {list.map(c => <Link key={c.id} href={`/product/${c.id}`} className={`rd-card ${c.cover ? "" : "logo"}`} style={{ animation: "rdIn .6s both" }}>
-        <div className="ph" data-drop="tint" style={{ aspectRatio: "4/3" }}><img src={c.src} alt={c.name} loading="lazy"/></div>
+        <div className="ph" data-shine style={{ aspectRatio: "4/3" }}><img src={c.src} alt={c.name} loading="lazy"/></div>
         <div className="nm"><b style={{ fontSize: "2.1rem" }}>{c.name}</b><i>{c.kind}</i></div>
         <p style={{ marginTop: ".5rem", fontSize: ".9rem", lineHeight: 1.6, color: "var(--body)" }}>{c.desc}</p>
       </Link>)}
@@ -41,7 +41,7 @@ export function CatalogueSearch() {
     <label className="rd-search" style={{ margin: "0 0 2.25rem" }}><span aria-hidden="true">⌕</span><input type="search" aria-label="Search catalogues" placeholder="Search catalogues" value={q} onChange={e => setQ(e.target.value)}/></label>
     <div className="rd-covers">
       {list.map(c => <PdfLink key={c.id} pdf={c.pdf} name={c.name} className={`rd-cover ${c.cover ? "" : "logo"}`}>
-        <div className="bk" data-drop="tint"><img src={c.src} alt={`${c.name} catalogue`} loading="lazy"/></div>
+        <div className="bk" data-shine><img src={c.src} alt={`${c.name} catalogue`} loading="lazy"/></div>
         <div className="nm"><b>{c.name}</b><i>PDF ↓</i></div>
       </PdfLink>)}
     </div>
