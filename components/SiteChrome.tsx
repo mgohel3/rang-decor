@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowDown, ArrowRight, ArrowUpRight, ChevronDown, Instagram, Facebook, Linkedin, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { directions, products } from "@/data/site";
+import { catalogues, directions, products } from "@/data/site";
 import { FooterWave } from "@/components/FooterWave";
 
 export function Header({ direction = "01-editorial" }: { direction?: string }) {
@@ -23,6 +23,12 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
     ...next,
   }));
   const closeMenu = () => updateMenu({ open: false, dropdown: null });
+  // Moves the coloured highlight under the pointer (CSS reads --mx / --my).
+  const liquid = (e: React.PointerEvent<HTMLElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+  };
   const toggleDropdown = (name: string) => updateMenu({ dropdown: activeDropdown === name ? null : name });
 
   useEffect(() => {
@@ -36,9 +42,34 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
     <nav id="rang-main-nav" className={`main-nav ${open ? "nav-open" : ""}`} aria-label="Main navigation">
       <div className="nav-group">
         <button className="nav-trigger" aria-expanded={activeDropdown === "products"} aria-controls="products-menu" onClick={() => toggleDropdown("products")}>Products <ArrowDown size={14}/></button>
-        <div id="products-menu" className={`nav-popover ${activeDropdown === "products" ? "nav-popover-open" : ""}`}>
-          <Link href={`${base}/collections`} onClick={closeMenu}>All collections<ArrowRight size={14}/></Link>
-          {products.map(product => <Link key={product.slug} href={`${base}/product/${product.slug}`} onClick={closeMenu}>{product.name}<ArrowRight size={14}/></Link>)}
+        <div id="products-menu" className={`nav-popover mega ${activeDropdown === "products" ? "nav-popover-open" : ""}`}>
+          <div className="mega-glass">
+            <span className="mega-blob mega-blob-a" aria-hidden="true"/><span className="mega-blob mega-blob-b" aria-hidden="true"/>
+            <div className="mega-grid">
+              <div className="mega-col mega-intro">
+                <span className="mega-label">RANG DÉCOR</span>
+                <h3>Surfaces for living</h3>
+                <p>Laminates, louvers and panels with a calm, tactile point of view.</p>
+                <Link className="mega-item" onPointerMove={liquid} href={`${base}/collections`} onClick={closeMenu}>All collections<ArrowRight size={16}/></Link>
+                <Link className="mega-item" onPointerMove={liquid} href={`${base}/visualizer/living-room`} onClick={closeMenu}>Try the visualizer<ArrowRight size={16}/></Link>
+                <Link className="mega-item" onPointerMove={liquid} href={`${base}/catalogue`} onClick={closeMenu}>Catalogue library<ArrowRight size={16}/></Link>
+              </div>
+              <div className="mega-col">
+                <span className="mega-label">COLLECTIONS</span>
+                {products.map(product => <Link className="mega-item mega-thumb" onPointerMove={liquid} key={product.slug} href={`${base}/product/${product.slug}`} onClick={closeMenu}><Image src={product.image} alt="" width={40} height={40} unoptimized/><span>{product.name}</span><ArrowRight size={16}/></Link>)}
+              </div>
+              <div className="mega-col mega-cat">
+                <span className="mega-label">CATALOGUES</span>
+                {catalogues.filter(c => c[2]).slice(0, 8).map(c => <Link className="mega-item mega-thumb" onPointerMove={liquid} key={c[0]} href={`${base}/catalogue`} onClick={closeMenu}><Image src={c[2]} alt="" width={40} height={40} unoptimized/><span>{c[0]}</span><ArrowRight size={16}/></Link>)}
+              </div>
+              <div className="mega-col mega-feature">
+                <div className="mega-covers" aria-hidden="true">
+                  <Image src="/images/charco.png" alt="" width={160} height={213} unoptimized/><Image src="/images/maskara.png" alt="" width={160} height={213} unoptimized/><Image src="/images/groove-earth.png" alt="" width={160} height={213} unoptimized/>
+                </div>
+                <Link className="mega-cta" onPointerMove={liquid} href={`${base}/catalogue`} onClick={closeMenu}>Browse full catalogue <ArrowRight size={18}/></Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Link href={`${base}/visualizer/living-room`} onClick={closeMenu}>Visualizer</Link>
