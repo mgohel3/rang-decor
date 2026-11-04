@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SwatchGrid } from "@/components/rd/Pages";
+import { SwatchGrid } from "@/components/rd/SwatchGrid";
 import { byId, collections, resolveId } from "@/data/rang";
 import { getFamilies } from "@/data/content";
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { collections, groups, nav, type GroupKey } from "@/data/rang";
 import { Smoke } from "./Smoke";
@@ -19,6 +19,8 @@ export function Header() {
   const [hov, setHov] = useState("groove-earth");
   const [scrolled, setScrolled] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
+  const headRef = useRef<HTMLElement>(null);
+  const openT = useRef(0), closeT = useRef(0);
 
   // Close menus on navigation (state adjusted during render, as React recommends).
   if (lastPath !== pathname) { setLastPath(pathname); setMenu(null); setMob(false); }
@@ -32,6 +34,21 @@ export function Header() {
     return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("keydown", onKey); };
   }, []);
 
+  // Hover intent: open after a short delay and close after a short grace period, so brushing past the
+  // menu or moving towards the page content does not leave the panel covering what the visitor wants to click.
+  const openMenu = (m: string) => { clearTimeout(closeT.current); clearTimeout(openT.current); openT.current = window.setTimeout(() => setMenu(m), menu ? 0 : 120); };
+  const closeNow = () => { clearTimeout(openT.current); clearTimeout(closeT.current); setMenu(null); };
+  const closeSoon = () => { clearTimeout(openT.current); clearTimeout(closeT.current); closeT.current = window.setTimeout(() => setMenu(null), 180); };
+  useEffect(() => {
+    if (!menu) return;
+    const outside = (e: PointerEvent) => { if (headRef.current && !headRef.current.contains(e.target as Node)) setMenu(null); };
+    const y0 = window.scrollY;
+    const away = () => { if (Math.abs(window.scrollY - y0) > 24) setMenu(null); };
+    document.addEventListener("pointerdown", outside);
+    window.addEventListener("scroll", away, { passive: true });
+    return () => { document.removeEventListener("pointerdown", outside); window.removeEventListener("scroll", away); };
+  }, [menu]);
+
   const light = pathname !== "/" || scrolled || !!menu || mob;
   const hi = collections.findIndex(c => c.id === hov);
   const close = () => { setMenu(null); setMob(false); };
@@ -40,14 +57,14 @@ export function Header() {
   // The page the visitor is on keeps its underline (Products also covers product pages).
   const active = (href: string) => href === "/" ? isHome : pathname.startsWith(href.split("/").slice(0, 2).join("/")) || (href === "/collections" && pathname.startsWith("/product"));
 
-  return <header className={`rd-header ${light ? "" : "over-hero"} ${isHome ? "" : "page"}`} onMouseLeave={() => setMenu(null)}>
+  return <header ref={headRef} className={`rd-header ${light ? "" : "over-hero"} ${isHome ? "" : "page"}`} onMouseLeave={closeSoon} onMouseEnter={() => clearTimeout(closeT.current)}>
     <div className="rd-header-in">
       <div className="rd-pill">
         <Link href="/" className="rd-logo" aria-label="Rang Décor home"><Image src="/images/rang-header.svg" alt="Rang Décor" width={126} height={46} priority unoptimized/></Link>
         <nav className="rd-nav" aria-label="Primary">
           {nav.map(n => n.menu
-            ? <button key={n.label} className={menu === n.menu || active(n.href) ? "on" : ""} aria-haspopup="true" aria-expanded={menu === n.menu} onMouseEnter={() => setMenu(n.menu!)} onClick={() => setMenu(menu === n.menu ? null : n.menu!)}>{n.label}<ArrowDown size={13} aria-hidden="true"/><span className="bar"/></button>
-            : <Link key={n.label} href={n.href} className={active(n.href) ? "on" : ""} aria-current={active(n.href) ? "page" : undefined} onMouseEnter={() => setMenu(null)}>{n.label}<span className="bar"/></Link>)}
+            ? <button key={n.label} className={menu === n.menu || active(n.href) ? "on" : ""} aria-haspopup="true" aria-expanded={menu === n.menu} onMouseEnter={() => openMenu(n.menu!)} onClick={() => { clearTimeout(openT.current); setMenu(menu === n.menu ? null : n.menu!); }}>{n.label}<ArrowDown size={13} aria-hidden="true"/><span className="bar"/></button>
+            : <Link key={n.label} href={n.href} className={active(n.href) ? "on" : ""} aria-current={active(n.href) ? "page" : undefined} onMouseEnter={closeNow}>{n.label}<span className="bar"/></Link>)}
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
           <Link href={isHome ? "/collections" : "/contact"} className="rd-cta" data-drop="btn">{isHome ? "Explore Collections" : "Enquire"}</Link>
@@ -56,7 +73,7 @@ export function Header() {
       </div>
 
       {/* The colour smoke sits BEHIND the glass panel, so the panel's backdrop blur softens it and the text stays crisp (same as the footer). */}
-      <div className={`rd-mega-pos ${menu ? "open" : ""}`} role="region" aria-label="Menu">
+      <div className={`rd-mega-pos ${menu ? "open" : ""}`} role="region" aria-label="Menu" inert={!menu}>
         <div className="rd-mega-under"><div className="rd-mega-wash"/><Smoke/></div>
       <div className="rd-mega">
         <div className="rd-mega-grid">

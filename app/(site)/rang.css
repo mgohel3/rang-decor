@@ -51,7 +51,7 @@ body{margin:0;background:#F7F5F0}
 
 /* header */
 .rd-header{position:fixed;top:14px;left:0;right:0;z-index:50;padding-inline:clamp(10px,2vw,24px)}
-.rd-header-in{max-width:92.5rem;margin:0 auto;position:relative;padding-bottom:.9rem} /* bridges the gap so the mega menu stays open while the pointer moves down */
+.rd-header-in{max-width:92.5rem;margin:0 auto;position:relative}
 .rd-pill{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem;padding:0 .75rem 0 1.5rem;border-radius:999px;border:1px solid rgba(255,255,255,.85);background:linear-gradient(135deg,rgba(255,255,255,.66),rgba(255,255,255,.26));backdrop-filter:blur(26px) saturate(1.9) brightness(1.04);box-shadow:0 12px 40px rgba(28,27,26,.16),inset 0 1px 0 rgba(255,255,255,.75);color:var(--ink);transition:background .5s,color .5s,border-color .5s}
 .rd-header.over-hero .rd-pill{background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.06));border-color:rgba(255,255,255,.4);color:#fff}
 .rd-header.over-hero .rd-logo img{filter:brightness(1.3)}
@@ -420,3 +420,43 @@ body{margin:0;background:#F7F5F0}
 .rd-lightbox .ctl{display:flex;flex-wrap:wrap;gap:.4rem}
 .rd-lightbox .ctl .rd-btn{min-height:2.5rem;padding:.55rem 1rem}
 .rd-lightbox .ctl .rd-btn:disabled{opacity:.4;cursor:default}
+
+/* Swatch tiles: rounded, with a glass code label */
+.rd-swatches{gap:1.5rem 1.25rem}
+.rd-sw .ph{border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(28,27,26,.14);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.rd-sw:hover .ph,.rd-sw:focus-visible .ph{transform:translateY(-6px);box-shadow:0 22px 44px rgba(28,27,26,.22)}
+.rd-sw .ph img{transition:transform 1s var(--ease)}
+.rd-sw:hover .ph img{transform:scale(1.05)}
+.rd-sw .lab{position:absolute;left:.65rem;right:.65rem;bottom:.65rem;z-index:2;margin:0;padding:.55rem .5rem;border-radius:999px;text-align:center;font-size:.9rem;font-weight:600;letter-spacing:.04em;color:var(--ink);
+  background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.24) 60%,rgba(255,255,255,.42));backdrop-filter:blur(18px) saturate(2.2) brightness(1.1);box-shadow:0 8px 20px rgba(28,27,26,.2)}
+
+/* Lightbox: the swatch shown as a 3D laminate sheet with thickness, tilting with the pointer, smooth zoom and pan */
+.rd-lightbox .box{width:min(94vw,56rem)}
+.rd-lightbox .im3d{position:relative;height:min(68vh,40rem);overflow:hidden;border-radius:14px;display:grid;place-items:center;background:radial-gradient(80% 70% at 50% 40%,#f3efe8,#d9d3c8);perspective:1500px;touch-action:none;cursor:zoom-in;user-select:none}
+.rd-lightbox .im3d.z{cursor:grab}
+.rd-lightbox .im3d.drag{cursor:grabbing}
+.rd-lightbox .pan{display:grid;place-items:center;will-change:transform;transform-origin:center}
+.rd-lightbox .sheet{--t:16px;position:relative;height:min(56vh,34rem);transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.rd-lightbox .sheet .face{display:block;height:100%;width:auto;max-width:none;border-radius:2px;transform:translateZ(0)}
+.rd-lightbox .sheet .sheen{position:absolute;inset:0;pointer-events:none;border-radius:2px;background:linear-gradient(115deg,transparent calc(var(--sheen) - 22%),rgba(255,255,255,.34) var(--sheen),transparent calc(var(--sheen) + 22%));mix-blend-mode:soft-light;transform:translateZ(1px)}
+.rd-lightbox .sheet .edge{position:absolute;display:block;background:linear-gradient(180deg,#8a6a43,#5a4026)}
+.rd-lightbox .sheet .e-r{top:0;bottom:0;right:0;width:var(--t);transform-origin:100% 50%;transform:rotateY(-90deg)}
+.rd-lightbox .sheet .e-l{top:0;bottom:0;left:0;width:var(--t);transform-origin:0 50%;transform:rotateY(90deg)}
+.rd-lightbox .sheet .e-t{left:0;right:0;top:0;height:var(--t);transform-origin:50% 0;transform:rotateX(-90deg);background:linear-gradient(90deg,#8a6a43,#6b4d2c)}
+.rd-lightbox .sheet .e-b{left:0;right:0;bottom:0;height:var(--t);transform-origin:50% 100%;transform:rotateX(90deg);background:linear-gradient(90deg,#6b4d2c,#4a3520)}
+.rd-lightbox .sheet .back{position:absolute;inset:0;background:#6b4d2c;transform:translateZ(calc(var(--t) * -1))}
+.rd-lightbox .floor{position:absolute;left:12%;right:12%;bottom:4%;height:1.6rem;border-radius:50%;background:radial-gradient(closest-side,rgba(28,27,26,.28),transparent);filter:blur(6px);pointer-events:none}
+@media(prefers-reduced-motion:reduce){.rd-lightbox .sheet{transition:none}}
+
+/* Stacking: the header pill stays above the smoke layer so menu items are always visible while the menu animates */
+.rd .rd-pill{z-index:3}
+.rd .rd-mega-pos{z-index:1}
+/* a small invisible bridge between pill and panel, only while the panel is open */
+.rd .rd-mega-pos.open::before{content:"";position:absolute;left:0;right:0;top:-1rem;height:1rem}
+/* Inner-page header uses the same glass as the mega menu and footer */
+.rd .rd-header.page .rd-pill{background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.2) 52%,rgba(255,255,255,.4));backdrop-filter:blur(42px) saturate(2.4) brightness(1.1);border:1px solid transparent;box-shadow:0 30px 70px rgba(28,27,26,.16),0 3px 8px rgba(28,27,26,.08)}
+.rd .rd-header.page .rd-pill::before{display:block;opacity:.45}
+/* Contact heading follows the design: Cormorant display, gradient accent word */
+.rd-contact-card .info h1{font-size:clamp(3rem,6.2vw,6.5rem)}
+.rd-contact-card .info h1 em.grad{color:transparent}
+.rd-contact-card .info p{font-size:1.0625rem}

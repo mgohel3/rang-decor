@@ -11,7 +11,7 @@ export default function Contact() {
       <div className="rd-contact-card">
         <div className="info">
           <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>Let’s work together</div>
-          <h1 className="rd-h1">Let’s get <em>in touch.</em></h1>
+          <h1 className="rd-h1">Let’s get <em className="grad">in touch.</em></h1>
           <p>For collection enquiries, project conversations and partnership questions, connect with the Rang Décor team. We reply within 24 hours.</p>
           <ul>
             <li><small>Email</small><a href={`mailto:${contact.email}`}>{contact.email}<ArrowUpRight size={16} aria-hidden="true"/></a></li>
