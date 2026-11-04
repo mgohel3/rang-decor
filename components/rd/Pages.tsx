@@ -36,31 +36,54 @@ export function CollectionList() {
 export function SwatchGrid({ c, swatches }: { c: Collection; swatches: { number: string; image: string }[] }) {
   const [q, setQ] = useState("");
   const [sel, setSel] = useState<number | null>(null);
-  const [zoom, setZoom] = useState(false);
+  const [zoom, setZoom] = useState(1); // 1 = fit, up to 4x
   const s = q.trim().toLowerCase();
   const list = swatches.filter(x => !s || x.number.toLowerCase().includes(s));
   const cur = sel === null ? null : list[sel];
+  const zoomBy = (d: number) => setZoom(z => Math.min(4, Math.max(1, Math.round((z + d) * 100) / 100)));
+  const step = (d: number) => { setSel(i => (i === null ? i : (i + d + list.length) % list.length)); setZoom(1); };
+  const closeBox = () => { setSel(null); setZoom(1); };
   useEffect(() => {
-    const k = (e: KeyboardEvent) => { if (e.key === "Escape") { setSel(null); setZoom(false); } };
+    if (sel === null) return;
+    const k = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeBox();
+      else if (e.key === "+" || e.key === "=") zoomBy(0.5);
+      else if (e.key === "-") zoomBy(-0.5);
+      else if (e.key === "0") setZoom(1);
+      else if (e.key === "ArrowRight") step(1);
+      else if (e.key === "ArrowLeft") step(-1);
+    };
     window.addEventListener("keydown", k);
     return () => window.removeEventListener("keydown", k);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sel, list.length]);
   return <>
     <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "1.25rem", marginBottom: "1.75rem" }}>
       <h2 className="rd-h3">Finishes &amp; codes</h2>
       <label className="rd-search" style={{ width: "min(100%,17.5rem)" }}><span aria-hidden="true">⌕</span><input type="search" aria-label="Search by product code" placeholder="Search by code" value={q} onChange={e => { setQ(e.target.value); setSel(null); }}/></label>
     </div>
     <div className="rd-swatches">
-      {list.map((x, i) => <button key={x.image} className="rd-sw" aria-label={`Zoom ${x.number}`} onClick={() => { setSel(i); setZoom(false); }}>
+      {list.map((x, i) => <button key={x.image} className="rd-sw" aria-label={`Open ${c.name} ${x.number}`} onClick={() => { setSel(i); setZoom(1); }}>
         <div className="ph" data-drop="tint"><img src={x.image} alt={`${c.name} ${x.number}`} loading="lazy"/></div><b>{x.number}</b>
       </button>)}
     </div>
     {!list.length && <p className="rd-lead">No code matches “{q}”.</p>}
-    <div role="dialog" aria-modal="true" aria-label="Swatch preview" className={`rd-lightbox ${cur ? "open" : ""}`} onClick={() => { setSel(null); setZoom(false); }}>
+    <div role="dialog" aria-modal="true" aria-label="Swatch preview" className={`rd-lightbox ${cur ? "open" : ""}`} onClick={closeBox}>
       <div className="box" onClick={e => e.stopPropagation()}>
-        <div className={`im ${zoom ? "z" : ""}`} onClick={() => setZoom(!zoom)}>{cur && <img src={cur.image} alt={cur.number}/>}</div>
-        <div className="bar"><div><b>{c.name}</b><span style={{ fontSize: ".8rem" }}>{cur?.number} · click image to zoom</span></div>
-          <button className="rd-btn glass" onClick={() => { setSel(null); setZoom(false); }}>Close</button></div>
+        <div className={`im ${zoom > 1 ? "z" : ""}`} onDoubleClick={() => setZoom(zoom > 1 ? 1 : 2.5)} onWheel={e => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); zoomBy(e.deltaY < 0 ? 0.25 : -0.25); } }}>
+          {cur && <img src={cur.image} alt={`${c.name} ${cur.number}`} style={{ width: `${zoom * 100}%`, maxWidth: "none" }}/>}
+        </div>
+        <div className="bar">
+          <div><b>{c.name}</b><span style={{ fontSize: ".8rem" }}>{cur?.number} · {Math.round(zoom * 100)}%</span></div>
+          <div className="ctl" role="group" aria-label="Zoom and navigation">
+            <button className="rd-btn glass" onClick={() => step(-1)} aria-label="Previous swatch">←</button>
+            <button className="rd-btn glass" onClick={() => zoomBy(-0.5)} disabled={zoom <= 1} aria-label="Zoom out">−</button>
+            <button className="rd-btn glass" onClick={() => setZoom(1)} disabled={zoom === 1} aria-label="Reset zoom">Fit</button>
+            <button className="rd-btn glass" onClick={() => zoomBy(0.5)} disabled={zoom >= 4} aria-label="Zoom in">+</button>
+            <button className="rd-btn glass" onClick={() => step(1)} aria-label="Next swatch">→</button>
+            <button className="rd-btn glass" onClick={closeBox}>Close</button>
+          </div>
+        </div>
       </div>
     </div>
   </>;

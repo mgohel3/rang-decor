@@ -1,19 +1,30 @@
-import { ContactForm, PageHead } from "@/components/rd/Pages";
+import { ArrowUpRight } from "lucide-react";
+import { ContactForm } from "@/components/rd/Pages";
 import { contact } from "@/data/rang";
 
-export const metadata = { title: "Contact | Rang Décor" };
+export const metadata = { title: "Contact | Rang Décor", description: "Talk to the Rang Décor team about collections, projects and partnerships." };
 
 export default function Contact() {
   return <div className="rd-wrap rd-page">
-    <PageHead eyebrow="Let’s work together" lead="Our experts are ready to cater to you. We reply within 24 hours.">Let’s get <em className="grad">in touch.</em></PageHead>
-    <div className="rd-two">
-      <ContactForm/>
-      <div style={{ display: "grid", gap: ".9rem" }}>
-        <a className="rd-tile" href={contact.map} style={{ background: "var(--stone)" }}><small>Address</small><b style={{ fontWeight: 500, fontSize: "1rem", lineHeight: 1.6 }}>{contact.address.join(", ")}, India</b></a>
-        <a className="rd-tile" href={contact.whatsapp} style={{ background: "var(--teal)", color: "#fff" }}><small>Phone / WhatsApp</small><b>{contact.phone}</b></a>
-        <a className="rd-tile" href={`mailto:${contact.email}`} style={{ background: "var(--magenta)", color: "#fff" }}><small>Email</small><b>{contact.email}</b></a>
-        <iframe title="Rang Décor on Google Maps" loading="lazy" src="https://www.google.com/maps?q=14-1-395%2F1+New+Aghapura+Rd+Hyderabad&output=embed" style={{ width: "100%", height: "17.5rem", border: 0, borderRadius: 18 }}/>
+    <section className="rd-contact-stage" aria-label="Contact Rang Décor">
+      <img src="/images/rang-hero-walnut.webp" alt="" className="bg"/>
+      <div className="rd-contact-card">
+        <div className="info">
+          <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>Let’s work together</div>
+          <h1 className="rd-h1">Let’s get <em>in touch.</em></h1>
+          <p>For collection enquiries, project conversations and partnership questions, connect with the Rang Décor team. We reply within 24 hours.</p>
+          <ul>
+            <li><small>Email</small><a href={`mailto:${contact.email}`}>{contact.email}<ArrowUpRight size={16} aria-hidden="true"/></a></li>
+            <li><small>Phone / WhatsApp</small><a href={contact.whatsapp}>{contact.phone}<ArrowUpRight size={16} aria-hidden="true"/></a><span>{contact.hours}</span></li>
+            <li><small>Visit</small><a href={contact.map}>{contact.address[0]},<br/>{contact.address[1]}, India</a></li>
+          </ul>
+        </div>
+        <div className="form"><ContactForm/></div>
       </div>
-    </div>
+    </section>
+    <section className="rd-contact-map" aria-label="Map">
+      <iframe title="Rang Décor on Google Maps" loading="lazy" src="https://www.google.com/maps?q=14-1-395%2F1+New+Aghapura+Rd+Hyderabad&output=embed"/>
+      <a href={contact.map} className="rd-textlink" style={{ marginTop: "1rem" }}>Open in Google Maps →</a>
+    </section>
   </div>;
 }
