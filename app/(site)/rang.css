@@ -577,3 +577,20 @@ body{background:#FFFFFF}
 .rd-page .rd-about-prod,.rd-page>section{margin-top:var(--gap)!important}
 .rd-prod{margin-top:1.25rem}
 .rd-about-prod .rd-lead{margin-top:.8rem}
+
+/* Product pages: stacked cards. Scoped to .rd-stack so no other page is affected. */
+.rd-stack .cs{position:relative;background:#fff}
+.rd-stack .c1{padding:7.5rem 0 4rem}
+.rd-stack .c2{padding:4.5rem 0;background:#F7F5F0}
+.rd-stack .c3{padding:4.5rem 0 6rem}
+.rd-stack .rd-prod{margin-top:1.25rem}
+.rd-stack .rd-about-prod{margin-top:0}
+.rd-stack .blk+.blk{margin-top:var(--gap)}
+@media(min-width:900px) and (min-height:640px){
+  .rd-stack .sticky{position:sticky;top:0}
+  .rd-stack .c1,.rd-stack .c2{min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+  .rd-stack .c1{z-index:1}
+  .rd-stack .c2,.rd-stack .c3{border-radius:34px 34px 0 0;box-shadow:0 -26px 60px rgba(28,27,26,.14)}
+  .rd-stack .c2{z-index:2}
+  .rd-stack .c3{z-index:3}
+}
