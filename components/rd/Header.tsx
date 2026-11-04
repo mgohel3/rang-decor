@@ -52,8 +52,8 @@ export function Header() {
       </div>
 
       <div className={`rd-mega ${menu ? "open" : ""}`} role="region" aria-label="Menu">
-        <Smoke/>
         <div className="rd-mega-wash"/>
+        <Smoke/>
         <div className="rd-mega-grid">
           <div className="rd-mega-tabs">
             <div className="rd-mega-label">{menu === "catalogues" ? "Catalogue library" : "Products by material"}</div>

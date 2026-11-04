@@ -1,46 +1,39 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createFluid } from "./fluid";
 
-const COLS = ["224,16,128", "242,169,0", "0,176,128", "255,111,181"];
+const COL: [number, number, number][] = [[0.9, 0.06, 0.5], [0.97, 0.66, 0], [0, 0.72, 0.5], [1, 0.31, 0.66]];
 
-// Soft coloured smoke that follows the pointer inside its parent element.
-// This is a light 2D canvas version of the DESIGN.md "cursor smoke"; it is off for reduced motion and touch screens.
+// WebGL cursor smoke behind the content of its parent. Runs only while the pointer moves inside the
+// canvas and for 4.5s after; off for reduced motion and touch screens. If WebGL2 is missing, nothing is drawn.
 export function Smoke() {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
-    const c = ref.current, host = c?.parentElement;
-    if (!c || !host || matchMedia("(prefers-reduced-motion: reduce), (hover: none)").matches) return;
-    const ctx = c.getContext("2d");
-    if (!ctx) return;
-    type Puff = { x: number; y: number; r: number; a: number; col: string; vx: number; vy: number };
-    let puffs: Puff[] = [], raf = 0, last = 0, ci = 0;
-    const size = () => { const r = host.getBoundingClientRect(); c.width = r.width; c.height = r.height; };
-    size();
-    const ro = new ResizeObserver(size); ro.observe(host);
-    const loop = () => {
-      ctx.clearRect(0, 0, c.width, c.height);
-      puffs = puffs.filter(p => p.a > 0.01);
-      for (const p of puffs) {
-        p.x += p.vx; p.y += p.vy; p.r += 1.1; p.a *= 0.96;
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-        g.addColorStop(0, `rgba(${p.col},${p.a})`); g.addColorStop(1, `rgba(${p.col},0)`);
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fill();
+    const cv = ref.current;
+    if (!cv || matchMedia("(prefers-reduced-motion: reduce), (hover: none)").matches) return;
+    const f = createFluid(cv);
+    if (!f) return;
+    let raf = 0, last = 0, lx = -1, ly = -1, ci = 0, on = false;
+    const tick = (t: number) => {
+      if (document.hidden) { raf = requestAnimationFrame(tick); return; }
+      if (t - last > 4500) { if (on) { on = false; f.clear(); } raf = 0; return; }
+      on = true; f.step(); raf = requestAnimationFrame(tick);
+    };
+    const move = (e: MouseEvent) => {
+      const r = cv.getBoundingClientRect();
+      if (r.width < 10 || e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) { lx = -1; return; }
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      if (lx >= 0) {
+        ci += 0.03;
+        f.splat(x / r.width, 1 - y / r.height, (x - lx) / r.width, -(y - ly) / r.height, COL[Math.floor(ci) % 4]);
+        last = performance.now();
+        if (!raf) raf = requestAnimationFrame(tick);
       }
-      raf = puffs.length ? requestAnimationFrame(loop) : 0;
+      lx = x; ly = y;
     };
-    const move = (e: PointerEvent) => {
-      const now = performance.now();
-      if (now - last < 40) return;
-      last = now;
-      const r = host.getBoundingClientRect();
-      ci = (ci + 1) % COLS.length;
-      puffs.push({ x: e.clientX - r.left, y: e.clientY - r.top, r: 30, a: 0.38, col: COLS[ci], vx: (Math.random() - 0.5) * 1.2, vy: (Math.random() - 0.5) * 1.2 });
-      if (puffs.length > 60) puffs.shift();
-      if (!raf) raf = requestAnimationFrame(loop);
-    };
-    host.addEventListener("pointermove", move);
-    return () => { host.removeEventListener("pointermove", move); ro.disconnect(); cancelAnimationFrame(raf); };
+    document.addEventListener("mousemove", move);
+    return () => { document.removeEventListener("mousemove", move); cancelAnimationFrame(raf); };
   }, []);
   return <canvas ref={ref} className="rd-smoke" aria-hidden="true" />;
 }

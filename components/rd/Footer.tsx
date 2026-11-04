@@ -12,8 +12,8 @@ export function Footer() {
       <a href={`mailto:${contact.email}`}><b>{contact.email}</b><br/>24 x 7 online support</a>
     </div></div>
     <footer className="rd-footer">
-      <Smoke/>
       <div className="wash" aria-hidden="true"/>
+      <Smoke/>
       <div className="rd-wrap rd-rel">
         <div className="rd-footer-glass">
           <div className="rd-footer-cols">
