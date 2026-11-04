@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowDown, ArrowRight, ArrowUpRight, ChevronDown, Instagram, Facebook, Linkedin, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { directions, galleryCategories, products } from "@/data/site";
+import { directions, products } from "@/data/site";
 import { FooterWave } from "@/components/FooterWave";
 
 export function Header({ direction = "01-editorial" }: { direction?: string }) {
@@ -34,33 +34,27 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
   return <header className="site-header" style={{ viewTransitionName: "site-header" }}>
     <Link href={`/demo/${direction}`} className="brand" aria-label="Rang Decor home"><Image src="/images/rang-header.svg" alt="Rang Decor, Let’s Live Beautiful" width={126} height={46} priority unoptimized /></Link>
     <nav id="rang-main-nav" className={`main-nav ${open ? "nav-open" : ""}`} aria-label="Main navigation">
-      <Link href={`${base}/about`} onClick={closeMenu}>About</Link>
       <div className="nav-group">
-        <button className="nav-trigger" aria-expanded={activeDropdown === "products"} aria-controls="products-menu" onClick={() => toggleDropdown("products")}>Products <ArrowDown size={12}/></button>
+        <button className="nav-trigger" aria-expanded={activeDropdown === "products"} aria-controls="products-menu" onClick={() => toggleDropdown("products")}>Products <ArrowDown size={14}/></button>
         <div id="products-menu" className={`nav-popover ${activeDropdown === "products" ? "nav-popover-open" : ""}`}>
-          <Link href={`${base}/collections`} onClick={closeMenu}>All collections<ArrowRight size={12}/></Link>
-          {products.map(product => <Link key={product.slug} href={`${base}/product/${product.slug}`} onClick={closeMenu}>{product.name}<ArrowRight size={12}/></Link>)}
-        </div>
-      </div>
-      <div className="nav-group">
-        <button className="nav-trigger" aria-expanded={activeDropdown === "catalogue"} aria-controls="catalogue-menu" onClick={() => toggleDropdown("catalogue")}>Catalogue <ArrowDown size={12}/></button>
-        <div id="catalogue-menu" className={`nav-popover ${activeDropdown === "catalogue" ? "nav-popover-open" : ""}`}>
-          <Link href={`${base}/catalogue`} onClick={closeMenu}>Browse catalogue library<ArrowRight size={12}/></Link>
-          {["Bern Thermo Lam", "Faded", "ONIT", "Groove Forest", "Maskara"].map(name => <Link key={name} href={`${base}/catalogue`} onClick={closeMenu}>{name}<ArrowRight size={12}/></Link>)}
+          <Link href={`${base}/collections`} onClick={closeMenu}>All collections<ArrowRight size={14}/></Link>
+          {products.map(product => <Link key={product.slug} href={`${base}/product/${product.slug}`} onClick={closeMenu}>{product.name}<ArrowRight size={14}/></Link>)}
         </div>
       </div>
       <Link href={`${base}/visualizer/living-room`} onClick={closeMenu}>Visualizer</Link>
+      <Link href={`${base}/catalogue`} onClick={closeMenu}>Catalogue</Link>
       <div className="nav-group">
-        <button className="nav-trigger" aria-expanded={activeDropdown === "gallery"} aria-controls="gallery-menu" onClick={() => toggleDropdown("gallery")}>Gallery <ArrowDown size={12}/></button>
-        <div id="gallery-menu" className={`nav-popover ${activeDropdown === "gallery" ? "nav-popover-open" : ""}`}>
-          {galleryCategories.map(category => <a key={category} href="#gallery" onClick={closeMenu}>{category.replaceAll("_", " ")}<ArrowRight size={12}/></a>)}
+        <button className="nav-trigger" aria-expanded={activeDropdown === "about"} aria-controls="about-menu" onClick={() => toggleDropdown("about")}>About <ArrowDown size={14}/></button>
+        <div id="about-menu" className={`nav-popover nav-popover-narrow ${activeDropdown === "about" ? "nav-popover-open" : ""}`}>
+          <Link href={`${base}/about`} onClick={closeMenu}>About Rang Décor<ArrowRight size={14}/></Link>
+          <Link href={`${base}/about#approach`} onClick={closeMenu}>Our approach<ArrowRight size={14}/></Link>
+          <Link href={`${base}/about#network`} onClick={closeMenu}>Our network<ArrowRight size={14}/></Link>
+          <Link href={`${base}#gallery`} onClick={closeMenu}>Gallery<ArrowRight size={14}/></Link>
+          <Link href={`${base}/testimonials`} onClick={closeMenu}>Testimonials<ArrowRight size={14}/></Link>
+          <Link href={`${base}/careers`} onClick={closeMenu}>Careers<ArrowRight size={14}/></Link>
         </div>
       </div>
-      <Link href={`${base}/about#approach`} onClick={closeMenu}>Our Approach</Link>
-      <Link href={`${base}/about#network`} onClick={closeMenu}>Our Network</Link>
-      <Link href={`${base}/testimonials`} onClick={closeMenu}>Testimonials</Link>
-      <Link href={`${base}/careers`} onClick={closeMenu}>Careers</Link>
-      <Link href={`${base}/contact`} className="nav-contact" onClick={closeMenu}>Contact <ArrowRight size={13}/></Link>
+      <Link href={`${base}/contact`} className="nav-contact" onClick={closeMenu}>Contact <ArrowRight size={15}/></Link>
     </nav>
     <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-controls="rang-main-nav" aria-expanded={open} onClick={() => updateMenu({ open: !open })}>{open ? <X/> : <Menu/>}</button>
   </header>;
@@ -109,19 +103,23 @@ export function Footer({ direction = "01-editorial" }: { direction?: string }) {
   const base = `/demo/${direction}`;
   return <footer className="footer">
     <FooterWave />
-    <div className="footer-top">
-      <div className="footer-brand-group">
-        <Link href={`/demo/${direction}`} className="brand"><Image src="/images/rang-header.svg" alt="Rang Decor, Let’s Live Beautiful" width={126} height={46} unoptimized /></Link>
-        <span className="footer-brand-divider" aria-hidden="true" />
-        <Image className="footer-group-mark" src="/images/bhandari-group.svg" alt="A Bhandari Group initiative" width={48} height={48} unoptimized />
-      </div>
-      <p>Surfaces for spaces<br/>that feel like yours.</p>
-      <Link className="footer-enquire" href={`${base}/contact`}>Begin a conversation <ArrowRight size={16}/></Link>
+    <div className="footer-cta">
+      <h2>Let’s make your<br/>space <em>beautiful.</em></h2>
+      <Link className="footer-enquire" href={`${base}/contact`}>Begin a conversation <ArrowRight size={20}/></Link>
     </div>
-    <div className="footer-bottom">
+    <div className="footer-bottom footer-grid">
+      <div className="footer-brand-col">
+        <div className="footer-brand-group">
+          <Link href={`/demo/${direction}`} className="brand"><Image src="/images/rang-header.svg" alt="Rang Decor, Let’s Live Beautiful" width={126} height={46} unoptimized /></Link>
+          <span className="footer-brand-divider" aria-hidden="true" />
+          <Image className="footer-group-mark" src="/images/bhandari-group.svg" alt="A Bhandari Group initiative" width={48} height={48} unoptimized />
+        </div>
+        <p>Decorative laminates, louvers and panels for spaces that feel like yours.</p>
+        <div className="footer-social"><a href="#" aria-label="Instagram"><Instagram size={22}/></a><a href="#" aria-label="Facebook"><Facebook size={22}/></a><a href="#" aria-label="LinkedIn"><Linkedin size={22}/></a></div>
+      </div>
       <div><span>Explore</span><Link href={`${base}/collections`}>Collections</Link><Link href={`${base}/catalogue`}>Catalogue library</Link><Link href={`${base}/visualizer/living-room`}>Visualizer</Link></div>
-      <div><span>Rang Décor</span><Link href={`${base}/about`}>About</Link><Link href={`${base}/about#network`}>Our Network</Link><Link href={`${base}/testimonials`}>Testimonials</Link><Link href={`${base}/careers`}>Careers</Link><Link href={`${base}/contact`}>Contact</Link></div>
-      <div><span>Find us</span><a href="mailto:info@rangdecor.in">info@rangdecor.in</a><a href="tel:+918297585000">+91 8297 585 000</a><p>14-1-395/1, New Aghapura Rd,<br/>Hyderabad, Telangana, India</p><div className="footer-social"><a href="#" aria-label="Instagram"><Instagram size={17}/><span>Instagram</span></a><a href="#" aria-label="Facebook"><Facebook size={17}/><span>Facebook</span></a><a href="#" aria-label="LinkedIn"><Linkedin size={17}/><span>LinkedIn</span></a></div></div>
+      <div><span>Company</span><Link href={`${base}/about`}>About</Link><Link href={`${base}/about#network`}>Our network</Link><Link href={`${base}/testimonials`}>Testimonials</Link><Link href={`${base}/careers`}>Careers</Link></div>
+      <div><span>Contact</span><a href="mailto:info@rangdecor.in">info@rangdecor.in</a><a href="tel:+918297585000">+91 8297 585 000</a><p>14-1-395/1, New Aghapura Rd,<br/>Hyderabad, Telangana, India</p></div>
     </div>
     <div className="footer-legal"><span>© Rang Décor · Let’s Live Beautiful</span><div><a href="#">Privacy</a><a href="#">Terms</a></div><span>Designed &amp; developed by Karya Graphito</span></div>
     <a className="whatsapp-float" href="https://wa.me/918297585000" target="_blank" rel="noreferrer" aria-label="Chat with Rang Décor on WhatsApp">
