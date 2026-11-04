@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./prototype-polish.css";
+import "./new-pages.css";
 import { PageTransition } from "@/components/PageTransition";
 
 export const metadata: Metadata = {

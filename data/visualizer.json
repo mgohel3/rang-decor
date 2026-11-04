@@ -1,0 +1,2805 @@
+{
+ "areas": [
+  {
+   "id": "living-room",
+   "name": "Living Room",
+   "image": "/images/rooms/living-room.png"
+  },
+  {
+   "id": "shopping-mall",
+   "name": "Shopping Mall",
+   "image": "/images/rooms/shopping-mall.png"
+  },
+  {
+   "id": "wardrobe",
+   "name": "Wardrobe",
+   "image": "/images/rooms/wardrobe.png"
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "image": "/images/rooms/kitchen.png"
+  }
+ ],
+ "families": [
+  {
+   "id": "bern-thermo",
+   "name": "Bern-Thermo"
+  },
+  {
+   "id": "onit",
+   "name": "ONIT"
+  },
+  {
+   "id": "faded",
+   "name": "Faded"
+  },
+  {
+   "id": "charco-charm",
+   "name": "charco-charm"
+  },
+  {
+   "id": "groove-earth",
+   "name": "groove-earth"
+  },
+  {
+   "id": "groove-forest",
+   "name": "groove-forest"
+  },
+  {
+   "id": "groove-pastel",
+   "name": "groove-pastel"
+  },
+  {
+   "id": "maskara",
+   "name": "maskara"
+  }
+ ],
+ "swatches": [
+  {
+   "number": "9117",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9117.webp"
+  },
+  {
+   "number": "9116",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9116.webp"
+  },
+  {
+   "number": "9115",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9115.webp"
+  },
+  {
+   "number": "9070",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9070.webp"
+  },
+  {
+   "number": "9062",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9062.webp"
+  },
+  {
+   "number": "9013",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9013.webp"
+  },
+  {
+   "number": "9004",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9004.webp"
+  },
+  {
+   "number": "7035",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7035.webp"
+  },
+  {
+   "number": "7034",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7034.webp"
+  },
+  {
+   "number": "5102",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5102.webp"
+  },
+  {
+   "number": "5101",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5101.webp"
+  },
+  {
+   "number": "5050",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5050.webp"
+  },
+  {
+   "number": "5003",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5003.webp"
+  },
+  {
+   "number": "11032",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11032.webp"
+  },
+  {
+   "number": "11031",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11031.webp"
+  },
+  {
+   "number": "11033",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11033.webp"
+  },
+  {
+   "number": "11046",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11046.webp"
+  },
+  {
+   "number": "11045",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11045.webp"
+  },
+  {
+   "number": "11029",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11029.webp"
+  },
+  {
+   "number": "11028",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11028.webp"
+  },
+  {
+   "number": "11026",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11026.webp"
+  },
+  {
+   "number": "11025",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/11025.webp"
+  },
+  {
+   "number": "9112",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9112.webp"
+  },
+  {
+   "number": "9111",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9111.webp"
+  },
+  {
+   "number": "9109",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9109.webp"
+  },
+  {
+   "number": "9108",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9108.webp"
+  },
+  {
+   "number": "9107",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9107.webp"
+  },
+  {
+   "number": "9106",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9106.webp"
+  },
+  {
+   "number": "9105",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9105.webp"
+  },
+  {
+   "number": "9103",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9103.webp"
+  },
+  {
+   "number": "9102",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9102.webp"
+  },
+  {
+   "number": "9101",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9101.webp"
+  },
+  {
+   "number": "9090",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9090.webp"
+  },
+  {
+   "number": "9078",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9078.webp"
+  },
+  {
+   "number": "9077",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9077.webp"
+  },
+  {
+   "number": "9075",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9075.webp"
+  },
+  {
+   "number": "9073",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9073.webp"
+  },
+  {
+   "number": "9072",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9072.webp"
+  },
+  {
+   "number": "9071",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9071.webp"
+  },
+  {
+   "number": "9069",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9069.webp"
+  },
+  {
+   "number": "9068",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9068.webp"
+  },
+  {
+   "number": "9067",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9067.webp"
+  },
+  {
+   "number": "9066",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9066.webp"
+  },
+  {
+   "number": "9065",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9065.webp"
+  },
+  {
+   "number": "9064",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9064.webp"
+  },
+  {
+   "number": "9063",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9063.webp"
+  },
+  {
+   "number": "9050",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9050.webp"
+  },
+  {
+   "number": "9049",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9049.webp"
+  },
+  {
+   "number": "9024",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9024.webp"
+  },
+  {
+   "number": "9016",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9016.webp"
+  },
+  {
+   "number": "7727",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7727.webp"
+  },
+  {
+   "number": "7726",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7726.webp"
+  },
+  {
+   "number": "7724",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7724.webp"
+  },
+  {
+   "number": "7723",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7723.webp"
+  },
+  {
+   "number": "7722",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7722.webp"
+  },
+  {
+   "number": "7023",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7023.webp"
+  },
+  {
+   "number": "7022",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7022.webp"
+  },
+  {
+   "number": "7004",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7004.webp"
+  },
+  {
+   "number": "7001",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/7001.webp"
+  },
+  {
+   "number": "5049",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5049.webp"
+  },
+  {
+   "number": "5048",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5048.webp"
+  },
+  {
+   "number": "5042",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5042.webp"
+  },
+  {
+   "number": "5034",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5034.webp"
+  },
+  {
+   "number": "5030",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5030.webp"
+  },
+  {
+   "number": "5029",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5029.webp"
+  },
+  {
+   "number": "5028",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5028.webp"
+  },
+  {
+   "number": "5025",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5025.webp"
+  },
+  {
+   "number": "5023",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5023.webp"
+  },
+  {
+   "number": "5022",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5022.webp"
+  },
+  {
+   "number": "5021",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5021.webp"
+  },
+  {
+   "number": "5020",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5020.webp"
+  },
+  {
+   "number": "5019",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5019.webp"
+  },
+  {
+   "number": "5018",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5018.webp"
+  },
+  {
+   "number": "5017",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5017.webp"
+  },
+  {
+   "number": "5016",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5016.webp"
+  },
+  {
+   "number": "5014",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5014.webp"
+  },
+  {
+   "number": "5012",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5012.webp"
+  },
+  {
+   "number": "5010",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5010.webp"
+  },
+  {
+   "number": "5009",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5009.webp"
+  },
+  {
+   "number": "5007",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5007.webp"
+  },
+  {
+   "number": "9005",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9005.webp"
+  },
+  {
+   "number": "9006",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9006.webp"
+  },
+  {
+   "number": "5002",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5002.webp"
+  },
+  {
+   "number": "5001",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/5001.webp"
+  },
+  {
+   "number": "3009",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/3009.webp"
+  },
+  {
+   "number": "3002",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/3002.webp"
+  },
+  {
+   "number": "3001",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/3001.webp"
+  },
+  {
+   "number": "9061",
+   "family": "bern-thermo",
+   "image": "/images/swatches/bern-thermo/9061.webp"
+  },
+  {
+   "number": "RO 9030",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9030.webp"
+  },
+  {
+   "number": "RO 9029",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9029.webp"
+  },
+  {
+   "number": "RO 9028",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9028.webp"
+  },
+  {
+   "number": "RO 9027",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9027.webp"
+  },
+  {
+   "number": "RO 9026",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9026.webp"
+  },
+  {
+   "number": "RO 9025",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9025.webp"
+  },
+  {
+   "number": "RO 9024",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9024.webp"
+  },
+  {
+   "number": "RO 9023",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9023.webp"
+  },
+  {
+   "number": "RO 9022",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9022.webp"
+  },
+  {
+   "number": "RO 9021",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9021.webp"
+  },
+  {
+   "number": "RO 9020",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9020.webp"
+  },
+  {
+   "number": "RO 9019",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9019.webp"
+  },
+  {
+   "number": "RO 9018",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9018.webp"
+  },
+  {
+   "number": "RO 9017",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9017.webp"
+  },
+  {
+   "number": "RO 9016",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9016.webp"
+  },
+  {
+   "number": "RO 9015",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9015.webp"
+  },
+  {
+   "number": "RO 9013",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9013.webp"
+  },
+  {
+   "number": "RO 9012",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9012.webp"
+  },
+  {
+   "number": "RO 9011",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9011.webp"
+  },
+  {
+   "number": "RO 9010",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9010.webp"
+  },
+  {
+   "number": "RO 9008",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9008.webp"
+  },
+  {
+   "number": "RO 9006",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9006.webp"
+  },
+  {
+   "number": "RO 9005",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9005.webp"
+  },
+  {
+   "number": "RO 9004",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9004.webp"
+  },
+  {
+   "number": "RO 9003",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-9003.webp"
+  },
+  {
+   "number": "RO 8565",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8565.webp"
+  },
+  {
+   "number": "RO 8563",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8563.webp"
+  },
+  {
+   "number": "RO 8562",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8562.webp"
+  },
+  {
+   "number": "RO 8561",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8561.webp"
+  },
+  {
+   "number": "RO 8555",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8555.webp"
+  },
+  {
+   "number": "RO 8551",
+   "family": "onit",
+   "image": "/images/swatches/onit/ro-8551.webp"
+  },
+  {
+   "number": "RF 2061",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2061.webp"
+  },
+  {
+   "number": "RF 2060",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2060.webp"
+  },
+  {
+   "number": "RF 2059",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2059.webp"
+  },
+  {
+   "number": "RF 2058",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2058.webp"
+  },
+  {
+   "number": "RF 2057",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2057.webp"
+  },
+  {
+   "number": "RF 2056",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2056.webp"
+  },
+  {
+   "number": "RF 2055",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2055.webp"
+  },
+  {
+   "number": "RF 2053",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2053.webp"
+  },
+  {
+   "number": "RF 2052",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2052.webp"
+  },
+  {
+   "number": "RF 2051",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2051.webp"
+  },
+  {
+   "number": "RF 2050",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2050.webp"
+  },
+  {
+   "number": "RF 2049",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2049.webp"
+  },
+  {
+   "number": "RF 2048",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2048.webp"
+  },
+  {
+   "number": "RF 2047",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2047.webp"
+  },
+  {
+   "number": "RF 2046",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2046.webp"
+  },
+  {
+   "number": "RF 2045",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2045.webp"
+  },
+  {
+   "number": "RF 2043",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2043.webp"
+  },
+  {
+   "number": "RF 2042",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2042.webp"
+  },
+  {
+   "number": "RF 2036",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2036.webp"
+  },
+  {
+   "number": "RF 2035",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2035.webp"
+  },
+  {
+   "number": "RF 2034",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2034.webp"
+  },
+  {
+   "number": "RF 2033",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2033.webp"
+  },
+  {
+   "number": "RF 2031",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2031.webp"
+  },
+  {
+   "number": "RF 2030",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2030.webp"
+  },
+  {
+   "number": "RF 2029",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2029.webp"
+  },
+  {
+   "number": "RF 2028",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2028.webp"
+  },
+  {
+   "number": "RF 2027",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2027.webp"
+  },
+  {
+   "number": "RF 2026",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2026.webp"
+  },
+  {
+   "number": "RF 2022",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2022.webp"
+  },
+  {
+   "number": "RF 2021",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2021.webp"
+  },
+  {
+   "number": "RF 2020",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2020.webp"
+  },
+  {
+   "number": "RF 2019",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2019.webp"
+  },
+  {
+   "number": "RF 2018",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2018.webp"
+  },
+  {
+   "number": "RF 2017",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2017.webp"
+  },
+  {
+   "number": "RF 2016",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2016.webp"
+  },
+  {
+   "number": "RF 2014",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2014.webp"
+  },
+  {
+   "number": "RF 2013",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2013.webp"
+  },
+  {
+   "number": "RF 2009",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2009.webp"
+  },
+  {
+   "number": "RF 2007",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2007.webp"
+  },
+  {
+   "number": "RF 2005",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2005.webp"
+  },
+  {
+   "number": "RF 2003",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2003.webp"
+  },
+  {
+   "number": "RF 2002",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2002.webp"
+  },
+  {
+   "number": "RF 2001",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2001.webp"
+  },
+  {
+   "number": "RF 2000",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-2000.webp"
+  },
+  {
+   "number": "RF 1061",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1061.webp"
+  },
+  {
+   "number": "RF 1059",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1059.webp"
+  },
+  {
+   "number": "RF 1053",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1053.webp"
+  },
+  {
+   "number": "RF 1052",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1052.webp"
+  },
+  {
+   "number": "RF 1028",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1028.webp"
+  },
+  {
+   "number": "RF 1016",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1016.webp"
+  },
+  {
+   "number": "RF 1002",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1002.webp"
+  },
+  {
+   "number": "RF 1001",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1001.webp"
+  },
+  {
+   "number": "RF 1000",
+   "family": "faded",
+   "image": "/images/swatches/faded/rf-1000.webp"
+  },
+  {
+   "number": "TL 28",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/tl-28.webp"
+  },
+  {
+   "number": "TL 26",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/tl-26.webp"
+  },
+  {
+   "number": "TL 25",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/tl-25.webp"
+  },
+  {
+   "number": "ST 18",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/st-18.webp"
+  },
+  {
+   "number": "ST 17",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/st-17.webp"
+  },
+  {
+   "number": "SG 69",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/sg-69.webp"
+  },
+  {
+   "number": "SG 68",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/sg-68.webp"
+  },
+  {
+   "number": "SG 65",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/sg-65.webp"
+  },
+  {
+   "number": "SF36",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/sf36.webp"
+  },
+  {
+   "number": "SF 35",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/sf-35.webp"
+  },
+  {
+   "number": "MF 69",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mf-69.webp"
+  },
+  {
+   "number": "MF 68",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mf-68.webp"
+  },
+  {
+   "number": "MF 65",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mf-65.webp"
+  },
+  {
+   "number": "MF 62",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mf-62.webp"
+  },
+  {
+   "number": "MF 61",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mf-61.webp"
+  },
+  {
+   "number": "MB 48",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mb-48.webp"
+  },
+  {
+   "number": "MB 47",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mb-47.webp"
+  },
+  {
+   "number": "MB 46",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/mb-46.webp"
+  },
+  {
+   "number": "HC 23",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/hc-23.webp"
+  },
+  {
+   "number": "FO 97",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fo-97.webp"
+  },
+  {
+   "number": "FO 96",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fo-96.webp"
+  },
+  {
+   "number": "FO 92",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fo-92.webp"
+  },
+  {
+   "number": "FO 91",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fo-91.webp"
+  },
+  {
+   "number": "FM 80",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fm-80.webp"
+  },
+  {
+   "number": "FM 77",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fm-77.webp"
+  },
+  {
+   "number": "FM 76",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fm-76.webp"
+  },
+  {
+   "number": "FM 74",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fm-74.webp"
+  },
+  {
+   "number": "FM 70",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/fm-70.webp"
+  },
+  {
+   "number": "EA 43",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/ea-43.webp"
+  },
+  {
+   "number": "EA 39",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/ea-39.webp"
+  },
+  {
+   "number": "EA 37",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/ea-37.webp"
+  },
+  {
+   "number": "EA 34",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/ea-34.webp"
+  },
+  {
+   "number": "CL 59",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/cl-59.webp"
+  },
+  {
+   "number": "AL 25",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/al-25.webp"
+  },
+  {
+   "number": "AB 89",
+   "family": "charco-charm",
+   "image": "/images/swatches/charco-charm/ab-89.webp"
+  },
+  {
+   "number": "RG 5282",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5282.webp"
+  },
+  {
+   "number": "RG 5280",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5280.webp"
+  },
+  {
+   "number": "RG 5206",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5206.webp"
+  },
+  {
+   "number": "RG 5005",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5005.webp"
+  },
+  {
+   "number": "RG 5021",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5021.webp"
+  },
+  {
+   "number": "RG 5023",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5023.webp"
+  },
+  {
+   "number": "RG 5030",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5030.webp"
+  },
+  {
+   "number": "RG 5072",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5072.webp"
+  },
+  {
+   "number": "RG 5073",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5073.webp"
+  },
+  {
+   "number": "RG 5074",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5074.webp"
+  },
+  {
+   "number": "RG 5081",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5081.webp"
+  },
+  {
+   "number": "RG 5083",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5083.webp"
+  },
+  {
+   "number": "RG 5084",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5084.webp"
+  },
+  {
+   "number": "RG 5087",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5087.webp"
+  },
+  {
+   "number": "RG 5088",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5088.webp"
+  },
+  {
+   "number": "RG 5093",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5093.webp"
+  },
+  {
+   "number": "RG 5094",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5094.webp"
+  },
+  {
+   "number": "RG 5095",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5095.webp"
+  },
+  {
+   "number": "RG 5201",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5201.webp"
+  },
+  {
+   "number": "RG 5202",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5202.webp"
+  },
+  {
+   "number": "RG 5203",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5203.webp"
+  },
+  {
+   "number": "RG 5204",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5204.webp"
+  },
+  {
+   "number": "RG 5207",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5207.webp"
+  },
+  {
+   "number": "RG 5208",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5208.webp"
+  },
+  {
+   "number": "RG 5209",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5209.webp"
+  },
+  {
+   "number": "RG 5210",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5210.webp"
+  },
+  {
+   "number": "RG 5211",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5211.webp"
+  },
+  {
+   "number": "RG 5214",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5214.webp"
+  },
+  {
+   "number": "RG 5215",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5215.webp"
+  },
+  {
+   "number": "RG 5221",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5221.webp"
+  },
+  {
+   "number": "RG 5222",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5222.webp"
+  },
+  {
+   "number": "RG 5223",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5223.webp"
+  },
+  {
+   "number": "RG 5225",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5225.webp"
+  },
+  {
+   "number": "RG 5226",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5226.webp"
+  },
+  {
+   "number": "RG 5227",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5227.webp"
+  },
+  {
+   "number": "RG 5228",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5228.webp"
+  },
+  {
+   "number": "RG 5229",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5229.webp"
+  },
+  {
+   "number": "RG 5231",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5231.webp"
+  },
+  {
+   "number": "RG 5232",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5232.webp"
+  },
+  {
+   "number": "RG 5233",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5233.webp"
+  },
+  {
+   "number": "RG 5234",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5234.webp"
+  },
+  {
+   "number": "RG 5235",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5235.webp"
+  },
+  {
+   "number": "RG 5236",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5236.webp"
+  },
+  {
+   "number": "RG 5237",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5237.webp"
+  },
+  {
+   "number": "RG 5238",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5238.webp"
+  },
+  {
+   "number": "RG 5239",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5239.webp"
+  },
+  {
+   "number": "RG 5240",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5240.webp"
+  },
+  {
+   "number": "RG 5241",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5241.webp"
+  },
+  {
+   "number": "RG 5242",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5242.webp"
+  },
+  {
+   "number": "RG 5243",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5243.webp"
+  },
+  {
+   "number": "RG 5244",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5244.webp"
+  },
+  {
+   "number": "RG 5245",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5245.webp"
+  },
+  {
+   "number": "RG 5246",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5246.webp"
+  },
+  {
+   "number": "RG 5247",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5247.webp"
+  },
+  {
+   "number": "RG 5248",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5248.webp"
+  },
+  {
+   "number": "RG 5249",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5249.webp"
+  },
+  {
+   "number": "RG 5250",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5250.webp"
+  },
+  {
+   "number": "RG 5251",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5251.webp"
+  },
+  {
+   "number": "RG 5252",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5252.webp"
+  },
+  {
+   "number": "RG 5253",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5253.webp"
+  },
+  {
+   "number": "RG 5254",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5254.webp"
+  },
+  {
+   "number": "RG 5255",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5255.webp"
+  },
+  {
+   "number": "RG 5256",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5256.webp"
+  },
+  {
+   "number": "RG 5257",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5257.webp"
+  },
+  {
+   "number": "RG 5258",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5258.webp"
+  },
+  {
+   "number": "RG 5259",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5259.webp"
+  },
+  {
+   "number": "RG 5260-",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5260.webp"
+  },
+  {
+   "number": "RG 5260",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5260.webp"
+  },
+  {
+   "number": "RG 5261",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5261.webp"
+  },
+  {
+   "number": "RG 5262",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5262.webp"
+  },
+  {
+   "number": "RG 5263",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5263.webp"
+  },
+  {
+   "number": "RG 5264",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5264.webp"
+  },
+  {
+   "number": "RG 5265",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5265.webp"
+  },
+  {
+   "number": "RG 5266",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5266.webp"
+  },
+  {
+   "number": "RG 5267",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5267.webp"
+  },
+  {
+   "number": "RG 5268",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5268.webp"
+  },
+  {
+   "number": "RG 5269",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5269.webp"
+  },
+  {
+   "number": "RG 5270",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5270.webp"
+  },
+  {
+   "number": "RG 5271",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5271.webp"
+  },
+  {
+   "number": "RG 5272",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5272.webp"
+  },
+  {
+   "number": "RG 5273",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5273.webp"
+  },
+  {
+   "number": "RG 5274",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5274.webp"
+  },
+  {
+   "number": "RG 5275",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5275.webp"
+  },
+  {
+   "number": "RG 5276",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5276.webp"
+  },
+  {
+   "number": "RG 5277",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5277.webp"
+  },
+  {
+   "number": "RG 5278",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5278.webp"
+  },
+  {
+   "number": "RG 5279",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5279.webp"
+  },
+  {
+   "number": "RG 5281",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5281.webp"
+  },
+  {
+   "number": "RG 5283",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5283.webp"
+  },
+  {
+   "number": "RG 5284",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5284.webp"
+  },
+  {
+   "number": "RG 5285",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5285.webp"
+  },
+  {
+   "number": "RG 5286",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5286.webp"
+  },
+  {
+   "number": "RG 5287",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5287.webp"
+  },
+  {
+   "number": "RG 5288",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5288.webp"
+  },
+  {
+   "number": "RG 5289",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5289.webp"
+  },
+  {
+   "number": "RG 5290",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5290.webp"
+  },
+  {
+   "number": "RG 5330",
+   "family": "groove-earth",
+   "image": "/images/swatches/groove-earth/rg-5330.webp"
+  },
+  {
+   "number": "RG 8008",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8008.webp"
+  },
+  {
+   "number": "RG 8007",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8007.webp"
+  },
+  {
+   "number": "RG 8006",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8006.webp"
+  },
+  {
+   "number": "RG 8005",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8005.webp"
+  },
+  {
+   "number": "RG 8004",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8004.webp"
+  },
+  {
+   "number": "RG 8003",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8003.webp"
+  },
+  {
+   "number": "RG 8002",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8002.webp"
+  },
+  {
+   "number": "RG 8001",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8001.webp"
+  },
+  {
+   "number": "RG 7031",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7031.webp"
+  },
+  {
+   "number": "RG 7030",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7030.webp"
+  },
+  {
+   "number": "RG 7029",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7029.webp"
+  },
+  {
+   "number": "RG 7028",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7028.webp"
+  },
+  {
+   "number": "RG 7027",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7027.webp"
+  },
+  {
+   "number": "RG 7026",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7026.webp"
+  },
+  {
+   "number": "RG 7025",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7025.webp"
+  },
+  {
+   "number": "RG 7024",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7024.webp"
+  },
+  {
+   "number": "RG 7023",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7023.webp"
+  },
+  {
+   "number": "RG 7022",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7022.webp"
+  },
+  {
+   "number": "RG 7021",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7021.webp"
+  },
+  {
+   "number": "RG 7020",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7020.webp"
+  },
+  {
+   "number": "RG 7019",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7019.webp"
+  },
+  {
+   "number": "RG 7018",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7018.webp"
+  },
+  {
+   "number": "RG 7017",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7017.webp"
+  },
+  {
+   "number": "RG 7016",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7016.webp"
+  },
+  {
+   "number": "RG 7015",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7015.webp"
+  },
+  {
+   "number": "RG 7014",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7014.webp"
+  },
+  {
+   "number": "RG 7013",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7013.webp"
+  },
+  {
+   "number": "RG 7012",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7012.webp"
+  },
+  {
+   "number": "RG 7009",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7009.webp"
+  },
+  {
+   "number": "RG 7008",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7008.webp"
+  },
+  {
+   "number": "RG 7007",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7007.webp"
+  },
+  {
+   "number": "RG 7006",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7006.webp"
+  },
+  {
+   "number": "RG 7002",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7002.webp"
+  },
+  {
+   "number": "RG 7001",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7001.webp"
+  },
+  {
+   "number": "RG 8008",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8008.webp"
+  },
+  {
+   "number": "RG 8007",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8007.webp"
+  },
+  {
+   "number": "RG 8006",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8006.webp"
+  },
+  {
+   "number": "RG 8005",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8005.webp"
+  },
+  {
+   "number": "RG 8004",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8004.webp"
+  },
+  {
+   "number": "RG 8003",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8003.webp"
+  },
+  {
+   "number": "RG 8002",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8002.webp"
+  },
+  {
+   "number": "RG 8001",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-8001.webp"
+  },
+  {
+   "number": "RG 7031",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7031.webp"
+  },
+  {
+   "number": "RG 7030",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7030.webp"
+  },
+  {
+   "number": "RG 7029",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7029.webp"
+  },
+  {
+   "number": "RG 7028",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7028.webp"
+  },
+  {
+   "number": "RG 7027",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7027.webp"
+  },
+  {
+   "number": "RG 7026",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7026.webp"
+  },
+  {
+   "number": "RG 7025",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7025.webp"
+  },
+  {
+   "number": "RG 7024",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7024.webp"
+  },
+  {
+   "number": "RG 7023",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7023.webp"
+  },
+  {
+   "number": "RG 7022",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7022.webp"
+  },
+  {
+   "number": "RG 7021",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7021.webp"
+  },
+  {
+   "number": "RG 7020",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7020.webp"
+  },
+  {
+   "number": "RG 7019",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7019.webp"
+  },
+  {
+   "number": "RG 7018",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7018.webp"
+  },
+  {
+   "number": "RG 7017",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7017.webp"
+  },
+  {
+   "number": "RG 7016",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7016.webp"
+  },
+  {
+   "number": "RG 7015",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7015.webp"
+  },
+  {
+   "number": "RG 7014",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7014.webp"
+  },
+  {
+   "number": "RG 7013",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7013.webp"
+  },
+  {
+   "number": "RG 7012",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7012.webp"
+  },
+  {
+   "number": "RG 7009",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7009.webp"
+  },
+  {
+   "number": "RG 7008",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7008.webp"
+  },
+  {
+   "number": "RG 7007",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7007.webp"
+  },
+  {
+   "number": "RG 7006",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7006.webp"
+  },
+  {
+   "number": "RG 7002",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7002.webp"
+  },
+  {
+   "number": "RG 7001",
+   "family": "groove-forest",
+   "image": "/images/swatches/groove-forest/rg-7001.webp"
+  },
+  {
+   "number": "RG 5330",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5330.webp"
+  },
+  {
+   "number": "RG 5279",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5279.webp"
+  },
+  {
+   "number": "RG 5278",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5278.webp"
+  },
+  {
+   "number": "RG 5277",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5277.webp"
+  },
+  {
+   "number": "RG 5276",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5276.webp"
+  },
+  {
+   "number": "RG 5275",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5275.webp"
+  },
+  {
+   "number": "RG 5274",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5274.webp"
+  },
+  {
+   "number": "RG 5273",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5273.webp"
+  },
+  {
+   "number": "RG 5272",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5272.webp"
+  },
+  {
+   "number": "RG 5271",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5271.webp"
+  },
+  {
+   "number": "RG 5270",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5270.webp"
+  },
+  {
+   "number": "RG 5269",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5269.webp"
+  },
+  {
+   "number": "RG 5268",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5268.webp"
+  },
+  {
+   "number": "RG 5254",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5254.webp"
+  },
+  {
+   "number": "RG 5253",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5253.webp"
+  },
+  {
+   "number": "RG 5252",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5252.webp"
+  },
+  {
+   "number": "RG 5251",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5251.webp"
+  },
+  {
+   "number": "RG 5250",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5250.webp"
+  },
+  {
+   "number": "RG 5249",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5249.webp"
+  },
+  {
+   "number": "RG 5248",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5248.webp"
+  },
+  {
+   "number": "RG 5247",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5247.webp"
+  },
+  {
+   "number": "RG 5246",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5246.webp"
+  },
+  {
+   "number": "RG 5245",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5245.webp"
+  },
+  {
+   "number": "RG 5244",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5244.webp"
+  },
+  {
+   "number": "RG 5243",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5243.webp"
+  },
+  {
+   "number": "RG 5242",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5242.webp"
+  },
+  {
+   "number": "RG 5241",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5241.webp"
+  },
+  {
+   "number": "RG 5240",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5240.webp"
+  },
+  {
+   "number": "RG 5239",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5239.webp"
+  },
+  {
+   "number": "RG 5238",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5238.webp"
+  },
+  {
+   "number": "RG 5237",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5237.webp"
+  },
+  {
+   "number": "RG 5236",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5236.webp"
+  },
+  {
+   "number": "RG 5235",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5235.webp"
+  },
+  {
+   "number": "RG 5234",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5234.webp"
+  },
+  {
+   "number": "RG 5233",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5233.webp"
+  },
+  {
+   "number": "RG 5232",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5232.webp"
+  },
+  {
+   "number": "RG 5231",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5231.webp"
+  },
+  {
+   "number": "RG 5228",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5228.webp"
+  },
+  {
+   "number": "RG 5221",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5221.webp"
+  },
+  {
+   "number": "RG 5215",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5215.webp"
+  },
+  {
+   "number": "RG 5211",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5211.webp"
+  },
+  {
+   "number": "RG 5210",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5210.webp"
+  },
+  {
+   "number": "RG 5094",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5094.webp"
+  },
+  {
+   "number": "RG 5087",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5087.webp"
+  },
+  {
+   "number": "RG 5081",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5081.webp"
+  },
+  {
+   "number": "RG 5074",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5074.webp"
+  },
+  {
+   "number": "RG 5023",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5023.webp"
+  },
+  {
+   "number": "RG 5021",
+   "family": "groove-pastel",
+   "image": "/images/swatches/groove-pastel/rg-5021.webp"
+  },
+  {
+   "number": "RM_6095",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6095.webp"
+  },
+  {
+   "number": "RM_6097",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6097.webp"
+  },
+  {
+   "number": "RM 8024",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8024.webp"
+  },
+  {
+   "number": "RM 8023",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8023.webp"
+  },
+  {
+   "number": "RM 8022",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8022.webp"
+  },
+  {
+   "number": "RM 8021",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8021.webp"
+  },
+  {
+   "number": "RM 6040",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6040.webp"
+  },
+  {
+   "number": "RM 6038",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6038.webp"
+  },
+  {
+   "number": "RM 6039",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6039.webp"
+  },
+  {
+   "number": "RM 6037",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6037.webp"
+  },
+  {
+   "number": "RM 6036",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6036.webp"
+  },
+  {
+   "number": "RM 6035",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6035.webp"
+  },
+  {
+   "number": "RM 6033",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6033.webp"
+  },
+  {
+   "number": "RM 6034",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6034.webp"
+  },
+  {
+   "number": "RM 6032",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6032.webp"
+  },
+  {
+   "number": "RM 6030",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6030.webp"
+  },
+  {
+   "number": "RM 6031",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6031.webp"
+  },
+  {
+   "number": "RM 8106",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8106.webp"
+  },
+  {
+   "number": "RM 8105",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8105.webp"
+  },
+  {
+   "number": "RM 8103",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8103.webp"
+  },
+  {
+   "number": "RM 8101",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8101.webp"
+  },
+  {
+   "number": "RM 8020",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8020.webp"
+  },
+  {
+   "number": "RM 8019",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8019.webp"
+  },
+  {
+   "number": "RM 8018",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8018.webp"
+  },
+  {
+   "number": "RM 8017",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8017.webp"
+  },
+  {
+   "number": "RM 8016",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8016.webp"
+  },
+  {
+   "number": "RM 8015",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8015.webp"
+  },
+  {
+   "number": "RM 8014",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8014.webp"
+  },
+  {
+   "number": "RM 8013",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8013.webp"
+  },
+  {
+   "number": "RM 8012",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8012.webp"
+  },
+  {
+   "number": "RM 8011",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8011.webp"
+  },
+  {
+   "number": "RM 8010",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8010.webp"
+  },
+  {
+   "number": "RM 8009",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8009.webp"
+  },
+  {
+   "number": "RM 8008",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8008.webp"
+  },
+  {
+   "number": "RM 8007",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8007.webp"
+  },
+  {
+   "number": "RM 8006",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8006.webp"
+  },
+  {
+   "number": "RM 8005",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8005.webp"
+  },
+  {
+   "number": "RM 8004",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8004.webp"
+  },
+  {
+   "number": "RM 8003",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8003.webp"
+  },
+  {
+   "number": "RM 8002",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8002.webp"
+  },
+  {
+   "number": "RM 8001",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-8001.webp"
+  },
+  {
+   "number": "RM 6406",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6406.webp"
+  },
+  {
+   "number": "RM 6405",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6405.webp"
+  },
+  {
+   "number": "RM 6404",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6404.webp"
+  },
+  {
+   "number": "RM 6403",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6403.webp"
+  },
+  {
+   "number": "RM 6402",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6402.webp"
+  },
+  {
+   "number": "RM 6401",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6401.webp"
+  },
+  {
+   "number": "RM 6125",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6125.webp"
+  },
+  {
+   "number": "RM 6124",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6124.webp"
+  },
+  {
+   "number": "RM 6123",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6123.webp"
+  },
+  {
+   "number": "RM 6122",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6122.webp"
+  },
+  {
+   "number": "RM 6121",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6121.webp"
+  },
+  {
+   "number": "RM 6119",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6119.webp"
+  },
+  {
+   "number": "RM 6118",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6118.webp"
+  },
+  {
+   "number": "RM 6116",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6116.webp"
+  },
+  {
+   "number": "RM 6115",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6115.webp"
+  },
+  {
+   "number": "RM 6114",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6114.webp"
+  },
+  {
+   "number": "RM 6113",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6113.webp"
+  },
+  {
+   "number": "RM 6112",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6112.webp"
+  },
+  {
+   "number": "RM 6111",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6111.webp"
+  },
+  {
+   "number": "RM 6110",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6110.webp"
+  },
+  {
+   "number": "RM 6109",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6109.webp"
+  },
+  {
+   "number": "RM 6108",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6108.webp"
+  },
+  {
+   "number": "RM 6107",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6107.webp"
+  },
+  {
+   "number": "RM 6029",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6029.webp"
+  },
+  {
+   "number": "RM 6028",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6028.webp"
+  },
+  {
+   "number": "RM 6027",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6027.webp"
+  },
+  {
+   "number": "RM 6026",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6026.webp"
+  },
+  {
+   "number": "RM 6025",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6025.webp"
+  },
+  {
+   "number": "RM 6024",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6024.webp"
+  },
+  {
+   "number": "RM 6023",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6023.webp"
+  },
+  {
+   "number": "RM 6022",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6022.webp"
+  },
+  {
+   "number": "RM 6021",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6021.webp"
+  },
+  {
+   "number": "RM 6020",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6020.webp"
+  },
+  {
+   "number": "RM 6019",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6019.webp"
+  },
+  {
+   "number": "RM 6018",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6018.webp"
+  },
+  {
+   "number": "RM 6017",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6017.webp"
+  },
+  {
+   "number": "RM 6016",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6016.webp"
+  },
+  {
+   "number": "RM 6015",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6015.webp"
+  },
+  {
+   "number": "RM 6013",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6013.webp"
+  },
+  {
+   "number": "RM 6012",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6012.webp"
+  },
+  {
+   "number": "RM 6011",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6011.webp"
+  },
+  {
+   "number": "RM 6010",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6010.webp"
+  },
+  {
+   "number": "RM 4044",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4044.webp"
+  },
+  {
+   "number": "RM 4043",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4043.webp"
+  },
+  {
+   "number": "RM 4042",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4042.webp"
+  },
+  {
+   "number": "RM 4041",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4041.webp"
+  },
+  {
+   "number": "RM 4040",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4040.webp"
+  },
+  {
+   "number": "RM 4039",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4039.webp"
+  },
+  {
+   "number": "RM 4038",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4038.webp"
+  },
+  {
+   "number": "RM 4037",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4037.webp"
+  },
+  {
+   "number": "RM 4036",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4036.webp"
+  },
+  {
+   "number": "RM 4035",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4035.webp"
+  },
+  {
+   "number": "RM 4034",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4034.webp"
+  },
+  {
+   "number": "RM 4033",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4033.webp"
+  },
+  {
+   "number": "RM 4032",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4032.webp"
+  },
+  {
+   "number": "RM 4031",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4031.webp"
+  },
+  {
+   "number": "RM 4030",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4030.webp"
+  },
+  {
+   "number": "RM 4022",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4022.webp"
+  },
+  {
+   "number": "RM 4019",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4019.webp"
+  },
+  {
+   "number": "RM 4018",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4018.webp"
+  },
+  {
+   "number": "RM 4017",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4017.webp"
+  },
+  {
+   "number": "RM 4016",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4016.webp"
+  },
+  {
+   "number": "RM 4015",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4015.webp"
+  },
+  {
+   "number": "RM 4014",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4014.webp"
+  },
+  {
+   "number": "RM 4013",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4013.webp"
+  },
+  {
+   "number": "RM 4003",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4003.webp"
+  },
+  {
+   "number": "RM 6104",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6104.webp"
+  },
+  {
+   "number": "RM 6103",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6103.webp"
+  },
+  {
+   "number": "RM 6102",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6102.webp"
+  },
+  {
+   "number": "RM 6101",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6101.webp"
+  },
+  {
+   "number": "RM 6008",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6008.webp"
+  },
+  {
+   "number": "RM 6007",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6007.webp"
+  },
+  {
+   "number": "RM 6001",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-6001.webp"
+  },
+  {
+   "number": "RM 4029",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4029.webp"
+  },
+  {
+   "number": "RM 4027",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4027.webp"
+  },
+  {
+   "number": "RM 4026",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4026.webp"
+  },
+  {
+   "number": "RM 4025",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4025.webp"
+  },
+  {
+   "number": "RM 4023",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4023.webp"
+  },
+  {
+   "number": "RM 4012",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4012.webp"
+  },
+  {
+   "number": "RM 4021",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4021.webp"
+  },
+  {
+   "number": "RM 4011",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4011.webp"
+  },
+  {
+   "number": "RM 4020",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4020.webp"
+  },
+  {
+   "number": "RM 4010",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4010.webp"
+  },
+  {
+   "number": "RM 4009",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4009.webp"
+  },
+  {
+   "number": "RM 4006",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4006.webp"
+  },
+  {
+   "number": "RM 4005",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4005.webp"
+  },
+  {
+   "number": "RM 4002",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4002.webp"
+  },
+  {
+   "number": "RM 4001",
+   "family": "maskara",
+   "image": "/images/swatches/maskara/rm-4001.webp"
+  }
+ ]
+}

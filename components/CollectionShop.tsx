@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Search, SlidersHorizontal } from "lucide-react";
 import { useMemo, useState } from "react";
 import { products } from "@/data/site";
+import { collectionInfo } from "@/data/content";
 
 type Category = "Laminates" | "Louvers" | "Panels";
 const productCategories: Record<string, Category> = {
@@ -52,8 +53,8 @@ export function CollectionShop({ base }: { base: string }) {
 
     {visibleProducts.length ? <div className="collection-shop-grid">
       {visibleProducts.map((product, index) => <Link className="shop-product-card" href={`${base}/product/${product.slug}`} key={product.slug}>
-        <div className="shop-product-image"><Image src={product.image} alt={`${product.name} decorative surface collection`} fill sizes="(max-width: 620px) 88vw, (max-width: 980px) 45vw, 30vw"/><span className="shop-product-number">{String(index + 1).padStart(2, "0")}</span><span className="shop-product-badge">{productCategories[product.slug]}</span><span className="shop-product-action" aria-hidden="true"><ArrowUpRight size={18}/></span></div>
-        <div className="shop-product-info"><div><span className="shop-product-kicker">RANG DÉCOR · SIGNATURE COLLECTION</span><h2>{product.name}</h2><p>{product.caption}</p></div><ArrowRight className="shop-product-arrow" size={17}/></div>
+        <div className="shop-product-image"><Image src={product.image} alt={`${product.name} decorative surface collection`} fill sizes="(max-width: 620px) 88vw, (max-width: 980px) 45vw, 30vw"/><span className="shop-product-number">{String(index + 1).padStart(2, "0")}</span><span className="shop-product-badge">{productCategories[product.slug]}</span><span className="shop-product-action" aria-hidden="true"><ArrowUpRight size={24}/></span></div>
+        <div className="shop-product-info"><div><span className="shop-product-kicker">RANG DÉCOR · SIGNATURE COLLECTION</span><h2>{product.name}</h2><p className="shop-product-caption">{product.caption}</p><p className="shop-product-about">{collectionInfo[product.name]}</p></div><ArrowRight className="shop-product-arrow" size={24}/></div>
       </Link>)}
     </div> : <div className="shop-empty-state"><span>No matching surfaces</span><p>Try another name or choose a different category.</p><button type="button" onClick={() => { setQuery(""); setActiveFilter("All collections"); }}>Clear filters</button></div>}
   </section>;

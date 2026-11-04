@@ -49,7 +49,7 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
           {["Bern Thermo Lam", "Faded", "ONIT", "Groove Forest", "Maskara"].map(name => <Link key={name} href={`${base}/catalogue`} onClick={closeMenu}>{name}<ArrowRight size={12}/></Link>)}
         </div>
       </div>
-      <a href="#" onClick={closeMenu}>Visualizer</a>
+      <Link href={`${base}/visualizer/living-room`} onClick={closeMenu}>Visualizer</Link>
       <div className="nav-group">
         <button className="nav-trigger" aria-expanded={activeDropdown === "gallery"} aria-controls="gallery-menu" onClick={() => toggleDropdown("gallery")}>Gallery <ArrowDown size={12}/></button>
         <div id="gallery-menu" className={`nav-popover ${activeDropdown === "gallery" ? "nav-popover-open" : ""}`}>
@@ -58,6 +58,8 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
       </div>
       <Link href={`${base}/about#approach`} onClick={closeMenu}>Our Approach</Link>
       <Link href={`${base}/about#network`} onClick={closeMenu}>Our Network</Link>
+      <Link href={`${base}/testimonials`} onClick={closeMenu}>Testimonials</Link>
+      <Link href={`${base}/careers`} onClick={closeMenu}>Careers</Link>
       <Link href={`${base}/contact`} className="nav-contact" onClick={closeMenu}>Contact <ArrowRight size={13}/></Link>
     </nav>
     <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-controls="rang-main-nav" aria-expanded={open} onClick={() => updateMenu({ open: !open })}>{open ? <X/> : <Menu/>}</button>
@@ -117,8 +119,8 @@ export function Footer({ direction = "01-editorial" }: { direction?: string }) {
       <Link className="footer-enquire" href={`${base}/contact`}>Begin a conversation <ArrowRight size={16}/></Link>
     </div>
     <div className="footer-bottom">
-      <div><span>Explore</span><Link href={`${base}/collections`}>Collections</Link><Link href={`${base}/catalogue`}>Catalogue library</Link><a href="#">Visualizer</a></div>
-      <div><span>Rang Décor</span><Link href={`${base}/about`}>About</Link><Link href={`${base}/about#network`}>Our Network</Link><Link href={`${base}/contact`}>Contact</Link></div>
+      <div><span>Explore</span><Link href={`${base}/collections`}>Collections</Link><Link href={`${base}/catalogue`}>Catalogue library</Link><Link href={`${base}/visualizer/living-room`}>Visualizer</Link></div>
+      <div><span>Rang Décor</span><Link href={`${base}/about`}>About</Link><Link href={`${base}/about#network`}>Our Network</Link><Link href={`${base}/testimonials`}>Testimonials</Link><Link href={`${base}/careers`}>Careers</Link><Link href={`${base}/contact`}>Contact</Link></div>
       <div><span>Find us</span><a href="mailto:info@rangdecor.in">info@rangdecor.in</a><a href="tel:+918297585000">+91 8297 585 000</a><p>14-1-395/1, New Aghapura Rd,<br/>Hyderabad, Telangana, India</p><div className="footer-social"><a href="#" aria-label="Instagram"><Instagram size={17}/><span>Instagram</span></a><a href="#" aria-label="Facebook"><Facebook size={17}/><span>Facebook</span></a><a href="#" aria-label="LinkedIn"><Linkedin size={17}/><span>LinkedIn</span></a></div></div>
     </div>
     <div className="footer-legal"><span>© Rang Décor · Let’s Live Beautiful</span><div><a href="#">Privacy</a><a href="#">Terms</a></div><span>Designed &amp; developed by Karya Graphito</span></div>
