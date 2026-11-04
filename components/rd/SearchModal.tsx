@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, X, ArrowUpRight } from "lucide-react";
 import { catalog } from "@/data/catalog";
+import { Smoke } from "./Smoke";
 import { byId, collections } from "@/data/rang";
 
 type Hit = { id: string; title: string; sub?: string; href: string; img?: string; group: "Pages" | "Collections" | "Product codes" };
@@ -54,6 +55,7 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
 
   let lastGroup = "";
   return <div className="rd-search-wrap" role="dialog" aria-modal="true" aria-label="Search" onMouseDown={e => { if (e.target === e.currentTarget) onClose(); }} onKeyDown={onKey}>
+    <Smoke/>
     <div className="rd-search-box">
       <div className="top">
         <Search size={20} aria-hidden="true"/>

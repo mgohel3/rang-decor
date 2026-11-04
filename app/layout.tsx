@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   icons: { icon: "/images/bhandari-group.svg", shortcut: "/images/bhandari-group.svg", apple: "/images/bhandari-group.svg" },
 };
 
-export const viewport: Viewport = { themeColor: "#F7F5F0", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#FFFFFF", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en-IN" className={`${display.variable} ${sans.variable}`}><body>{children}</body></html>;

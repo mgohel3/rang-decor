@@ -506,18 +506,18 @@ body{margin:0;background:#F7F5F0}
 
 /* Lead / catalogue modal: dark glass over a blurred page */
 .rd-lead-wrap{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:1rem;overflow:auto;background:rgba(28,27,26,.55);backdrop-filter:blur(12px);animation:rdIn .35s var(--ease) both}
-.rd-lead{position:relative;width:min(100%,30rem);padding:clamp(1.5rem,4vw,2.4rem);border-radius:24px;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(28,27,26,.58) 60%,rgba(28,27,26,.45));backdrop-filter:blur(36px) saturate(1.8);box-shadow:0 40px 90px rgba(0,0,0,.45)}
-.rd-lead h2{font-size:clamp(2rem,5vw,2.8rem);line-height:1;color:#fff;margin-bottom:.8rem}
-.rd-lead h2 em{font-style:italic;color:#FFB3D9}
-.rd-lead>p,.rd-lead .done>p{color:#efe8de;line-height:1.7;font-size:.95rem}
-.rd-lead form{display:grid;gap:.8rem;margin-top:1.3rem}
-.rd-lead .rd-field{color:#fff;gap:.35rem}
-.rd-lead .rd-field input,.rd-lead .rd-field select{height:3rem;padding:0 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;font:500 .95rem var(--sans)}
-.rd-lead .rd-field select option{color:var(--ink)}
-.rd-lead .rd-field input:focus,.rd-lead .rd-field select:focus{outline:2px solid var(--teal);outline-offset:1px;background:rgba(255,255,255,.22)}
-.rd-lead .rd-field input[aria-invalid="true"]{border-color:#FFB3D9}
-.rd-lead .rd-field .err{color:#FFB3D9;min-height:.9rem;font-size:.8rem}
-.rd-lead .fine{font-size:.75rem;color:#d8cdbf;text-align:center;margin:0}
+.rd-leadbox{position:relative;width:min(100%,30rem);padding:clamp(1.5rem,4vw,2.4rem);border-radius:24px;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(28,27,26,.58) 60%,rgba(28,27,26,.45));backdrop-filter:blur(36px) saturate(1.8);box-shadow:0 40px 90px rgba(0,0,0,.45)}
+.rd-leadbox h2{font-size:clamp(2rem,5vw,2.8rem);line-height:1;color:#fff;margin-bottom:.8rem}
+.rd-leadbox h2 em{font-style:italic;color:#FFB3D9}
+.rd-leadbox>p,.rd-leadbox .done>p{color:#efe8de;line-height:1.7;font-size:.95rem}
+.rd-leadbox form{display:grid;gap:.8rem;margin-top:1.3rem}
+.rd-leadbox .rd-field{color:#fff;gap:.35rem}
+.rd-leadbox .rd-field input,.rd-leadbox .rd-field select{height:3rem;padding:0 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;font:500 .95rem var(--sans)}
+.rd-leadbox .rd-field select option{color:var(--ink)}
+.rd-leadbox .rd-field input:focus,.rd-leadbox .rd-field select:focus{outline:2px solid var(--teal);outline-offset:1px;background:rgba(255,255,255,.22)}
+.rd-leadbox .rd-field input[aria-invalid="true"]{border-color:#FFB3D9}
+.rd-leadbox .rd-field .err{color:#FFB3D9;min-height:.9rem;font-size:.8rem}
+.rd-leadbox .fine{font-size:.75rem;color:#d8cdbf;text-align:center;margin:0}
 .rd-lead-x{position:absolute;top:1rem;right:1rem;width:2.25rem;height:2.25rem;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;display:grid;place-items:center}
 .rd-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
 
@@ -553,3 +553,27 @@ body{margin:0;background:#F7F5F0}
 .rd-guide h3{font-size:1.7rem;margin-bottom:.5rem}
 .rd-guide p{line-height:1.75;color:var(--body);font-size:.95rem}
 .rd-guide p a{color:var(--magenta-ink);text-decoration:underline;text-underline-offset:3px}
+
+
+/* ---- Round 3: pure white page; popups and search use the same white glass as the footer panel ---- */
+.rd{--ivory:#FFFFFF;--gap:clamp(3rem,6vw,5rem)}
+body{background:#FFFFFF}
+.rd-search-wrap,.rd-lead-wrap{background:radial-gradient(45% 55% at 14% 105%,rgba(224,16,128,.34),transparent 70%),radial-gradient(40% 50% at 50% 112%,rgba(242,169,0,.3),transparent 70%),radial-gradient(45% 55% at 88% 105%,rgba(0,176,128,.32),transparent 70%),rgba(255,255,255,.52);backdrop-filter:blur(16px)}
+.rd-search-box,.rd-leadbox{position:relative;z-index:1;background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.22) 52%,rgba(255,255,255,.42));backdrop-filter:blur(42px) saturate(2.4) brightness(1.1);box-shadow:0 40px 90px rgba(28,27,26,.2),0 3px 8px rgba(28,27,26,.08);color:var(--ink)}
+.rd-leadbox{width:min(100%,30rem);padding:clamp(1.5rem,4vw,2.4rem);border-radius:24px}
+.rd-leadbox h2{color:var(--ink)}
+.rd-leadbox h2 em{color:transparent}
+.rd-leadbox>p,.rd-leadbox .done>p{color:var(--body)}
+.rd-leadbox .rd-field{color:var(--ink)}
+.rd-leadbox .rd-field input,.rd-leadbox .rd-field select{border:1px solid rgba(28,27,26,.14);background:rgba(255,255,255,.72);color:var(--ink)}
+.rd-leadbox .rd-field select option{color:var(--ink)}
+.rd-leadbox .rd-field input:focus,.rd-leadbox .rd-field select:focus{background:#fff}
+.rd-leadbox .rd-field input[aria-invalid="true"]{border-color:var(--magenta-ink)}
+.rd-leadbox .rd-field .err{color:var(--magenta-ink)}
+.rd-leadbox .fine{color:var(--grey-ink)}
+.rd-lead-x{background:rgba(28,27,26,.08);color:var(--ink)}
+.rd-search-box li button.on{background:rgba(255,255,255,.85)}
+/* product page: tighter rhythm */
+.rd-page .rd-about-prod,.rd-page>section{margin-top:var(--gap)!important}
+.rd-prod{margin-top:1.25rem}
+.rd-about-prod .rd-lead{margin-top:.8rem}

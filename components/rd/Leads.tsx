@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
+import { Smoke } from "./Smoke";
 
 type Mode = { kind: "popup" } | { kind: "catalogue"; name: string; pdf: string };
 type Ctx = { openCatalogue: (name: string, pdf: string) => void; openLead: () => void };
@@ -93,19 +94,20 @@ function LeadModal({ mode, onClose }: { mode: Mode; onClose: () => void }) {
   };
 
   return <div className="rd-lead-wrap" role="dialog" aria-modal="true" aria-labelledby="lead-title" onMouseDown={e => { if (e.target === e.currentTarget) onClose(); }}>
-    <div className="rd-lead">
+    <Smoke/>
+    <div className="rd-leadbox">
       <button className="rd-lead-x" onClick={onClose} aria-label="Close"><X size={20}/></button>
       {done ? <div className="done">
-        <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>Thank you</div>
-        <h2 id="lead-title">{catalogue ? <>Your {mode.name} catalogue is <em>on its way.</em></> : <>We will be <em>in touch.</em></>}</h2>
+        <div className="rd-eyebrow">Thank you</div>
+        <h2 id="lead-title">{catalogue ? <>Your {mode.name} catalogue is <em className="grad">on its way.</em></> : <>We will be <em className="grad">in touch.</em></>}</h2>
         <p>{catalogue ? "If the download did not start, use the button below." : "A member of the Rang team will reach out soon."}</p>
         <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginTop: "1.4rem" }}>
-          {catalogue && <a className="rd-btn light" href={mode.pdf} target="_blank" rel="noopener noreferrer">Open the PDF</a>}
-          <button className="rd-btn glass" onClick={onClose}>Close</button>
+          {catalogue && <a className="rd-btn dark" href={mode.pdf} target="_blank" rel="noopener noreferrer">Open the PDF</a>}
+          <button className="rd-btn outline" onClick={onClose}>Close</button>
         </div>
       </div> : <>
-        <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>{catalogue ? "Catalogue download" : "Stay in touch"}</div>
-        <h2 id="lead-title">{catalogue ? <>Get the {mode.name} <em>catalogue.</em></> : <>Let’s plan your <em>space.</em></>}</h2>
+        <div className="rd-eyebrow">{catalogue ? "Catalogue download" : "Stay in touch"}</div>
+        <h2 id="lead-title">{catalogue ? <>Get the {mode.name} <em className="grad">catalogue.</em></> : <>Let’s plan your <em className="grad">space.</em></>}</h2>
         <p>{catalogue ? "Tell us who you are and the PDF opens right away." : "Share your details and the Rang team will help you choose finishes, samples and a catalogue."}</p>
         <form onSubmit={submit} noValidate>
           <label className="rd-field">Name<input ref={first} value={f.name} onChange={set("name")} autoComplete="name" aria-invalid={!!err.name}/><span className="err">{err.name}</span></label>
@@ -113,7 +115,7 @@ function LeadModal({ mode, onClose }: { mode: Mode; onClose: () => void }) {
           <label className="rd-field">Phone<input type="tel" value={f.phone} onChange={set("phone")} autoComplete="tel" aria-invalid={!!err.phone}/><span className="err">{err.phone}</span></label>
           <label className="rd-field">I am a<select value={f.role} onChange={set("role")}>{roles.map(r => <option key={r}>{r}</option>)}</select></label>
           <input className="rd-hp" tabIndex={-1} autoComplete="off" aria-hidden="true" value={f.company} onChange={set("company")}/>
-          <button type="submit" className="rd-btn light" disabled={busy} data-drop="btn" style={{ width: "100%", minHeight: "3.4rem" }}>{busy ? "Sending…" : catalogue ? "Download catalogue" : "Send my details"}</button>
+          <button type="submit" className="rd-btn dark" disabled={busy} data-drop="btn" style={{ width: "100%", minHeight: "3.4rem" }}>{busy ? "Sending…" : catalogue ? "Download catalogue" : "Send my details"}</button>
           <p className="fine">We use your details only to reply to you and share Rang updates.</p>
         </form>
       </>}
