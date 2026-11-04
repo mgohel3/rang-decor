@@ -55,9 +55,10 @@ export function Header() {
         </div>
       </div>
 
-      <div className={`rd-mega ${menu ? "open" : ""}`} role="region" aria-label="Menu">
-        <div className="rd-mega-wash"/>
-        <Smoke/>
+      {/* The colour smoke sits BEHIND the glass panel, so the panel's backdrop blur softens it and the text stays crisp (same as the footer). */}
+      <div className={`rd-mega-pos ${menu ? "open" : ""}`} role="region" aria-label="Menu">
+        <div className="rd-mega-under"><div className="rd-mega-wash"/><Smoke/></div>
+      <div className="rd-mega">
         <div className="rd-mega-grid">
           <div className="rd-mega-tabs">
             <div className="rd-mega-label">{menu === "catalogues" ? "Catalogue library" : "Products by material"}</div>
@@ -78,6 +79,7 @@ export function Header() {
             </div>)}
           </div>
         </div>
+      </div>
       </div>
 
       <div className={`rd-mobmenu ${mob ? "open" : ""}`}>
