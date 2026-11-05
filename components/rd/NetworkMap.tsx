@@ -31,11 +31,11 @@ export function NetworkMap() {
         if (dead || !el.current) return;
         // The worker is served from /public (copied from node_modules/maplibre-gl/dist). Update it when maplibre-gl is upgraded.
         ml.setWorkerUrl("/vendor/maplibre-gl-worker.mjs");
-        const m = new ml.Map({ container: el.current, style: STYLE, bounds: [[68, 6.5], [97.6, 35.8]], fitBoundsOptions: { padding: 24 }, maxBounds: [[55, -2], [112, 44]], cooperativeGestures: true, attributionControl: { compact: true }, minZoom: 3.2, maxZoom: 9 });
+        const m = new ml.Map({ container: el.current, style: STYLE, bounds: [[68, 6.5], [97.6, 37.3]], fitBoundsOptions: { padding: 24 }, maxBounds: [[55, -2], [112, 46]], cooperativeGestures: true, attributionControl: { compact: true }, minZoom: 3.2, maxZoom: 9 });
         map.current = m;
         m.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
         // Only India is shown sharply: hide every label, fade the rest of the world and outline India.
-        m.on("load", () => {
+        m.on("style.load", () => {
           m.getStyle().layers.forEach(l => { if (l.type === "symbol") m.setLayoutProperty(l.id, "visibility", "none"); });
           const outer = (india.geometry.coordinates as number[][][][]).map(poly => poly[0]);
           m.addSource("india", { type: "geojson", data: india as GeoJSON.Feature });
