@@ -21,7 +21,7 @@ export function Footer() {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "1.1rem" }}>
                 <Image className="rd-footer-logo" src="/images/rang-footer.svg" alt="Rang Décor" width={170} height={84} unoptimized/>
-                <Image src="/images/dilipji-bhandari-group.svg" alt="Dilipji Bhandari Group" width={42} height={84} unoptimized/>
+                <Image className="rd-footer-group" src="/images/dilipji-bhandari-group.svg" alt="Dilipji Bhandari Group" width={100} height={200} unoptimized/>
               </div>
               <p className="tagline">Let’s live beautiful.</p>
               <div className="rd-social">{contact.social.map(([n, u]) => { const Ic = socialIcons[n]; return <a key={n} href={u} target="_blank" rel="noopener noreferrer" aria-label={`Rang Décor on ${n}`} title={n}><Ic/></a>; })}</div>

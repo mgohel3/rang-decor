@@ -756,3 +756,19 @@ body{background:#FFFFFF}
 @media(max-width:899px){.rd-viz .scrim{background:linear-gradient(180deg,rgba(246,235,221,.85),rgba(246,235,221,.2) 60%)}}
 /* Brighter hero photo needs a stronger scrim for the white headline */
 .rd-hero .scrim{background:linear-gradient(180deg,rgba(28,27,26,.42) 0%,rgba(28,27,26,.22) 40%,rgba(28,27,26,.72) 100%)}
+/* Hero: keep the photo bright, darken only behind the text; Envision: soft edges top and bottom */
+.rd-hero .scrim{background:linear-gradient(90deg,rgba(28,27,26,.62) 0%,rgba(28,27,26,.3) 45%,rgba(28,27,26,.04) 80%),linear-gradient(180deg,rgba(28,27,26,.28) 0%,rgba(28,27,26,0) 30%,rgba(28,27,26,.5) 100%)}
+.rd-hero h1,.rd-hero .tag{text-shadow:0 2px 30px rgba(0,0,0,.28)}
+.rd-viz::before,.rd-viz::after{content:"";position:absolute;left:0;right:0;height:5rem;z-index:1;pointer-events:none}
+.rd-viz::before{top:0;background:linear-gradient(rgba(28,27,26,.16),rgba(28,27,26,0))}
+.rd-viz::after{bottom:0;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.55));border-bottom:1px solid rgba(28,27,26,.1)}
+/* Footer: tall three-stripe group mark beside the Rang logo, scaled for every screen */
+.rd-footer-group{width:clamp(64px,7vw,100px);height:auto;flex:none}
+@media(max-width:520px){.rd-footer-group{width:60px}}
+/* Team cards: hover must beat the scroll-reveal transition/transform */
+.rd-team li{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .3s,opacity .8s!important}
+.rd-team li:hover,.rd-team li:focus-within{transform:translateY(-10px)!important;border-color:#E01080;box-shadow:0 30px 56px -18px rgba(224,16,128,.45)}
+.rd-team .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(224,16,128,0) 40%,rgba(224,16,128,.38));opacity:0;transition:opacity .5s;pointer-events:none}
+.rd-team li:hover .ph::after{opacity:1}
+.rd-team li:hover .ph img{transform:scale(1.08)}
+.rd-team li:hover .ph .n{color:#E01080}

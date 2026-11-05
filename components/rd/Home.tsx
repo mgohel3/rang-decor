@@ -94,7 +94,7 @@ export function Home() {
           <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem" }}>Choose a room, then try Rang finishes on its walls and see how each one changes the space.</p>
         </div>
         <div className="rd-glass-dark">
-          <div style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: ".9rem" }}>Room</div>
+          <h3 style={{ font: "500 1.7rem/1.15 var(--display)", marginBottom: "1rem" }}>Which room shall we <em className="grad">dress today?</em></h3>
           <div className="rd-rooms" role="group" aria-label="Room">{rooms.map(([l, id]) => <Link key={id} href={`/visualizer/${id}`} data-drop="btn">{l}</Link>)}</div>
           <Link href="/visualizer" className="rd-btn light" data-drop="btn" style={{ width: "100%", justifyContent: "space-between", marginTop: "1.25rem" }}>Open the visualizer <span>→</span></Link>
         </div>

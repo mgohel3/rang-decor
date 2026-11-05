@@ -57,7 +57,7 @@ export default function About() {
 
     <section className="rd-wrap ab-prod" id="products">
       <div className="rd-head" data-rv="1"><div><div className="rd-eyebrow">Our products</div><h2 className="rd-h2">Surfaces for <em className="grad">every room.</em></h2></div><p>From thermo-mica sheets to seamless louvers, each range is made to fit the way people live and work.</p></div>
-      {products.map(([n, t, img, d, href], i) => <article key={t} className={`row ${i % 2 ? "flip" : ""}`} data-rv="1">
+      {products.map(([n, t, img, d, href], i) => <article key={t} className={`row ${i % 2 ? "flip" : ""}`} style={{ "--i": i } as React.CSSProperties}>
         <div className="ph" data-shine><img src={`${I}${img}.webp`} alt={`${t} by Rang Décor`} loading="lazy"/></div>
         <div className="tx"><small>{n}</small><h3>{t}</h3><p>{d}</p><Link href={href} className="rd-textlink">Explore {t}</Link></div>
       </article>)}
