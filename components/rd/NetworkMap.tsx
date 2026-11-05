@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Map as MapLibreMap, Marker } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { kinds, places, type NodeKind } from "@/data/network";
+import india from "@/data/india.json";
 
 // Interactive map of Rang depots and channel partners (MapLibre GL with the free OpenFreeMap "positron" style).
 // The list beside it and the markers stay in sync; if WebGL is not available the list still works.
@@ -27,9 +28,19 @@ export function NetworkMap() {
         if (dead || !el.current) return;
         // The worker is served from /public (copied from node_modules/maplibre-gl/dist). Update it when maplibre-gl is upgraded.
         ml.setWorkerUrl("/vendor/maplibre-gl-worker.mjs");
-        const m = new ml.Map({ container: el.current, style: STYLE, bounds: [[67.5, 6], [98.5, 37.5]], fitBoundsOptions: { padding: 24 }, cooperativeGestures: true, attributionControl: { compact: true }, minZoom: 3.2, maxZoom: 9 });
+        const m = new ml.Map({ container: el.current, style: STYLE, bounds: [[68, 6.5], [97.6, 35.8]], fitBoundsOptions: { padding: 24 }, maxBounds: [[55, -2], [112, 44]], cooperativeGestures: true, attributionControl: { compact: true }, minZoom: 3.2, maxZoom: 9 });
         map.current = m;
         m.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
+        // Only India is shown sharply: hide every label, fade the rest of the world and outline India.
+        m.on("load", () => {
+          m.getStyle().layers.forEach(l => { if (l.type === "symbol") m.setLayoutProperty(l.id, "visibility", "none"); });
+          const outer = (india.geometry.coordinates as number[][][][]).map(poly => poly[0]);
+          m.addSource("india", { type: "geojson", data: india as GeoJSON.Feature });
+          m.addSource("india-mask", { type: "geojson", data: { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]], ...outer] } } });
+          m.addLayer({ id: "india-fill", type: "fill", source: "india", paint: { "fill-color": "#ffffff", "fill-opacity": 0.35 } });
+          m.addLayer({ id: "world-fade", type: "fill", source: "india-mask", paint: { "fill-color": "#EEEBE5", "fill-opacity": 0.82 } });
+          m.addLayer({ id: "india-line", type: "line", source: "india", paint: { "line-color": "#1C1B1A", "line-opacity": 0.55, "line-width": 1.2 } });
+        });
         places.forEach(p => {
           const node = document.createElement("button");
           node.type = "button";

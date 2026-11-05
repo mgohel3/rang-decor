@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { applications, byId, collections, events, featuredLayout, featuredOrder, rooms, why } from "@/data/rang";
+import { applications, byId, collections, events, featuredOrder, rooms, why } from "@/data/rang";
 import { Smoke } from "./Smoke";
 import { PdfLink } from "./Leads";
 
@@ -65,15 +65,15 @@ export function Home() {
     </section>
 
     {/* 03 COLLECTIONS */}
-    <section className="rd-wrap" id="collections" style={{ paddingBottom: "var(--sec)" }}>
+    <section className="rd-band" id="collections"><div className="rd-wrap">
       <div className="rd-head" data-rv="1">
         <div><Eyebrow>02 — Signature collections</Eyebrow><h2 className="rd-h2">Meet your next <G>point of view.</G></h2></div>
         <p>Eight collections of louvers, panels, laminates and ceiling slats, each with its own character, texture and way of shaping a room.</p>
       </div>
       <div className="rd-showcase">
         {feat.map((c, i) => <Link key={c.id} href={`/product/${c.id}`} data-rv="1" className={`rd-card ${c.cover ? "" : "logo"}`}
-          style={{ gridColumn: featuredLayout[i][0], marginTop: featuredLayout[i][2], transitionDelay: `${(i % 2) * 0.12}s` }}>
-          <div className="ph" data-shine style={{ aspectRatio: featuredLayout[i][1] }}>
+          style={{ transitionDelay: `${(i % 4) * 0.08}s` }}>
+          <div className="ph" data-shine>
             <img src={c.src} alt={`${c.name} collection`} loading="lazy"/>
             <div className="ov"><p>{c.desc}</p><span>View collection →</span></div>
           </div>
@@ -81,7 +81,7 @@ export function Home() {
         </Link>)}
       </div>
       <div className="rd-also"><h4>Also from Rang</h4><div>{others.map(o => <Link key={o.id} href={`/product/${o.id}`}>{o.name}</Link>)}</div></div>
-    </section>
+    </div></section>
 
     {/* 06 VISUALIZER */}
     <section className="rd-viz" id="visualizer">
