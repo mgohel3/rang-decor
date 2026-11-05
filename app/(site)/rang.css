@@ -748,3 +748,11 @@ body{background:#FFFFFF}
 .rd-lb button:hover{background:#E01080}
 .rd-lb .x{top:1rem;right:1rem}.rd-lb .p{left:1rem;top:50%}.rd-lb .nx{right:1rem;top:50%}
 @media(max-width:700px){.rd-lb{padding:3.5rem 1rem}.rd-lb .p,.rd-lb .nx{top:auto;bottom:3rem}}
+/* Envision section on the light photo: dark text on the left, dark glass panel on the right */
+.rd-viz{background:#F6EBDD;color:var(--ink)}
+.rd-viz>img{object-position:right center}
+.rd-viz .scrim{background:linear-gradient(90deg,rgba(246,235,221,.55),rgba(246,235,221,0) 60%)}
+.rd .rd-viz .rd-glass-dark{background:linear-gradient(135deg,rgba(28,27,26,.66),rgba(28,27,26,.5));color:#fff}
+@media(max-width:899px){.rd-viz .scrim{background:linear-gradient(180deg,rgba(246,235,221,.85),rgba(246,235,221,.2) 60%)}}
+/* Brighter hero photo needs a stronger scrim for the white headline */
+.rd-hero .scrim{background:linear-gradient(180deg,rgba(28,27,26,.42) 0%,rgba(28,27,26,.22) 40%,rgba(28,27,26,.72) 100%)}

@@ -28,7 +28,7 @@ export function Home() {
   return <>
     {/* 01 HERO */}
     <section className={`rd-hero ${loaded ? "in" : ""}`} aria-label="Hero">
-      <img src="/images/rang-hero-walnut.webp" alt="Interior with walnut-toned Rang Décor wall surfaces" style={{ marginTop: -heroY }}/>
+      <img src="/images/rang-hero-living.webp" alt="Bright living room with a marble and gold Rang Décor louver feature wall" style={{ marginTop: -heroY }}/>
       <div className="scrim"/>
       <div className="rd-hero-body">
         <div>
@@ -85,13 +85,13 @@ export function Home() {
 
     {/* 06 VISUALIZER */}
     <section className="rd-viz" id="visualizer">
-      <img src="/images/visualizer.jpg" alt="Interior room used in the Rang visualizer" loading="lazy"/>
+      <img src="/images/visualizer-bg.webp" alt="Interior room used in the Rang visualizer" loading="lazy"/>
       <div className="scrim"/>
       <div className="rd-wrap rd-sec rd-viz-in">
         <div>
-          <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>03 — Envision your space</div>
+          <div className="rd-eyebrow">03 — Envision your space</div>
           <h2 className="rd-h2">See a surface in <G>your space.</G></h2>
-          <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem", color: "#ece6dd" }}>Choose a room, then try Rang finishes on its walls and see how each one changes the space.</p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem" }}>Choose a room, then try Rang finishes on its walls and see how each one changes the space.</p>
         </div>
         <div className="rd-glass-dark">
           <div style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: ".9rem" }}>Room</div>
