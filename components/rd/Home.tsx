@@ -137,7 +137,7 @@ export function Home() {
     {/* 10 GALLERY */}
     <section className="rd-wrap rd-sec" id="gallery">
       <div data-rv="1" style={{ marginBottom: "2.5rem" }}><Eyebrow>07 — Out in the world</Eyebrow><h2 className="rd-h2">Meet us <G>there.</G></h2></div>
-      <div>{events.map(([n, u], i) => <a key={n} href={u} target="_blank" rel="noopener noreferrer" className="rd-event"><span className="l"><small>0{i + 1}</small><b>{n}</b></span><em>Gallery →</em></a>)}<div style={{ borderTop: "1px solid var(--line)" }}/></div>
+      <div>{events.map(([n], i) => <Link key={n} href="/gallery" className="rd-event"><span className="l"><small>0{i + 1}</small><b>{n}</b></span><em>Gallery →</em></Link>)}<div style={{ borderTop: "1px solid var(--line)" }}/></div>
     </section>
 
     {/* 11 CTA */}

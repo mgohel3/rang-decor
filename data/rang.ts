@@ -95,6 +95,7 @@ export const nav = [
   { label: "Catalogues", href: "/catalogue", menu: "catalogues" },
   { label: "Visualizer", href: "/visualizer/living-room" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Our Team", href: "/team" },
   { label: "Our Network", href: "/network" },
   { label: "Contact", href: "/contact" },
 ];
