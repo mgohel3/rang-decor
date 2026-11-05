@@ -653,14 +653,17 @@ body{background:#FFFFFF}
 .rd-slider>.rd-result{flex:0 0 clamp(16rem,23%,19rem)}
 
 /* Home: signature collections on a soft warm band, tidy 4-column mosaic (1 large, 2 wide) */
-.rd-band{background:#F4F1EB;padding-block:var(--sec)}
-.rd-band .rd-showcase{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(21rem,30vw,29rem);gap:1.5rem}
-.rd-band .rd-card{display:flex;flex-direction:column;margin:0;min-height:0}
-.rd-band .rd-card .ph{flex:1;min-height:0;aspect-ratio:auto}
-.rd-band .rd-card:nth-child(1){grid-column:span 2;grid-row:span 2}
-.rd-band .rd-card:nth-child(8){grid-column:span 2}
-.rd-band .rd-card .nm b{font-size:clamp(1.5rem,2vw,2.1rem)}
-.rd-band .rd-card:nth-child(1) .nm b{font-size:clamp(2rem,3vw,3rem)}
-.rd-band .rd-also{border-color:rgba(28,27,26,.12)}
-@media(max-width:899px){.rd-band .rd-showcase{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(16rem,52vw,22rem)}.rd-band .rd-card:nth-child(1),.rd-band .rd-card:nth-child(8){grid-column:span 2;grid-row:auto}}
-@media(max-width:560px){.rd-band .rd-showcase{grid-template-columns:1fr}.rd-band .rd-card:nth-child(n){grid-column:auto}}
+.rd-colband{background:#F4F1EB;padding-block:var(--sec)}
+.rd-colband .rd-showcase{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(21rem,30vw,29rem);gap:1.5rem}
+.rd-colband .rd-card{display:flex;flex-direction:column;margin:0;min-height:0}
+.rd-colband .rd-card .ph{flex:1;min-height:0;aspect-ratio:auto}
+.rd-colband .rd-card:nth-child(1){grid-column:span 2;grid-row:span 2}
+.rd-colband .rd-card:nth-child(8){grid-column:span 2}
+.rd-colband .rd-card .nm b{font-size:clamp(1.5rem,2vw,2.1rem)}
+.rd-colband .rd-card:nth-child(1) .nm b{font-size:clamp(2rem,3vw,3rem)}
+.rd-colband .rd-also{border-color:rgba(28,27,26,.12)}
+@media(max-width:899px){.rd-colband .rd-showcase{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(16rem,52vw,22rem)}.rd-colband .rd-card:nth-child(1),.rd-colband .rd-card:nth-child(8){grid-column:span 2;grid-row:auto}}
+@media(max-width:560px){.rd-colband .rd-showcase{grid-template-columns:1fr}.rd-colband .rd-card:nth-child(n){grid-column:auto}}
+
+.rd-pin .logo{position:absolute;left:50%;bottom:calc(100% - .1rem);width:2.5rem;height:auto;transform:translateX(-50%);pointer-events:none;filter:drop-shadow(0 1px 2px rgba(255,255,255,.9))}
+.rd-pin.hq .logo,.rd-pin.company .logo{display:block}

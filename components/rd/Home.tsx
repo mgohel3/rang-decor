@@ -65,7 +65,7 @@ export function Home() {
     </section>
 
     {/* 03 COLLECTIONS */}
-    <section className="rd-band" id="collections"><div className="rd-wrap">
+    <section className="rd-colband" id="collections"><div className="rd-wrap">
       <div className="rd-head" data-rv="1">
         <div><Eyebrow>02 — Signature collections</Eyebrow><h2 className="rd-h2">Meet your next <G>point of view.</G></h2></div>
         <p>Eight collections of louvers, panels, laminates and ceiling slats, each with its own character, texture and way of shaping a room.</p>
