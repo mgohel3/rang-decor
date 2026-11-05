@@ -19,6 +19,22 @@ export function Home() {
   const [tilt, setTilt] = useState<Record<string, [number, number]>>({});
   const [heroY, setHeroY] = useState(0);
 
+  // Endless slow drift; pauses while the pointer is over the row. The list is rendered twice so the loop is seamless.
+  useEffect(() => {
+    const el = track.current;
+    if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0, hold = false, pos = el.scrollLeft;
+    const stop = () => { hold = true; }, go = () => { hold = false; pos = el.scrollLeft; };
+    el.addEventListener("pointerenter", stop); el.addEventListener("pointerleave", go);
+    el.addEventListener("touchstart", stop, { passive: true }); el.addEventListener("touchend", go);
+    const tick = () => {
+      if (!hold && el.scrollWidth > el.clientWidth) { pos += 0.6; if (pos >= el.scrollWidth / 2) pos -= el.scrollWidth / 2; el.scrollLeft = pos; }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => { cancelAnimationFrame(raf); el.removeEventListener("pointerenter", stop); el.removeEventListener("pointerleave", go); el.removeEventListener("touchstart", stop); el.removeEventListener("touchend", go); };
+  }, [query, filter]);
+
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80);
     const onScroll = () => setHeroY(Math.min(window.scrollY, 800) * 0.12);
@@ -27,7 +43,6 @@ export function Home() {
   }, []);
 
   const track = useRef<HTMLDivElement>(null);
-  const slide = (d: number) => track.current?.scrollBy({ left: d * track.current.clientWidth * 0.8, behavior: "smooth" });
   const q = query.trim().toLowerCase();
   const results = collections.filter(c => (filter === "all" || c.group === filter) && (!q || `${c.name} ${c.kind} ${c.desc}`.toLowerCase().includes(q)));
   const feat = featuredOrder.map(id => byId(id)!);
@@ -124,9 +139,8 @@ export function Home() {
         <div role="group" aria-label="Filter by material" style={{ display: "flex", flexWrap: "wrap", gap: ".5rem", marginBottom: "2.25rem" }}>
           {[["all", "All"], ...Object.entries(groups)].map(([k, l]) => <button key={k} className="rd-chip" data-drop="btn" aria-pressed={filter === k} onClick={() => setFilter(k as "all" | GroupKey)}>{l}</button>)}
         </div>
-        <div className="rd-slider-bar"><span>{results.length} collections</span><div><button aria-label="Previous" onClick={() => slide(-1)}>←</button><button aria-label="Next" onClick={() => slide(1)}>→</button></div></div>
-        <div className="rd-slider" ref={track} tabIndex={0} aria-label="Collections">
-          {results.map(c => <article key={c.id} className={`rd-result ${c.cover ? "" : "logo"}`}>
+        <div className="rd-slider" ref={track} aria-label="Collections">
+          {[...results, ...results].map((c, i) => <article key={`${c.id}-${i}`} aria-hidden={i >= results.length || undefined} className={`rd-result ${c.cover ? "" : "logo"}`}>
             <div className="ph"><img src={c.src} alt={c.name} loading="lazy"/></div>
             <div className="tx"><small>{c.kind}</small><b>{c.name}</b><p>{c.desc}</p>
               <div className="ln"><Link href={`/product/${c.id}`}>View</Link><PdfLink pdf={c.pdf} name={c.name}>Catalogue PDF</PdfLink></div></div>
