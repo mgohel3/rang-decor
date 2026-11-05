@@ -64,7 +64,7 @@ export function Header({ direction = "01-editorial" }: { direction?: string }) {
               </div>
               <div className="mega-col mega-feature">
                 <div className="mega-covers" aria-hidden="true">
-                  <Image src="/images/charco.png" alt="" width={160} height={213} unoptimized/><Image src="/images/maskara.png" alt="" width={160} height={213} unoptimized/><Image src="/images/groove-earth.png" alt="" width={160} height={213} unoptimized/>
+                  <Image src="/images/charco.webp" alt="" width={160} height={213} unoptimized/><Image src="/images/maskara.webp" alt="" width={160} height={213} unoptimized/><Image src="/images/groove-earth.webp" alt="" width={160} height={213} unoptimized/>
                 </div>
                 <Link className="mega-cta" onPointerMove={liquid} href={`${base}/catalogue`} onClick={closeMenu}>Browse full catalogue <ArrowRight size={18}/></Link>
               </div>

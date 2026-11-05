@@ -4,9 +4,9 @@ import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { DemoSelector, Footer, Header } from "@/components/SiteChrome";
 
 const collections = [
-  { name: "Bern Thermo", detail: "Thermo-mica surfaces", image: "/images/bern.png", slug: "Bern-Thermo" },
-  { name: "Charco Charm", detail: "Decorative charcoal panels", image: "/images/charco.png", slug: "charco-charm" },
-  { name: "Groove", detail: "Seamless decorative louvers", image: "/images/groove-forest.png", slug: "groove-forest" },
+  { name: "Bern Thermo", detail: "Thermo-mica surfaces", image: "/images/bern.webp", slug: "Bern-Thermo" },
+  { name: "Charco Charm", detail: "Decorative charcoal panels", image: "/images/charco.webp", slug: "charco-charm" },
+  { name: "Groove", detail: "Seamless decorative louvers", image: "/images/groove-forest.webp", slug: "groove-forest" },
 ];
 
 export default async function About({ params }: { params: Promise<{ direction: string }> }) {
@@ -88,7 +88,7 @@ export default async function About({ params }: { params: Promise<{ direction: s
     </section>
 
     <section className="about-connect" id="network">
-      <div className="about-connect-image"><Image src="/images/groove-earth.png" alt="Warm interior featuring Rang Décor Groove Earth decorative louvers" fill sizes="(max-width: 760px) 100vw, 48vw"/></div>
+      <div className="about-connect-image"><Image src="/images/groove-earth.webp" alt="Warm interior featuring Rang Décor Groove Earth decorative louvers" fill sizes="(max-width: 760px) 100vw, 48vw"/></div>
       <div className="about-connect-copy"><span className="eyebrow">ROOTED IN HYDERABAD · OPEN TO THE WORLD</span><h2>Let’s make room<br/>for <em>good ideas.</em></h2><p>For homes, workspaces and everything in between, we’d love to hear what you’re imagining.</p><Link className="button button-charcoal" href={`${base}/contact`}>Start a conversation <ArrowRight size={15}/></Link></div>
     </section>
     <Footer direction={direction}/>

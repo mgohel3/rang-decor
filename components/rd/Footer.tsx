@@ -20,7 +20,7 @@ export function Footer() {
           <div className="rd-footer-cols">
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "1.1rem" }}>
-                <Image className="rd-footer-logo" src="/images/rang-footer.svg" alt="Rang Décor" width={170} height={84} unoptimized/>
+                <Image className="rd-footer-logo" src="/images/rang-footer.webp" alt="Rang Décor" width={170} height={84} unoptimized/>
                 <Image className="rd-footer-group" src="/images/dilipji-bhandari-group.svg" alt="Dilipji Bhandari Group" width={100} height={200} unoptimized/>
               </div>
               <p className="tagline">Let’s live beautiful.</p>
