@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { applications, byId, collections, events, featuredLayout, featuredOrder, groups, materials, rooms, why, type GroupKey } from "@/data/rang";
 import { Smoke } from "./Smoke";
 import { PdfLink } from "./Leads";
@@ -26,6 +26,8 @@ export function Home() {
     return () => { clearTimeout(t); window.removeEventListener("scroll", onScroll); };
   }, []);
 
+  const track = useRef<HTMLDivElement>(null);
+  const slide = (d: number) => track.current?.scrollBy({ left: d * track.current.clientWidth * 0.8, behavior: "smooth" });
   const q = query.trim().toLowerCase();
   const results = collections.filter(c => (filter === "all" || c.group === filter) && (!q || `${c.name} ${c.kind} ${c.desc}`.toLowerCase().includes(q)));
   const feat = featuredOrder.map(id => byId(id)!);
@@ -64,8 +66,8 @@ export function Home() {
           <Link href="/about" className="rd-textlink" style={{ marginTop: "2rem" }}>Learn more about us</Link>
         </div>
         <div className="rd-intro-art">
-          <div className="a" data-rv="top"><img src="/images/groove-forest.png" alt="Groove Forest louvers" loading="lazy"/></div>
-          <div className="b" data-rv="bottom"><img src="/images/bern.png" alt="Bern Thermo surface" loading="lazy"/></div>
+          <div className="a" data-rv="top"><img src="/images/rang-hero-sage.webp" alt="Living room with green and cream Rang Décor louver walls" loading="lazy" style={{ objectPosition: "72% 50%" }}/></div>
+          <div className="b" data-rv="bottom"><img src="/images/rang-hero-charcoal.webp" alt="Interior with charcoal Rang Décor wall surfaces" loading="lazy"/></div>
           <div className="sig">Let’s live beautiful.</div>
         </div>
       </div>
@@ -122,7 +124,8 @@ export function Home() {
         <div role="group" aria-label="Filter by material" style={{ display: "flex", flexWrap: "wrap", gap: ".5rem", marginBottom: "2.25rem" }}>
           {[["all", "All"], ...Object.entries(groups)].map(([k, l]) => <button key={k} className="rd-chip" data-drop="btn" aria-pressed={filter === k} onClick={() => setFilter(k as "all" | GroupKey)}>{l}</button>)}
         </div>
-        <div className="rd-grid">
+        <div className="rd-slider-bar"><span>{results.length} collections</span><div><button aria-label="Previous" onClick={() => slide(-1)}>←</button><button aria-label="Next" onClick={() => slide(1)}>→</button></div></div>
+        <div className="rd-slider" ref={track} tabIndex={0} aria-label="Collections">
           {results.map(c => <article key={c.id} className={`rd-result ${c.cover ? "" : "logo"}`}>
             <div className="ph"><img src={c.src} alt={c.name} loading="lazy"/></div>
             <div className="tx"><small>{c.kind}</small><b>{c.name}</b><p>{c.desc}</p>

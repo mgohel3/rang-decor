@@ -11,8 +11,18 @@ export function Effects() {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const canHover = matchMedia("(hover: hover)").matches;
 
-    const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
-    const scan = () => document.querySelectorAll("[data-rv]:not(.in)").forEach(el => io.observe(el));
+    // Clip-path reveals ("top"/"bottom") start fully clipped, so they never intersect; watch their parent and reveal them together.
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const t = e.target as HTMLElement;
+      (t.dataset.rv === "top" || t.dataset.rv === "bottom" ? [t] : []).forEach(x => x.classList.add("in"));
+      t.querySelectorAll(':scope > [data-rv="top"],:scope > [data-rv="bottom"]').forEach(x => x.classList.add("in"));
+      t.classList.add("in"); io.unobserve(t);
+    }), { threshold: 0.12 });
+    const scan = () => document.querySelectorAll("[data-rv]:not(.in)").forEach(el => {
+      const clip = (el as HTMLElement).dataset.rv === "top" || (el as HTMLElement).dataset.rv === "bottom";
+      io.observe(clip && el.parentElement ? el.parentElement : el);
+    });
     scan();
     const mo = new MutationObserver(scan);
     mo.observe(document.body, { childList: true, subtree: true });
