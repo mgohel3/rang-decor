@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { applications, byId, collections, events, featuredLayout, featuredOrder, groups, materials, rooms, why, type GroupKey } from "@/data/rang";
+import { useEffect, useState } from "react";
+import { applications, byId, collections, events, featuredLayout, featuredOrder, rooms, why } from "@/data/rang";
 import { Smoke } from "./Smoke";
 import { PdfLink } from "./Leads";
 
@@ -11,29 +11,9 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <div className=
 
 export function Home() {
   const [loaded, setLoaded] = useState(false);
-  const [mat, setMat] = useState(0);
-  const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<"all" | GroupKey>("all");
-  const [room, setRoom] = useState("living-room");
   const [app, setApp] = useState(0);
   const [tilt, setTilt] = useState<Record<string, [number, number]>>({});
   const [heroY, setHeroY] = useState(0);
-
-  // Endless slow drift; pauses while the pointer is over the row. The list is rendered twice so the loop is seamless.
-  useEffect(() => {
-    const el = track.current;
-    if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0, hold = false, pos = el.scrollLeft;
-    const stop = () => { hold = true; }, go = () => { hold = false; pos = el.scrollLeft; };
-    el.addEventListener("pointerenter", stop); el.addEventListener("pointerleave", go);
-    el.addEventListener("touchstart", stop, { passive: true }); el.addEventListener("touchend", go);
-    const tick = () => {
-      if (!hold && el.scrollWidth > el.clientWidth) { pos += 0.6; if (pos >= el.scrollWidth / 2) pos -= el.scrollWidth / 2; el.scrollLeft = pos; }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(raf); el.removeEventListener("pointerenter", stop); el.removeEventListener("pointerleave", go); el.removeEventListener("touchstart", stop); el.removeEventListener("touchend", go); };
-  }, [query, filter]);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80);
@@ -42,12 +22,8 @@ export function Home() {
     return () => { clearTimeout(t); window.removeEventListener("scroll", onScroll); };
   }, []);
 
-  const track = useRef<HTMLDivElement>(null);
-  const q = query.trim().toLowerCase();
-  const results = collections.filter(c => (filter === "all" || c.group === filter) && (!q || `${c.name} ${c.kind} ${c.desc}`.toLowerCase().includes(q)));
   const feat = featuredOrder.map(id => byId(id)!);
   const others = collections.filter(c => !featuredOrder.includes(c.id));
-  const cur = materials[mat], curC = byId(cur.id)!;
 
   return <>
     {/* 01 HERO */}
@@ -107,70 +83,27 @@ export function Home() {
       <div className="rd-also"><h4>Also from Rang</h4><div>{others.map(o => <Link key={o.id} href={`/product/${o.id}`}>{o.name}</Link>)}</div></div>
     </section>
 
-    {/* 04 MATERIALS IN MOTION */}
-    <section className="rd-materials" id="materials" aria-label="Materials in motion" style={{ background: cur.tone }}>
-      <div className="rd-wrap">
-        <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>03 — Materials in motion</div>
-        <div className="rd-mat-grid">
-          <div className="rd-mat-left">
-            <h2 className="rd-h2">One language,<br/><G>many materials.</G></h2>
-            <div role="tablist" aria-label="Materials">
-              {materials.map((m, i) => <button key={m.id} role="tab" aria-selected={mat === i} className={`rd-mat-tab ${mat === i ? "on" : ""}`} onClick={() => setMat(i)} onMouseEnter={() => setMat(i)}><small>0{i + 1}</small><b>{byId(m.id)!.name}</b></button>)}
-            </div>
-          </div>
-          <div className="rd-mat-stage">
-            <div className="rd-mat-imgs">{materials.map((m, i) => <img key={m.id} src={byId(m.id)!.src} alt={byId(m.id)!.name} loading="lazy" className={mat === i ? "on" : ""}/>)}</div>
-            <div className="rd-mat-card">
-              <small>{cur.kind}</small><b>{curC.name}</b><p>{curC.desc}</p><div className="fin">{cur.finish}</div>
-              <Link href={`/product/${curC.id}`} className="rd-textlink" style={{ marginTop: "1.1rem", color: "#fff", fontSize: ".8rem" }}>View {curC.name} →</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* 05 EXPLORER */}
-    <section className="rd-explore rd-sec" id="explore">
-      <div className="rd-wrap">
-        <div className="rd-head" data-rv="1" style={{ marginBottom: "2.5rem" }}>
-          <div><Eyebrow>04 — Find a surface</Eyebrow><h2 className="rd-h2">Explore by <G>material.</G></h2></div>
-          <label className="rd-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search collections" aria-label="Search collections" value={query} onChange={e => setQuery(e.target.value)}/></label>
-        </div>
-        <div role="group" aria-label="Filter by material" style={{ display: "flex", flexWrap: "wrap", gap: ".5rem", marginBottom: "2.25rem" }}>
-          {[["all", "All"], ...Object.entries(groups)].map(([k, l]) => <button key={k} className="rd-chip" data-drop="btn" aria-pressed={filter === k} onClick={() => setFilter(k as "all" | GroupKey)}>{l}</button>)}
-        </div>
-        <div className="rd-slider" ref={track} aria-label="Collections">
-          {[...results, ...results].map((c, i) => <article key={`${c.id}-${i}`} aria-hidden={i >= results.length || undefined} className={`rd-result ${c.cover ? "" : "logo"}`}>
-            <div className="ph"><img src={c.src} alt={c.name} loading="lazy"/></div>
-            <div className="tx"><small>{c.kind}</small><b>{c.name}</b><p>{c.desc}</p>
-              <div className="ln"><Link href={`/product/${c.id}`}>View</Link><PdfLink pdf={c.pdf} name={c.name}>Catalogue PDF</PdfLink></div></div>
-          </article>)}
-        </div>
-        {!results.length && <p className="rd-lead">No collections match. Clear the search or choose another material.</p>}
-      </div>
-    </section>
-
     {/* 06 VISUALIZER */}
     <section className="rd-viz" id="visualizer">
       <img src="/images/visualizer.jpg" alt="Interior room used in the Rang visualizer" loading="lazy"/>
       <div className="scrim"/>
       <div className="rd-wrap rd-sec rd-viz-in">
         <div>
-          <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>05 — Envision your space</div>
+          <div className="rd-eyebrow" style={{ color: "var(--glow)" }}>03 — Envision your space</div>
           <h2 className="rd-h2">See a surface in <G>your space.</G></h2>
           <p style={{ fontSize: "1rem", lineHeight: 1.7, maxWidth: "28.75rem", marginTop: "1.6rem", color: "#ece6dd" }}>Choose a room, then try Rang finishes on its walls and see how each one changes the space.</p>
         </div>
         <div className="rd-glass-dark">
           <div style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: ".9rem" }}>Room</div>
-          <div className="rd-rooms" role="group" aria-label="Room">{rooms.map(([l, id]) => <button key={id} aria-pressed={room === id} onClick={() => setRoom(id)} data-drop="btn">{l}</button>)}</div>
-          <Link href={`/visualizer/${room}`} className="rd-btn light" data-drop="btn" style={{ width: "100%", justifyContent: "space-between", marginTop: "1.25rem" }}>Open the visualizer <span>→</span></Link>
+          <div className="rd-rooms" role="group" aria-label="Room">{rooms.map(([l, id]) => <Link key={id} href={`/visualizer/${id}`} data-drop="btn">{l}</Link>)}</div>
+          <Link href="/visualizer" className="rd-btn light" data-drop="btn" style={{ width: "100%", justifyContent: "space-between", marginTop: "1.25rem" }}>Open the visualizer <span>→</span></Link>
         </div>
       </div>
     </section>
 
     {/* 07 APPLICATIONS */}
     <section className="rd-wrap rd-sec" id="applications">
-      <div data-rv="1" style={{ marginBottom: "3rem" }}><Eyebrow>06 — Applications</Eyebrow><h2 className="rd-h2">Find a finish for <G>everywhere.</G></h2></div>
+      <div data-rv="1" style={{ marginBottom: "3rem" }}><Eyebrow>04 — Applications</Eyebrow><h2 className="rd-h2">Find a finish for <G>everywhere.</G></h2></div>
       <div className="rd-apps">
         {applications.map((a, i) => <Link key={a.n} href={`/product/${a.id}`} className={`rd-app ${app === i ? "on" : ""}`} onMouseEnter={() => setApp(i)} onFocus={() => setApp(i)}>
           <img src={byId(a.id)!.src} alt={a.title} loading="lazy" style={byId(a.id)!.cover ? undefined : { objectFit: "contain", padding: "18%", background: "#E8E5DF" }}/>
@@ -182,7 +115,7 @@ export function Home() {
     {/* 08 WHY */}
     <section className="rd-wrap" id="why" style={{ paddingBottom: "var(--sec)" }}>
       <div className="rd-why">
-        <div className="stick" data-rv="1"><Eyebrow>07 — Why Rang</Eyebrow><h2 className="rd-h2">What makes <G>Rang</G> the best choice.</h2></div>
+        <div className="stick" data-rv="1"><Eyebrow>05 — Why Rang</Eyebrow><h2 className="rd-h2">What makes <G>Rang</G> the best choice.</h2></div>
         <div>{why.map(([t, d], i) => <div key={t} className="rd-why-row" data-rv="1"><span>0{i + 1}</span><div><b>{t}</b><p>{d}</p></div></div>)}</div>
       </div>
     </section>
@@ -190,7 +123,7 @@ export function Home() {
     {/* 09 CATALOGUES */}
     <section className="rd-explore rd-sec" id="catalogues" style={{ overflow: "hidden" }}>
       <div className="rd-wrap">
-        <div className="rd-head"><div><Eyebrow>08 — Catalogue library</Eyebrow><h2 className="rd-h2">Ideas, in <G>good company.</G></h2></div><p>{collections.length - 1} catalogues, each a PDF from the Rang library.</p></div>
+        <div className="rd-head"><div><Eyebrow>06 — Catalogue library</Eyebrow><h2 className="rd-h2">Ideas, in <G>good company.</G></h2></div><p>{collections.length - 1} catalogues, each a PDF from the Rang library.</p></div>
         <div className="rd-covers">
           {collections.map(c => <PdfLink key={c.id} pdf={c.pdf} name={c.name} className={`rd-cover ${c.cover ? "" : "logo"}`}
             onMouseMove={e => { const r = e.currentTarget.getBoundingClientRect(); setTilt({ [c.id]: [-((e.clientY - r.top) / r.height - 0.5) * 10, ((e.clientX - r.left) / r.width - 0.5) * 12] }); }} onMouseLeave={() => setTilt({})}>
@@ -203,7 +136,7 @@ export function Home() {
 
     {/* 10 GALLERY */}
     <section className="rd-wrap rd-sec" id="gallery">
-      <div data-rv="1" style={{ marginBottom: "2.5rem" }}><Eyebrow>09 — Out in the world</Eyebrow><h2 className="rd-h2">Meet us <G>there.</G></h2></div>
+      <div data-rv="1" style={{ marginBottom: "2.5rem" }}><Eyebrow>07 — Out in the world</Eyebrow><h2 className="rd-h2">Meet us <G>there.</G></h2></div>
       <div>{events.map(([n, u], i) => <a key={n} href={u} target="_blank" rel="noopener noreferrer" className="rd-event"><span className="l"><small>0{i + 1}</small><b>{n}</b></span><em>Gallery →</em></a>)}<div style={{ borderTop: "1px solid var(--line)" }}/></div>
     </section>
 
@@ -211,7 +144,7 @@ export function Home() {
     <section className="rd-cta-sec" id="contact">
       <div className="wash" aria-hidden="true"/><Smoke/>
       <div className="rd-wrap rd-rel" style={{ maxWidth: "70rem" }}>
-        <div className="rd-eyebrow" style={{ color: "#fff", marginBottom: "1.9rem" }}>10 — For architects, designers, dealers and customers</div>
+        <div className="rd-eyebrow" style={{ color: "#fff", marginBottom: "1.9rem" }}>08 — For architects, designers, dealers and customers</div>
         <h2>Let’s create something <em>beautiful.</em></h2>
         <p style={{ fontSize: "1.0625rem", lineHeight: 1.7, maxWidth: "32.5rem", margin: "1.9rem auto 0" }}>Explore the collections, download a catalogue, or talk to the Rang team about your next space.</p>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: ".75rem", marginTop: "2.75rem" }}>
