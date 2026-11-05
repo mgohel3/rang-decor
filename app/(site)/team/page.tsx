@@ -17,9 +17,9 @@ export default function Team() {
     </div>
     <div className="rd-wrap rd-teamdir">
       <PageHead eyebrow="Leadership" lead="The visionaries behind Rang Décor.">Meet our <em className="grad">directors.</em></PageHead>
-      <ul className="rd-team">{team.map(t => <li key={t.name} data-rv="1">
-        <div className="ph"><img src={t.img} alt={`${t.name}, ${t.role} at Rang Décor`} width={560} height={560} loading="lazy"/></div>
-        <h2>{t.name}</h2><p>{t.role}</p>
+      <ul className="rd-team">{team.map((t, i) => <li key={t.name} data-rv="1" style={{ transitionDelay: `${i * 0.07}s` }}>
+        <div className="ph" data-shine><img src={t.img} alt={`${t.name}, ${t.role} at Rang Décor`} width={560} height={700} loading="lazy"/><span className="n">0{i + 1}</span></div>
+        <div className="cap"><h2>{t.name}</h2><p>{t.role}</p></div>
       </li>)}</ul>
     </div>
   </>;
