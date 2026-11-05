@@ -692,3 +692,12 @@ body{background:#FFFFFF}
 .rd-legaldoc p,.rd-legaldoc li{line-height:1.75;margin-bottom:.8rem}
 .rd-legaldoc ul{padding-left:1.2rem}
 .rd-social{gap:.55rem;flex-wrap:nowrap}.rd-social a{width:2.3rem;height:2.3rem}
+.rd-teamhero{position:relative;height:min(78svh,52rem);min-height:30rem;overflow:hidden;background:#f4f1eb;display:flex;align-items:flex-end}
+.rd-teamhero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rd-teamhero .fade{position:absolute;inset:0;background:linear-gradient(to top,#fff 4%,rgba(255,255,255,.7) 28%,rgba(255,255,255,0) 62%)}
+.rd-teamhero .in{position:relative;width:100%;padding-bottom:clamp(2rem,5vw,4rem)}
+.rd-teamhero h1{max-width:46rem}
+.rd-teamintro{max-width:60rem!important;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;padding-block:clamp(3rem,6vw,5rem);font-size:1.05rem;line-height:1.85;color:var(--grey-ink)}
+.rd-teamintro p:first-child{font-size:1.45rem;line-height:1.5;color:var(--ink);font-family:var(--serif,inherit)}
+.rd-teamdir{padding-bottom:var(--sec);border-top:1px solid var(--line);padding-top:clamp(3rem,6vw,5rem)}
+@media(max-width:760px){.rd-teamintro{grid-template-columns:1fr;gap:1.25rem}}
