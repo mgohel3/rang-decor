@@ -5,7 +5,7 @@ export const metadata = { title: "Privacy Policy", description, alternates: { ca
 
 export default function Privacy() {
   return <Legal eyebrow="Legal" title={<>Privacy <em className="grad">policy.</em></>} lead="How we protect your data at Rang Décor."
-    contactLine="If you have any questions about this Privacy Policy, please contact us."
+    contactLine="If you have any questions about this Privacy Policy, please contact us using the details alongside." other={{ href: "/policy/terms-of-service", label: "Read our Terms of Service" }}
     sections={[
       { h: "Overview", p: ["This page informs you of our policies regarding the collection, use and disclosure of personal information when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.", "We use your personal information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used here have the same meanings as in our Terms of Service."] },
       { h: "Information collection and use", p: ["While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you."] },

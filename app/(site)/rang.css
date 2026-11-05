@@ -701,3 +701,21 @@ body{background:#FFFFFF}
 .rd-teamintro p:first-child{font-size:1.45rem;line-height:1.5;color:var(--ink);font-family:var(--serif,inherit)}
 .rd-teamdir{padding-bottom:var(--sec);border-top:1px solid var(--line);padding-top:clamp(3rem,6vw,5rem)}
 @media(max-width:760px){.rd-teamintro{grid-template-columns:1fr;gap:1.25rem}}
+.rd-footer .c a.ic{display:flex;gap:.7rem;align-items:flex-start}
+.rd-footer .c a.ic svg{flex:none;margin-top:.2rem;color:#E01080}
+.rd-footer .c a.ic small{display:block}
+.rd-legalgrid{display:grid;grid-template-columns:minmax(0,46rem) minmax(16rem,22rem);gap:clamp(2rem,6vw,6rem);justify-content:space-between;align-items:start}
+.rd-legaldoc{max-width:none}
+.rd-legaldoc section{scroll-margin-top:7rem}
+.rd-legaldoc section:first-child{margin-top:0}
+.rd-legalside{position:sticky;top:7rem;display:grid;gap:1.5rem}
+.rd-legalside h3{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-ink);margin-bottom:1rem;font-weight:600}
+.rd-legalside ol{list-style:none;padding:0;margin:0;border-left:1px solid var(--line)}
+.rd-legalside ol a{display:block;padding:.45rem 0 .45rem 1rem;margin-left:-1px;border-left:2px solid transparent;font-size:.95rem;transition:color .2s,border-color .2s}
+.rd-legalside ol a:hover{color:#E01080;border-color:#E01080}
+.rd-legalside .card{padding:1.6rem;border-radius:1.25rem;background:#F4F1EB;display:grid;gap:1rem}
+.rd-legalside .card h3{margin:0}
+.rd-legalside .card a:not(.rd-textlink){display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;line-height:1.5}
+.rd-legalside .card svg{flex:none;margin-top:.2rem;color:#E01080}
+.rd-legalside .card small{display:block;color:var(--grey-ink);font-size:.8rem}
+@media(max-width:900px){.rd-legalgrid{grid-template-columns:1fr}.rd-legalside{position:static;order:-1}}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { collections, contact } from "@/data/rang";
 import { Smoke } from "./Smoke";
-import { WhatsAppIcon, socialIcons } from "./Icons";
+import { WhatsAppIcon, socialIcons, PinIcon, PhoneIcon, MailIcon } from "./Icons";
 
 export function Footer() {
   return <>
@@ -28,7 +28,7 @@ export function Footer() {
             </div>
             <div className="c"><h5>Products</h5>{collections.filter(c => c.cover).slice(0, 8).map(c => <Link key={c.id} href={`/product/${c.id}`}>{c.name}</Link>)}</div>
             <div className="c"><h5>Company</h5><Link href="/about">About</Link><Link href="/network">Our Network</Link><Link href="/visualizer/living-room">Visualizer</Link><Link href="/catalogue">Catalogues</Link><Link href="/testimonials">Testimonials</Link><Link href="/team">Our Team</Link><Link href="/careers">Careers</Link><Link href="/contact">Contact</Link></div>
-            <div className="c"><h5>Visit &amp; write</h5><a href={contact.map}>{contact.address[0]}<br/>{contact.address[1]}</a><a href={contact.whatsapp}>{contact.phone}<br/><span className="rd-muted" style={{ fontSize: ".8rem" }}>{contact.hours}</span></a><a href={`mailto:${contact.email}`}>{contact.email}</a></div>
+            <div className="c"><h5>Visit &amp; write</h5><a className="ic" href={contact.map}><PinIcon/><span>{contact.address[0]}<br/>{contact.address[1]}</span></a><a className="ic" href={contact.whatsapp}><PhoneIcon/><span>{contact.phone}<br/><small className="rd-muted" style={{ fontSize: ".8rem" }}>{contact.hours}</small></span></a><a className="ic" href={`mailto:${contact.email}`}><MailIcon/><span>{contact.email}</span></a></div>
           </div>
           <div className="rd-legal">
             <div><span>© Rang Décor. All rights reserved.</span><span>A Bhandari Group initiative</span></div>

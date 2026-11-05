@@ -7,3 +7,7 @@ const S = { fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap:
 const Instagram = () => <svg {...P} width={20} height={20} {...S}><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>;
 const LinkedIn = () => <svg {...P} width={20} height={20} {...S}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>;
 export const socialIcons: Record<string, () => React.ReactElement> = { Facebook, Pinterest, Instagram, LinkedIn };
+export const PinIcon = () => <svg {...P} width={18} height={18} {...S}><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>;
+export const PhoneIcon = () => <svg {...P} width={18} height={18} {...S}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>;
+export const MailIcon = () => <svg {...P} width={18} height={18} {...S}><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>;
+export const ClockIcon = () => <svg {...P} width={18} height={18} {...S}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>;
